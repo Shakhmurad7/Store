@@ -9,6 +9,11 @@
 .Big-Container{
     padding: 40px 100px;
 }
+ul li{
+    list-style: none;
+}
+
+// ---header---
 .header-container{
     display: flex;
     justify-content: space-between;
@@ -33,5 +38,36 @@
         display:flex;
         gap: 15px;
         font-size: 22px;
+    }
+}
+
+// ---footer---
+.footer-container{
+    padding: 40px 100px;
+    justify-content: space-between;
+    display: flex;
+    background-color: #F0F0F4;
+
+    .footer-center{
+        max-width: 800px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-center-block{
+        width: 100%;
+        max-width: 400px;
+        gap: 20px;
+        justify-content: space-between;
+        display: flex;
+    }
+    .footer-block-text ul{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .one-text{
+            font-weight: 700;
+        }
     }
 }

@@ -1,3 +1,4 @@
+import Footer from "./assets/layout/footer"
 import Header from "./assets/layout/header"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="Big-Container">
        <Header/>
     </div>
+       <Footer/>
     </>     
   )
 }

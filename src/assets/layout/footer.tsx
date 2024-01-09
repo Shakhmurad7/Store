@@ -1,5 +1,7 @@
-
-
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 function Footer() {
   return (
     <div className="footer-container">
@@ -11,10 +13,11 @@ function Footer() {
             </div>
         </div>
         <div className="footer-center">
+
             <div className="footer-center-block">
                 <div className="footer-block-text">
                     <ul>
-                        <li>Информация</li>
+                        <li className="one-text" >Информация</li>
                         <li>О компании</li>
                         <li>Контакты</li>
                         <li>Акции</li>
@@ -23,7 +26,7 @@ function Footer() {
                 </div>
                 <div className="footer-block-text">
                 <ul>
-                        <li>Интернет-магазин</li>
+                        <li className="one-text" >Интернет-магазин</li>
                         <li>Доставка и самовывоз</li>
                         <li>Оплата</li>
                         <li>Возврат-обмен</li>
@@ -31,6 +34,14 @@ function Footer() {
                     </ul>
                 </div>
             </div>
+
+            <div className="footer-icon">
+                <FaInstagram />
+                <FaFacebook />
+                <FaTwitter />
+                <FaYoutube />
+            </div>
+
         </div>
     </div>
   )
