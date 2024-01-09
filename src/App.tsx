@@ -4,8 +4,7 @@ function App() {
   return (
     <>
     <div className="Big-Container">
-  
-      <Header/>
+       <Header/>
     </div>
     </>     
   )
