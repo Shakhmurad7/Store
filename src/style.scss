@@ -43,6 +43,7 @@ ul li{
 
 // ---footer---
 .footer-container{
+    gap: 40px;
     padding: 40px 100px;
     justify-content: space-between;
     display: flex;
@@ -53,6 +54,7 @@ ul li{
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     .footer-center-block{
         width: 100%;
@@ -69,5 +71,32 @@ ul li{
         .one-text{
             font-weight: 700;
         }
+    }
+    .footer-icon{
+        font-size: 28px;
+        gap: 10px;
+        display: flex;
+    }
+    .footer-left{
+        max-width: 400px;
+        width: 100%;
+    }
+    .footer-block-left{
+        padding-top: 20px;
+        display: flex;
+    }
+    .footer-block-left input{
+        width: 100%;
+    }
+    .footer-block-left input, .footer-block-left button{
+        padding: 10px;
+        border: none;
+        outline: none
+    };
+    .footer-block-left button{
+        padding: 0px 30px;
+        cursor: pointer;
+        background-color: #1C62CD;
+        color: white;
     }
 }
