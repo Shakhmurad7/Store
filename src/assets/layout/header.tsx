@@ -15,7 +15,7 @@ function Header() {
                 <FaLocationDot />
                 <h2>Москва,  ул. Науки  25</h2>
             </div>
-            <div className="header-right-block">
+            <div className="header-right-block-icon">
                  <CiHeart />
                  <IoPersonSharp />
                  <SlBasket />
