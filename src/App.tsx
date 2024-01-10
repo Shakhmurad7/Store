@@ -1,13 +1,13 @@
+import Home from "./assets/Page/Home"
 import Footer from "./assets/layout/footer"
-import Header from "./assets/layout/header"
 
 function App() {
   return (
     <>
     <div className="Big-Container">
-       <Header/>
+       <Home/>
     </div>
-       <Footer/>
+    <Footer/>
     </>     
   )
 }
