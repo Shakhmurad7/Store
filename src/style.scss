@@ -113,3 +113,28 @@ ul li{
 .Navbar-container ul li{
     cursor: pointer;
 }
+
+// ---Swiper---
+.Swiper-container{
+    gap: 50px;
+    justify-content: space-between;
+    display: flex;
+    padding: 40px 0px;
+}
+.swiper{
+    width: 700px;
+    height: 350px;
+}
+.swipers{
+    width: 700px;
+    height: 350px;
+}
+
+.swiper-slide.swiper-slide-active img ,
+.swiper-slide.swiper-slide-next img ,
+.swiper-slide.swiper-slide-prev img ,
+.swiper-slide img{
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+}
