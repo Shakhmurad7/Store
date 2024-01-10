@@ -1,13 +1,11 @@
 import PageContainer from "../Components/PageContainer"
 
-function Home() {
+function Stock() {
   return (
-    <>
     <PageContainer>
-        <h1>salam</h1>
+        
     </PageContainer>
-    </>
   )
 }
 
-export default Home
+export default Stock

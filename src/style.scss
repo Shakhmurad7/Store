@@ -100,3 +100,16 @@ ul li{
         color: white;
     }
 }
+
+
+// ----Navbar----
+.Navbar-container ul{
+    padding: 10px;
+    margin-top: 50px;
+    background-color: #F0F0F4;
+    display: flex;
+    justify-content: space-between;
+}
+.Navbar-container ul li{
+    cursor: pointer;
+}
