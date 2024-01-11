@@ -29,12 +29,11 @@ export default function Swipers() {
         className="mySwiper"
       >
         <SwiperSlide><img  src={'./img/слайдер баннер.png'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/da00adc39fb62ce64af0eebbbbec407b.png'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/ф1.jpg'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/ф2.jpg'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/ф3.jpg'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/ф4.jpg'} /></SwiperSlide>
-        <SwiperSlide><img src={'./img/ф5.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./img/pexels-engin-akyurt-10364376.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./img/pexels-karola-siimson-704213.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./img/pexels-sebastian-voortman-804570.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./public/img/pexels-shelly-ohlsson-3761037.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./img/pexels-tima-miroshnichenko-5976911.jpg'} /></SwiperSlide>
       </Swiper>
     </>
   );
