@@ -163,18 +163,24 @@ ul li{
     justify-content: space-between;
 }
 .block-center-img{
+    justify-content: center;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 .block-center-img img{
+    width: 170px;
+}
+.block-center-img h3{
     width: 200px;
+
 }
 .block-botton-text{
+    font-weight: 700    ;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #F0F0F4;
-    padding: 20px;
+    padding: 32px;
 }
