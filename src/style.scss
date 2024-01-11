@@ -109,9 +109,10 @@ ul li{
     background-color: #F0F0F4;
     display: flex;
     justify-content: space-between;
-}
-.Navbar-container ul li{
-    cursor: pointer;
+
+    li{
+       cursor: pointer;
+   }
 }
 
 // ---Swiper---
@@ -168,9 +169,9 @@ ul li{
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.block-center-img img{
-    width: 170px;
+    img{
+        width: 170px;
+    }
 }
 .block-center-img h3{
     width: 200px;
@@ -183,4 +184,29 @@ ul li{
     flex-direction: column;
     background-color: #F0F0F4;
     padding: 32px;
+}
+
+
+
+// ---Search---
+.search-container{
+    width: 100%;
+    display: flex;
+    button{
+        font-size: 22px;
+        cursor: pointer;
+        padding:15px 25px;
+        background-color: #1C62CD;
+        color: white;
+        outline: none;
+        border: none;
+    }
+    input{
+        font-size: 22px;
+        background-color: #F0F0F4;
+        outline: none;
+        border: none;
+        padding: 10px;
+        width: 100%;
+    }
 }

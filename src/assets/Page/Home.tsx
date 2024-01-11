@@ -5,6 +5,7 @@ function Home() {
   return (
     <>
     <PageContainer>
+      {/* ---Swiper--- */}
       <div className="Swiper-container">
 
         <div className="swipers">
@@ -28,6 +29,13 @@ function Home() {
             </div>
         </div>
         
+      </div>
+
+
+      {/* ----Search---- */}
+      <div className="search-container">
+          <input type="text" />
+          <button>Искать</button>
       </div>
     </PageContainer>
     </>
