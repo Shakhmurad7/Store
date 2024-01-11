@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import '../../style.scss'
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard , Autoplay} from 'swiper/modules';
 
 export default function Swipers() {
   return (
@@ -19,8 +19,13 @@ export default function Swipers() {
         navigation={true}
         pagination={true}
         mousewheel={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+      }}
+        loop={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        modules={[ Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
         <SwiperSlide><img  src={'./img/слайдер баннер.png'} /></SwiperSlide>
