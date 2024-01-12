@@ -1,5 +1,6 @@
 import PageContainer from "../Components/PageContainer"
 import Swipers from "../Components/Swiper"
+import Search from "../layout/Search"
 
 function Home() {
   return (
@@ -33,10 +34,7 @@ function Home() {
 
 
       {/* ----Search---- */}
-      <div className="search-container">
-          <input type="text" />
-          <button>Искать</button>
-      </div>
+          <Search/>
     </PageContainer>
     </>
   )

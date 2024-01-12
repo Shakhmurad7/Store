@@ -189,7 +189,7 @@ ul li{
 
 
 // ---Search---
-.search-container{
+.secrch-input{
     width: 100%;
     display: flex;
     button{
@@ -209,4 +209,37 @@ ul li{
         padding: 10px;
         width: 100%;
     }
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .cart-container{
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .cart-block{
+            gap: 20px;
+            justify-content: space-between;
+            display: flex;
+        }
+        .cart-box img{
+            object-fit: contain;
+            width: 150px;
+            height: 100px;
+        }
+        .cart-box{
+            justify-content: space-between;
+            display: flex;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            height: auto;
+            width: 400px;
+        }
+    }
+
+    
 }
