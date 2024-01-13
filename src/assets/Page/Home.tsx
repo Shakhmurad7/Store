@@ -1,6 +1,7 @@
 import PageContainer from "../Components/PageContainer"
 import Swipers from "../Components/Swiper"
-import Search from "../layout/Search"
+import Search from "../layout/Search/Search"
+import Goods from "../layout/Search/goods/Goods"
 
 function Home() {
   return (
@@ -35,6 +36,10 @@ function Home() {
 
       {/* ----Search---- */}
           <Search/>
+
+
+      {/* ---Goods--- */}
+        <Goods/>
     </PageContainer>
     </>
   )

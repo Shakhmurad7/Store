@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const url = 'https://book-db-shakhmurad.vercel.app/Post-Store';
 
 interface SearchProps {
-  user: any;
+  user:any;
   dispatch: React.Dispatch<any>;
 }
 
@@ -43,8 +43,8 @@ function Search({ user, dispatch }: SearchProps) {
             user.slice(0,3).map(({item , title , img , id }:cartData)=>(
               <div key={id} className="cart-box">
                   <div className="cart-text">
-                      <h2>{item}</h2>
-                      <p>{title}</p>
+                      <h2>{title}</h2>
+                      <p>{item}</p>
                   </div>
                   <img src={`./img/${img}.png`} />
               </div>
@@ -57,8 +57,8 @@ function Search({ user, dispatch }: SearchProps) {
             user.slice(3,6).map(({item , title , img , id }:cartData)=>(
               <div key={id} className="cart-box">
                   <div className="cart-text">
-                      <h2>{item}</h2>
-                      <p>{title}</p>
+                      <h2>{title}</h2>
+                      <p>{item}</p>
                   </div>
                   <img src={`./img/${img}.png`} />
               </div>
