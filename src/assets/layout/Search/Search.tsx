@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const url = 'https://book-db-shakhmurad.vercel.app/Post-Store';
 
 interface SearchProps {
-  user:any;
+  user:cartData[];
   dispatch: React.Dispatch<any>;
 }
 
@@ -15,8 +15,6 @@ type cartData ={
   id:number,
   title:string,
   img:string,
-
-
 }
 
 function Search({ user, dispatch }: SearchProps) {
@@ -26,10 +24,8 @@ function Search({ user, dispatch }: SearchProps) {
         type: 'data',
         payload: data,
       });
-      console.log(data);
     });
-  }, []);
-
+  }, [dispatch]);
   return (
     <div className="search-container">
       <div className="secrch-input">
@@ -71,11 +67,9 @@ function Search({ user, dispatch }: SearchProps) {
   );
 }
 
-const mapState =(state:any)=> ({
-  user: state.user
-})
-const connector = connect(mapState) 
-export default connector(Search);
+const mapState =(state:any)=> state
+
+export default connect(mapState)(Search);
 
 
 

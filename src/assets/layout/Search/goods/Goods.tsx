@@ -1,5 +1,25 @@
+import axios from 'axios'
 import style from './goods.module.scss'
-function Goods() {
+import { useEffect, useState } from 'react'
+
+import { FaShoppingBasket } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
+  type cartData ={
+      item:string,
+      id:number,
+      price:string,
+      img:string,
+    }
+    function Goods() {
+        const [data , setdata] = useState([]) 
+        
+        useEffect(()=>{
+            axios.get(url).then(({data})=>{
+                setdata(data)    
+            })
+    } , [])
+        
   return (
     <div className={style['goods-container']}>
         <div className={style['goods-top-itme']}>
@@ -13,8 +33,30 @@ function Goods() {
             <p>инструменты</p>
             <p>аксессуары </p>
         </div>
+
+        <div className={style['cart-container']}>
+                {
+                    
+                   data.map(({item , id , img  , price}:cartData)=>(
+                        <div key={id} className="cart-box">
+                            <div className="icon-heart"><FaRegHeart /></div>
+                            <div className="img-cart">
+                                <img src={`./img/${img}.png`} />
+                                <h3>{item}</h3>
+                            </div>
+                            <div className="cart-price">{price}$</div>
+                            <div className="icon-basket"><FaShoppingBasket /></div>
+                        </div>
+                    ))
+                }
+        </div>
+        {
+            
+        }
+        
     </div>
   )
 }
 
-export default Goods
+
+export default (Goods)

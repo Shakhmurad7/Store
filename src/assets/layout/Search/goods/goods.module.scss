@@ -1,0 +1,17 @@
+.goods-container{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .goods-list{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px;
+
+        p{
+            font-size: 18px;
+        }
+    }
+}

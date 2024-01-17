@@ -10,13 +10,13 @@ import reduxRoot from './assets/layout/readax.tsx'
 const store = createStore(reduxRoot)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
     <Provider store={store}>
+  <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    </Provider>
     </React.StrictMode>,
+    </Provider>
 )
 
 
