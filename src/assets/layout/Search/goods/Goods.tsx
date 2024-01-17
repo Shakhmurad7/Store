@@ -52,9 +52,9 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                     ))
                 }
         </div>
-        {
-            
-        }
+                <div className={style['block-box']}>
+                    <h3>Показать еще</h3>
+                </div>
         
     </div>
   )

@@ -1,0 +1,23 @@
+.box-contaier{
+    width: 100%;
+    height: auto;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C62CD;
+    .img-box{
+        display: flex;
+        gap: 10/px;
+        align-items: center;
+    }
+    .center-text {
+        width: 230px;
+        color: white;
+        font-weight: 700;
+    }
+    .left-text{
+        padding: 10px 40px;
+        background-color: white;
+    }
+}

@@ -1,7 +1,9 @@
 import PageContainer from "../Components/PageContainer"
 import Swipers from "../Components/Swiper"
 import Search from "../layout/Search/Search"
+
 import Goods from "../layout/Search/goods/Goods"
+import Box from "../layout/box/Box"
 
 function Home() {
   return (
@@ -35,11 +37,17 @@ function Home() {
 
 
       {/* ----Search---- */}
-          <Search/>
+          <Search user={[]} dispatch={function (): void {
+          throw new Error("Function not implemented.")
+        } }/>
 
 
       {/* ---Goods--- */}
         <Goods/>
+      
+
+      {/* ----box-text---- */}
+          <Box/>
     </PageContainer>
     </>
   )
