@@ -4,6 +4,59 @@
     flex-direction: column;
     gap: 30px;
 
+    .cart-container{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .cart-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        text-align: center;
+        max-width: 300px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+        h2{
+            padding: 15px 0px;
+        }
+        h3{
+            display: flex;
+            justify-content: end;
+            
+        }
+        p{
+            font-size: 20px;
+            width: 55px !important;;
+            height: 34px !important;;
+            color: white;
+            width: fit-content;
+            border-top-left-radius:10px;
+            background-color: #1C62CD;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        .icon-basket{
+            margin: 0px -15px -15px 0px ;
+            display: flex;
+            justify-content: end;
+            align-items: end; 
+        }
+        &:hover h3{
+            color: #1C62CD;
+        }
+        &:hover{
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            transition: .4s;
+        }
+        
+    }
+
     .goods-list{
         display: flex;
         justify-content: space-between;

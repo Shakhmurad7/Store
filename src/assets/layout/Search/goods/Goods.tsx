@@ -38,14 +38,16 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                 {
                     
                    data.map(({item , id , img  , price}:cartData)=>(
-                        <div key={id} className="cart-box">
-                            <div className="icon-heart"><FaRegHeart /></div>
-                            <div className="img-cart">
+                        <div key={id} className={style['cart-box']}>
+                            <h3> <FaRegHeart /></h3>
+                            <div className={style['img-cart']}>
                                 <img src={`./img/${img}.png`} />
                                 <h3>{item}</h3>
                             </div>
-                            <div className="cart-price">{price}$</div>
-                            <div className="icon-basket"><FaShoppingBasket /></div>
+                            <h2>{price}$</h2>
+                            <div className={style['icon-basket']}>
+                                <p><FaShoppingBasket /></p>
+                            </div>
                         </div>
                     ))
                 }
