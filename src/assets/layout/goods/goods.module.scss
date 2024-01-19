@@ -22,8 +22,19 @@
         justify-content: space-between;
         gap: 20px;
     }
+    .img-cart{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+            object-fit: contain !important;
+            height: 300px !important;
+        }
+    }
     
     .cart-box{
+        height:100%;
+        max-height:500px ;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

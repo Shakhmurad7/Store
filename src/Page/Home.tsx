@@ -4,6 +4,7 @@ import Search from "../assets/layout/Search/Search"
 
 import Goods from "../assets/layout/goods/Goods"
 import Box from "../assets/layout/box/Box"
+import GoodsTwo from "../assets/layout/goodTwo/goodTwo"
 
 function Home() {
   return (
@@ -48,6 +49,11 @@ function Home() {
 
       {/* ----box-text---- */}
           <Box/>
+
+
+
+       {/* ---GoodTwo--- */}
+        <GoodsTwo/>
     </PageContainer>
     </>
   )
