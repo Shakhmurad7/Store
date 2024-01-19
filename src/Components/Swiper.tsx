@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import '../../style.scss'
+import '../style.scss'
 
 // import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard , Autoplay} from 'swiper/modules';
@@ -18,7 +18,7 @@ export default function Swipers() {
         cssMode={true}
         navigation={true}
         pagination={true}
-        mousewheel={true}
+        // mousewheel={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false

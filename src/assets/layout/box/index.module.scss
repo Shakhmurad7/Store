@@ -1,15 +1,22 @@
 .box-contaier{
+    margin: 50px 0px;
     width: 100%;
     height: auto;
     padding: 30px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #1C62CD;
+    .box-block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 950px;
+    }
     .img-box{
         display: flex;
         gap: 10/px;
         align-items: center;
+        img{
+            width: 150px;
+        }
     }
     .center-text {
         width: 230px;
@@ -20,4 +27,7 @@
         padding: 10px 40px;
         background-color: white;
     }
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: none !important;
 }
