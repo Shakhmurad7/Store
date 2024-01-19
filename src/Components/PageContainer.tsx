@@ -1,5 +1,5 @@
-import Navbar from "../layout/Navbar"
-import Header from "../layout/header"
+import Navbar from "../assets/layout/Navbar"
+import Header from "../assets/layout/header"
 
 function PageContainer(a:any) {
   return (

@@ -1,9 +1,9 @@
 import PageContainer from "../Components/PageContainer"
 import Swipers from "../Components/Swiper"
-import Search from "../layout/Search/Search"
+import Search from "../assets/layout/Search/Search"
 
-import Goods from "../layout/Search/goods/Goods"
-import Box from "../layout/box/Box"
+import Goods from "../assets/layout/goods/Goods"
+import Box from "../assets/layout/box/Box"
 
 function Home() {
   return (
