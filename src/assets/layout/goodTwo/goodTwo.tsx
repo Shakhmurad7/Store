@@ -2,6 +2,7 @@
 import axios from 'axios'
 import style from '../goods/goods.module.scss'
 import { useEffect, useState } from 'react'
+import { FaHeart } from "react-icons/fa";
 // Import Swiper React components
 import { Swiper, SwiperSlide  } from 'swiper/react';
 
@@ -26,7 +27,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
     }
     function GoodsTwo() {
         const [data , setdata] = useState([]) 
-        
+        const [icon , seticon ] = useState(1)
         useEffect(()=>{
             axios.get(url).then(({data})=>{
                 setdata(data)  
@@ -62,7 +63,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
                          <SwiperSlide>{
                              data.slice(0,1).map(({item , id , img  , price}:cartData)=>(
                                 <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
+                                    <h3 onClick={()=>seticon(icon)} className='opne-icon'></h3>
                                     <div className={style['img-cart']}>
                                         <img src={`./img/${img}.png`} />
                                         <h3>{item}</h3>
