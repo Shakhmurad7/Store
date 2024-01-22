@@ -2,9 +2,9 @@
 import axios from 'axios'
 import style from '../goods/goods.module.scss'
 import { useEffect, useState } from 'react'
-import { FaHeart } from "react-icons/fa";
 // Import Swiper React components
 import { Swiper, SwiperSlide  } from 'swiper/react';
+import { IoMdHeart } from "react-icons/io";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -27,7 +27,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
     }
     function GoodsTwo() {
         const [data , setdata] = useState([]) 
-        const [icon , seticon ] = useState(1)
+        const [icon , seticon ] = useState(true)
         useEffect(()=>{
             axios.get(url).then(({data})=>{
                 setdata(data)  
@@ -63,13 +63,20 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
                          <SwiperSlide>{
                              data.slice(0,1).map(({item , id , img  , price}:cartData)=>(
                                 <div key={id} className={style['cart-box']}>
-                                    <h3 onClick={()=>seticon(icon)} className='opne-icon'></h3>
+                                    <h4 onClick={()=>seticon(!icon)} >
+                                             { icon? 
+                                              <div><FaRegHeart /></div> :
+                                              <div className={style['open-icon']}> <IoMdHeart /></div>
+                                              
+                                            
+                                            }
+                                    </h4>
                                     <div className={style['img-cart']}>
                                         <img src={`./img/${img}.png`} />
                                         <h3>{item}</h3>
                                     </div>
                                     <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
+                                    <div  className={style['icon-basket']}>
                                         <p><FaShoppingBasket /></p>
                                     </div>
                                 </div>

@@ -48,7 +48,8 @@
         h2{
             padding: 15px 0px;
         }
-        h3{
+        h4{
+            font-size: 20px;
             display: flex;
             justify-content: end;
             
@@ -93,4 +94,8 @@
             font-size: 18px;
         }
     }
+}
+.open-icon{
+    color: red;
+    transition: .5s;
 }
