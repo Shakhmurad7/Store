@@ -5,14 +5,14 @@ function Navbar() {
     <div>
         <div className="Navbar-container">
             <ul>
-                <li>Квадроциклы</li>
-                <li>Катера</li>
-                <li>Гидроциклы</li>
-                <li>Лодки</li>
-                <li>Вездеходы</li>
-                <li>Снегоходы</li>
-                <li>Двигатели</li>
-                <li>Запчасти</li>
+                <li>ATV-lər</li>
+                <li>Böyük-Qayıqlar</li>
+                <li>Su üstə avtomobilləri</li>
+                <li>Qayıqlar</li>
+                <li>Bütün ərazi nəqliyyat vasitələri</li>
+                <li>Qar avtomobilləri</li>
+                <li>Mühərriklər</li>
+                <li>Ehtiyat hissələri</li>
             </ul>
         </div>
     </div>

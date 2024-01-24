@@ -9,10 +9,10 @@ function Box() {
             <img src={'./img/2018-Maverick-X3-X-rc-TURBO-R-Carbon-Black-and-Octane-Blue_3-4-front4072 2.png'} />
         </div>
         <div className={style['center-text']}>
-            <h1>Cкидки на все запчасти до 70%</h1>
+            <h1>Bütün ehtiyat hissələrinə 70%-ə qədər endirim</h1>
         </div>
         <div className={style['left-text']}>
-            <h3>ПОСМОТЕТЬ ВСЕ</h3>
+            <h3>HAMISINA BAXIN</h3>
         </div>
         </div>
     </div>

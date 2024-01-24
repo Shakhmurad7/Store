@@ -12,6 +12,10 @@
 ul li{
     list-style: none;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 // ---header---
 .header-container{
@@ -111,6 +115,8 @@ ul li{
     justify-content: space-between;
 
     li{
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.71);
        cursor: pointer;
    }
 }

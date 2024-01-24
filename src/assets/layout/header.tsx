@@ -8,17 +8,17 @@ function Header() {
     <div className="header-container">
         <div className="header-left">
           <Link to={'/'}>
-            <h2> Магазины</h2>
+            <h2> Mağazalar</h2>
           </Link>
           <Link to={'/Stock'}>
-            <h2>Акции</h2>
+            <h2>Səhm</h2>
           </Link>
-            <h2>Доставка и оплата</h2>
+            <h2>Çatdırılma və ödəniş</h2>
         </div>
         <div className="header-right">
             <div className="header-right-block">
                 <FaLocationDot />
-                <h2>Москва,  ул. Науки  25</h2>
+                <h2>Baki kc , Babək</h2>
             </div>
             <div className="header-right-block-icon">
                  <CiHeart />

@@ -40,15 +40,15 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
   return (
     <div className={style['goods-container']}>
         <div className={style['goods-top-itme']}>
-            <h2>Популярные товары</h2>
+            <h2>Məşhur mallar</h2>
         </div>
         <div className={style['goods-list']}>
-            <p>запчасти</p>
-            <p>моторы</p>
-            <p>шины </p>
-            <p>электроника</p>
-            <p>инструменты</p>
-            <p>аксессуары </p>
+            <p>Ehtiyat hissələri</p>
+            <p>Mühərriklər</p>
+            <p>Təkərlər </p>
+            <p>Elektronika</p>
+            <p>Alətlər</p>
+            <p>Aksesuarlar </p>
         </div>
 
         <div className={style['cart-container']}>
@@ -85,7 +85,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
    
         </div>
                 <div className={style['block-box']}>
-                    <h3>Показать еще</h3>
+                    <h3>Daha çox göstər</h3>
                 </div>
         
     </div>

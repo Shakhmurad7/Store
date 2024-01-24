@@ -30,7 +30,7 @@ function Search({ user, dispatch }: SearchProps) {
     <div className="search-container">
       <div className="secrch-input">
         <input type="text" />
-        <button>Искать</button>
+        <button>Axtar</button>
       </div>
 
       <div className="cart-container">

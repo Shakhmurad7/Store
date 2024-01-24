@@ -19,18 +19,18 @@ function Home() {
 
         <div className="swiper-right">
             <div className="block-top-swiper">
-              <p>Aкция</p>
+              <p>Promosyon</p>
               <div className="blcok-right-top">
                 <h3>5000$</h3>
               </div>
             </div>
             <div className="block-center-img">
               <img src={'./img/e641b764933eb1e2fb94daf493c064f0.Png'}  />
-              <h3>Лодочный мотор Suzuki DF9.9BRS</h3>
+              <h3>Xarici mühərrik Suzuki DF9.9BRS</h3>
             </div>
             <div className="block-botton-text">
-              <p>Акция действует до</p>
-              <h3>31.08.2020</h3>
+              <p>Kampaniya tarixinə qədər keçərlidir</p>
+              <h3>31.08.2024</h3>
             </div>
         </div>
         
