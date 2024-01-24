@@ -1,20 +1,14 @@
 import axios from 'axios'
 import style from './goods.module.scss'
 import { useEffect, useState } from 'react'
-// Import Swiper React components
 import { Swiper, SwiperSlide  } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { IoMdHeart } from "react-icons/io";
 
-// import './styles.css';
-
-// import required modules
 import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
-
 import { FaShoppingBasket } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
 
   type cartData ={
@@ -31,6 +25,12 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                 setdata(data)    
             })
     } , [])
+
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleIconClick = (index:any) => {
+                setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+            };
         
   return (
     <div className={style['goods-container']}>
@@ -51,17 +51,18 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                     slidesPerView={4}
                     spaceBetween={30}
                     navigation={true}
-                    // mousewheel={true}
-                // pagination={{
-                //      clickable: true,
-                //              }}
-                             modules={[ Navigation, Pagination, Mousewheel]}
+                        modules={[ Navigation, Pagination, Mousewheel]}
                         className="mySwiper"
                      >
-                         <SwiperSlide>{
-                             data.slice(0,1).map(({item , id , img  , price}:cartData)=>(
+                            {
+                                data.map(({item , id , img  , price}:cartData)=>(
+                            <SwiperSlide>
                                 <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
+                                      <h4
+                                        onClick={() => handleIconClick(id)}
+                                         className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
+                                            <div> <IoMdHeart /></div>
+                                         </h4>
                                     <div className={style['img-cart']}>
                                         <img src={`./img/${img}.png`} />
                                         <h3>{item}</h3>
@@ -71,113 +72,9 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                         <p><FaShoppingBasket /></p>
                                     </div>
                                 </div>
+                            </SwiperSlide>
                             ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(1,2).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(2,3).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(3,4).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(3,4).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(3,4).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(3,4).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
-                         <SwiperSlide>{
-                             data.slice(3,4).map(({item , id , img  , price}:cartData)=>(
-                                <div key={id} className={style['cart-box']}>
-                                    <h3> <FaRegHeart /></h3>
-                                    <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
-                                </div>
-                            ))
-                            }</SwiperSlide>
+                            }
                         </Swiper>
    
         </div>
@@ -189,5 +86,6 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
   )
 }
 
-
 export default (Goods)
+
+
