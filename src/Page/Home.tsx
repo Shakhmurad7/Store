@@ -19,7 +19,7 @@ function Home() {
 
         <div className="swiper-right">
             <div className="block-top-swiper">
-              <p>Promosyon</p>
+              <p>Səhm</p>
               <div className="blcok-right-top">
                 <h3>5000$</h3>
               </div>

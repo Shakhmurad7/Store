@@ -6,10 +6,10 @@ function Footer() {
   return (
     <div className="footer-container">
         <div className="footer-left">
-            <h2>Подпишитесь на нашу рассылку и узнавайте о акция быстрее</h2>
+            <h2>Bülletenimizə abunə olun və promosyonlardan daha tez xəbərdar olun</h2>
             <div className="footer-block-left">
                 <input type="text"/>
-                <button>Отправить</button>
+                <button>Göndər</button>
             </div>
         </div>
         <div className="footer-center">
@@ -17,20 +17,20 @@ function Footer() {
             <div className="footer-center-block">
                 <div className="footer-block-text">
                     <ul>
-                        <li className="one-text" >Информация</li>
-                        <li>О компании</li>
-                        <li>Контакты</li>
-                        <li>Акции</li>
-                        <li>Магазины</li>
+                        <li className="one-text" >Məlumat</li>
+                        <li>Şirkət haqqında</li>
+                        <li>Əlaqələr</li>
+                        <li>Səhm</li>
+                        <li>Mağazalar</li>
                     </ul>
                 </div>
                 <div className="footer-block-text">
                 <ul>
-                        <li className="one-text" >Интернет-магазин</li>
-                        <li>Доставка и самовывоз</li>
-                        <li>Оплата</li>
-                        <li>Возврат-обмен</li>
-                        <li>Новости</li>
+                        <li className="one-text" >Online mağaza</li>
+                        <li>Çatdırılma və götürmə</li>
+                        <li>Ödəniş</li>
+                        <li>Qaytarma - mübadilə</li>
+                        <li>Xəbərlər</li>
                     </ul>
                 </div>
             </div>

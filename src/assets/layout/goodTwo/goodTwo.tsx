@@ -40,7 +40,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
   return (
     <div className={style['goods-container']}>
         <div className={style['goods-top-itme']}>
-            <h2>Məşhur mallar</h2>
+            <h2>Bu məhsulla satın alın</h2>
         </div>
         <div className={style['goods-list']}>
             <p>Ehtiyat hissələri</p>

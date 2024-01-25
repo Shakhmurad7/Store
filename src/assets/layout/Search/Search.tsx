@@ -29,7 +29,7 @@ function Search({ user, dispatch }: SearchProps) {
   return (
     <div className="search-container">
       <div className="secrch-input">
-        <input type="text" />
+        <input placeholder="Brend daxil edin" type="text" />
         <button>Axtar</button>
       </div>
 
