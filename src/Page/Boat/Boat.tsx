@@ -1,14 +1,11 @@
 import PageContainer from "../../Components/PageContainer"
 
-
-function Boats() {
+function Boat() {
   return (
-    <>
     <PageContainer>
-        <h1>B</h1>
+        <h2>Boat</h2>
     </PageContainer>
-    </>
   )
 }
 
-export default Boats
+export default Boat

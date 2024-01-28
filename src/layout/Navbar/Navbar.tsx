@@ -8,17 +8,27 @@ function Navbar() {
               <NavLink to={'/atv'} >
                 <li>ATV-lər</li>
               </NavLink>
-              <NavLink to={'/Boats'} >
+              <NavLink to={'/BigBoats'} >
                 <li>Böyük-Qayıqlar</li>
               </NavLink>
               <NavLink to={'/Hydrocycles'} >
                 <li>Su üstə avtomobilləri</li>
               </NavLink>
+              <NavLink to={'/Boat'} >
                 <li>Qayıqlar</li>
+              </NavLink>
+              <NavLink to={'/AllTerrainVehicles'} >
                 <li>Bütün ərazi nəqliyyat vasitələri</li>
+              </NavLink>
+              <NavLink to={'/Snowmobiles'} >
                 <li>Qar avtomobilləri</li>
-                <li>Mühərriklər</li>
-                <li>Ehtiyat hissələri</li>
+              </NavLink>
+                <NavLink to={'/Engines'}>
+                    <li>Mühərriklər</li>
+                </NavLink>
+                <NavLink to={"/SpareParts"}>
+                   <li>Ehtiyat hissələri</li>
+                </NavLink>
             </ul>
         </div>
     </div>
