@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import Home from "./Page/Home"
+import Home from "./Page/Home/Home"
 import Stock from "./Page/Stock/Stock"
 import Atv from "./Page/Atv/Atv"
 import Boats from "./Page/Boats/Boats"

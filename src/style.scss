@@ -103,8 +103,21 @@ a{
         background-color: #1C62CD;
         color: white;
     }
-}
 
+}
+a.active li{
+    position: relative;
+}
+a.active li::after{
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: -10px !important;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: #1C62CD;
+}
 
 // ----Navbar----
 .Navbar-container ul{

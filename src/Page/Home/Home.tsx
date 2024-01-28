@@ -1,9 +1,9 @@
 import { Box } from "@mui/material"
-import PageContainer from "../Components/PageContainer"
-import Swipers from "../Components/Swiper"
-import Search from "../layout/Search/Search"
-import Goods from "../layout/goods/Goods"
-import GoodsTwo from "../layout/goodTwo/goodTwo"
+import PageContainer from "../../Components/PageContainer"
+import Swipers from "../../Components/Swiper"
+import Search from "../../layout/Search/Search"
+import Goods from "../../layout/goods/Goods"
+import GoodsTwo from "../../layout/goodTwo/goodTwo"
 
 
 function Home() {
