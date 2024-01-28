@@ -1,13 +1,4 @@
 
-// function ReduxRoot(state = {user:[]} , action:any ) {
-//     if(action.type === 'data'){
-//         return {...state , user: action.payload}
-//     }
-//     return state
-// }
-
-// export default ReduxRoot
-
 interface RootState {
     user: any[]; // Replace 'any' with the actual type of your user data
   }
@@ -19,14 +10,14 @@ interface RootState {
   
   type ActionTypes = DataAction;
   
-  const rootReducer = (state: RootState = { user: [] }, action: ActionTypes): RootState => {
+  const RootRedux = (state: RootState = { user: [] }, action: ActionTypes): RootState => {
     if (action.type === 'data') {
       return { ...state, user: action.payload };
     }    
     return state;
   };
   
-  export default rootReducer;
+  export default RootRedux;
   
 
 

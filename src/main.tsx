@@ -5,9 +5,10 @@ import './style.scss'
 import { BrowserRouter } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reduxRoot from './assets/layout/readax.tsx'
+import RootRedux from './layout/redux/redux.tsx'
 
-const store = createStore(reduxRoot)
+
+const store = createStore(RootRedux)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={store}>

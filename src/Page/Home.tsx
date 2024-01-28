@@ -1,10 +1,10 @@
+import { Box } from "@mui/material"
 import PageContainer from "../Components/PageContainer"
 import Swipers from "../Components/Swiper"
-import Search from "../assets/layout/Search/Search"
+import Search from "../layout/Search/Search"
+import Goods from "../layout/goods/Goods"
+import GoodsTwo from "../layout/goodTwo/goodTwo"
 
-import Goods from "../assets/layout/goods/Goods"
-import Box from "../assets/layout/box/Box"
-import GoodsTwo from "../assets/layout/goodTwo/goodTwo"
 
 function Home() {
   return (

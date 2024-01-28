@@ -1,7 +1,10 @@
+import PageContainer from "../../Components/PageContainer"
 
 function Hydrocycles() {
   return (
-    <div>Hydrocycles</div>
+  <PageContainer>
+    <h1>s</h1>
+  </PageContainer>
   )
 }
 

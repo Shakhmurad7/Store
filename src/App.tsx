@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./Page/Home"
 import Stock from "./Page/Stock/Stock"
-import Footer from "./assets/layout/footer"
 import Atv from "./Page/Atv/Atv"
 import Boats from "./Page/Boats/Boats"
 import Hydrocycles from "./Page/Hydrocycles/Hydrocycles"
+import Footer from "./layout/Footer/footer"
 
 
 function App() {
