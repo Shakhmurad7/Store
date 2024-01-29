@@ -1,0 +1,23 @@
+.icon{
+    padding: 20px 0px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    font-size: 15px;    
+    color: #C4C4C4;
+}
+.JetSki-text-top{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .JetSki-block{
+        display: flex;
+        gap: 20px;
+
+        p{
+            padding: 5px 15px;
+            background-color: #F0F0F4;
+        }
+
+    }
+}
