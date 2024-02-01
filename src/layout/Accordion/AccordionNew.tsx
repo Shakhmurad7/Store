@@ -9,7 +9,7 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Stack } from '@mui/material';
-import '../../Page/JetSkis/index.module.css'
+
 
 
 export default function AccordionTransition() {
@@ -40,15 +40,15 @@ export default function AccordionTransition() {
         </AccordionSummary>
         <AccordionDetails>
             <Stack sx={{flexDirection:'row' , gap:3}}>
-              <FormGroup>
-                 <FormControlLabel control={<Checkbox defaultChecked />} label="Hamısı" />
-               </FormGroup>
-              <FormGroup>
-                 <FormControlLabel control={<Checkbox defaultChecked />} label="Yeni" />
-               </FormGroup>
-              <FormGroup>
-                 <FormControlLabel control={<Checkbox defaultChecked />} label="Səhm" />
-               </FormGroup>
+            <FormGroup>
+                    <FormControlLabel control={<Checkbox />} label="Hamsi" />
+                 </FormGroup>
+                 <FormGroup>
+                    <FormControlLabel control={<Checkbox />} label="Yeni" />
+                 </FormGroup>
+                 <FormGroup>
+                    <FormControlLabel control={<Checkbox />} label="Sehm" />
+                 </FormGroup>
             </Stack>
         </AccordionDetails>
       </Accordion>

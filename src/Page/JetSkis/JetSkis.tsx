@@ -6,6 +6,7 @@ import style from '../../layout/goods/goods.module.scss'
 import styles from './index.module.scss'
 
 import AccordionNew from '../../layout/Accordion/AccordionNew.tsx'
+import AccordionCountries from '../../layout/Accordion/AccoedionCountries.tsx'
 import { FaAngleRight } from "react-icons/fa6";
 import axios from "axios";
 import { IoMdHeart } from "react-icons/io";
@@ -59,7 +60,7 @@ function JetSki({JetSki , dispatch}:any) {
           <AccordionNew/>
         </div>
         <div className={styles['accordion']}>
-          <AccordionNew/>
+          <AccordionCountries/>
         </div>
     </div>
 
