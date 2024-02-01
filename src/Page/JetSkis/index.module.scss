@@ -21,3 +21,14 @@
 
     }
 }
+
+.cart-big-contaner{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .cart-container{
+        display: flex;
+        gap: 20px;
+        }
+}
+
