@@ -5,9 +5,15 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Fade from '@mui/material/Fade';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { Stack } from '@mui/material';
+import '../../Page/JetSkis/index.module.css'
+
 
 export default function AccordionTransition() {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(true);
 
   const handleExpansion = () => {
     setExpanded((prevExpanded) => !prevExpanded);
@@ -30,28 +36,20 @@ export default function AccordionTransition() {
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography>Custom transition using Fade</Typography>
+          <Typography>Yeni əşyalar</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          <Typography>Default transition using Collapse</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+            <Stack sx={{flexDirection:'row' , gap:3}}>
+              <FormGroup>
+                 <FormControlLabel control={<Checkbox defaultChecked />} label="Hamısı" />
+               </FormGroup>
+              <FormGroup>
+                 <FormControlLabel control={<Checkbox defaultChecked />} label="Yeni" />
+               </FormGroup>
+              <FormGroup>
+                 <FormControlLabel control={<Checkbox defaultChecked />} label="Səhm" />
+               </FormGroup>
+            </Stack>
         </AccordionDetails>
       </Accordion>
     </div>

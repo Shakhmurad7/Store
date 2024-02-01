@@ -22,13 +22,27 @@
     }
 }
 
-.cart-big-contaner{
+.all-container{
+    padding: 40px 0px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    .cart-container{
+    justify-content: space-between;
+    gap: 30px;
+
+    .left-contaner-JetSki{
         display: flex;
         gap: 20px;
+        flex-direction: column;
+        padding: 7px 0px;
+    }
+    .cart-big-contaner{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .cart-container{
+            display: flex;
+            gap: 20px;
         }
+    }
+    
+    
 }
-

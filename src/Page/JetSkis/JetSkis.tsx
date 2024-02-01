@@ -50,9 +50,17 @@ function JetSki({JetSki , dispatch}:any) {
 
 
 <div className={styles['all-container']}>
-
     <div className={styles['left-contaner-JetSki']}>
-        <AccordionNew/>
+        <h2>Seçimlər</h2>
+        <div className={styles['accordion']}>
+          <AccordionNew/>
+        </div>
+        <div className={styles['accordion']}>
+          <AccordionNew/>
+        </div>
+        <div className={styles['accordion']}>
+          <AccordionNew/>
+        </div>
     </div>
 
 <div className={styles['cart-big-contaner']}>
