@@ -13,6 +13,7 @@ import { IoMdHeart } from "react-icons/io";
 import { connect } from "react-redux";
 const url = `https://book-db-shakhmurad.vercel.app/JetSki`
 import { FaShoppingBasket } from "react-icons/fa";
+import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 function JetSki({JetSki , dispatch}:any) {
 
   useEffect(()=>{
@@ -57,7 +58,7 @@ function JetSki({JetSki , dispatch}:any) {
           <AccordionNew/>
         </div>
         <div className={styles['accordion']}>
-          <AccordionNew/>
+          <AccordionBrand/>
         </div>
         <div className={styles['accordion']}>
           <AccordionCountries/>
