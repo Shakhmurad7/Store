@@ -16,6 +16,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { Link } from "react-router-dom";
 function JetSki({JetSki , dispatch}:any) {
 
   useEffect(()=>{
@@ -95,7 +96,8 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-      JetSki.slice(0,3).map(({id ,img , item , price , }:any)=>(
+    JetSki.length && JetSki.slice(0,3).map(({id ,img , item , price , }:any)=>(
+      <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -111,13 +113,15 @@ function JetSki({JetSki , dispatch}:any) {
            <p><FaShoppingBasket /></p>
         </div>
         </div>
+        </Link>
         ))
     }
     </div>
 
     <div className={styles['cart-container']}>
     {
-      JetSki.slice(3,6).map(({id ,img , item , price , }:any)=>(
+       JetSki.length && JetSki.slice(3,6).map(({id ,img , item , price , }:any)=>(
+        <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -133,12 +137,14 @@ function JetSki({JetSki , dispatch}:any) {
            <p><FaShoppingBasket /></p>
         </div>
         </div>
+        </Link>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-      JetSki.slice(6,9).map(({id ,img , item , price , }:any)=>(
+      JetSki.length &&  JetSki.slice(6,9).map(({id ,img , item , price , }:any)=>(
+        <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -154,12 +160,14 @@ function JetSki({JetSki , dispatch}:any) {
            <p><FaShoppingBasket /></p>
         </div>
         </div>
+        </Link>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-      JetSki.slice(9,12).map(({id ,img , item , price , }:any)=>(
+       JetSki.length && JetSki.slice(9,12).map(({id ,img , item , price , }:any)=>(
+        <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -175,6 +183,7 @@ function JetSki({JetSki , dispatch}:any) {
            <p><FaShoppingBasket /></p>
         </div>
         </div>
+        </Link>
         ))
       }
     </div>
