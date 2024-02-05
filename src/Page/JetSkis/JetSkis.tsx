@@ -14,6 +14,8 @@ import { connect } from "react-redux";
 const url = `https://book-db-shakhmurad.vercel.app/JetSki`
 import { FaShoppingBasket } from "react-icons/fa";
 import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 function JetSki({JetSki , dispatch}:any) {
 
   useEffect(()=>{
@@ -31,6 +33,16 @@ function JetSki({JetSki , dispatch}:any) {
                 setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
             };
 
+            const top100Films = [
+              { label: 'The Shawshank Redemption', year: 1994 },
+              { label: 'The Godfather', year: 1972 },
+              { label: 'The Godfather: Part II', year: 1974 },
+              { label: 'The Dark Knight', year: 2008 },
+              { label: '12 Angry Men', year: 1957 },
+              { label: "Schindler's List", year: 1993 },
+              { label: 'Pulp Fiction', year: 1994 },
+            ]
+
   return (
 
   <PageContainer>
@@ -42,11 +54,25 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['JetSki-text-top']}>
       <h2>JetSki</h2>
+      <div className={styles['JetSki-container-block']}>
+
       <div className={styles['JetSki-block']}>
         <p>Tam ötürücülü</p>
         <p>5000-dən</p>
         <p>BRP</p>
         <p>daha çox</p>
+      </div>
+
+      <div className={styles['JetSki-block-right']}>
+           <Autocomplete
+           disablePortal
+           id="combo-box-demo"
+            options={top100Films}
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Polarite görə" />}
+    />
+
+      </div>
       </div>
     </div>
 
