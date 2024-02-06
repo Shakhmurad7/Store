@@ -96,7 +96,7 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-    JetSki.length && JetSki.slice(0,3).map(({id ,img , item , price , }:any)=>(
+    JetSki.length && JetSki.slice(0,3).map(({id ,img , item , price}:any)=>(
       <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -120,7 +120,7 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-       JetSki.length && JetSki.slice(3,6).map(({id ,img , item , price , }:any)=>(
+       JetSki.length && JetSki.slice(3,6).map(({id ,img , item , price }:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -143,7 +143,7 @@ function JetSki({JetSki , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-      JetSki.length &&  JetSki.slice(6,9).map(({id ,img , item , price , }:any)=>(
+      JetSki.length &&  JetSki.slice(6,9).map(({id ,img , item , price}:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -166,7 +166,7 @@ function JetSki({JetSki , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-       JetSki.length && JetSki.slice(9,12).map(({id ,img , item , price , }:any)=>(
+       JetSki.length && JetSki.slice(9,12).map(({id ,img , item , price}:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
