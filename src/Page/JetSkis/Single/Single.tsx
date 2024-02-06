@@ -5,6 +5,9 @@ import { useParams } from "react-router"
 import { FaAngleRight } from "react-icons/fa6";
 import styles from '../index.module.scss'
 import style from './index.module.scss'
+import { CiHeart } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
+import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 const url = `https://book-db-shakhmurad.vercel.app/JetSki/`
 function SingleJetSki({JetSki , dispatch}:any) {
@@ -37,12 +40,20 @@ function SingleJetSki({JetSki , dispatch}:any) {
     <div className={style['container']}>
         <div className={style['block-left']}>
             <img src={`../../../public/img/${JetSki.img}.png`}/>
-            <h2>{JetSki.price}</h2>
+            <h1>{JetSki.price} $</h1>
         </div>
         <div className={style['block-right']}>
             <h1>{JetSki.item}</h1>
             <div className={style['block-icon']}>
-
+                <h2><CiHeart /></h2>
+                <h2><BiSolidBarChartAlt2 /></h2>
+                <div className={style['star']}>
+                    <h2><FaStar /></h2>
+                    <h2><FaStar /></h2>
+                    <h2><FaStar /></h2>
+                    <h2><FaStar /></h2>
+                    <h2><FaStar /></h2>
+                </div>
             </div>
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>

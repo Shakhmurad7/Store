@@ -1,5 +1,43 @@
 .container{
+    padding:40px 0; 
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 50px;
+    .block-right{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .block-left{
+        text-align: center;
+        img{
+            width: 600px;
+        }
+        h1{
+            font-size: 2.5rem;
+            font-weight:bold;
+            line-height: 40px;
+            font-family: "Barlow Semi Condensed", sans-serif;
+            font-weight: 800;
+            font-style: normal
+        }
+    }
+    .block-icon{
+        display: flex;
+        gap: 10px;
+        .star{
+            display: flex;
+            gap: 3px;
+        }
+    }
+    .block-text{
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        .block-text-row{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+        }
+    }
 }
