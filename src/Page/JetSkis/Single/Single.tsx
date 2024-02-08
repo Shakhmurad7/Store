@@ -44,6 +44,7 @@ function SingleJetSki({JetSki , dispatch}:any) {
         </div>
         <div className={style['block-right']}>
             <h1>{JetSki.item}</h1>
+            <p>Məhsul kodu: 366666-2</p>
             <div className={style['block-icon']}>
                 <h2><CiHeart /></h2>
                 <h2><BiSolidBarChartAlt2 /></h2>
@@ -55,6 +56,7 @@ function SingleJetSki({JetSki , dispatch}:any) {
                     <h2><FaStar /></h2>
                 </div>
             </div>
+            <h2>Xüsusiyyətlər</h2>
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>
                     <h3>İstehsalçı</h3>
