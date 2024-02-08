@@ -13,6 +13,13 @@
             font-style: normal
         }
     }
+    .button-buy{
+        padding: 10px 50px;
+        background-color: #1C62CD;
+        color: white;
+        width: fit-content;
+        cursor: pointer;
+    }
     .block-left{
         text-align: center;
         img{
@@ -51,4 +58,7 @@
             width: 400px;
         }
     }
+}
+.GoodsTwo{
+    padding-top: 50px
 }

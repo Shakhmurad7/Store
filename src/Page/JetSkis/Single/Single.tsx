@@ -9,6 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
+import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 const url = `https://book-db-shakhmurad.vercel.app/JetSki/`
 function SingleJetSki({JetSki , dispatch}:any) {
 
@@ -75,9 +76,14 @@ function SingleJetSki({JetSki , dispatch}:any) {
                     <h3>{JetSki.fuel}</h3>
                 </div>
             </div>
+            <p className={style['button-buy']} >Almaq</p>
         </div>
     </div>
 
+    {/* ---GoodsTwo---- */}
+    <div className={style['GoodsTwo']}>
+        <GoodsTwo/>
+    </div>
 
     </PageContainer>
     </>
