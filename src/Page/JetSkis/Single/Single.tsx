@@ -61,18 +61,22 @@ function SingleJetSki({JetSki , dispatch}:any) {
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>
                     <h3>İstehsalçı</h3>
-                    <h3>{JetSki.force}</h3>
-                </div>
-                <div className={style['block-text-row']}>
-                    <h3>At Gucu</h3>
-                    <h3>{JetSki.year}</h3>
-                </div>
-                <div className={style['block-text-row']}>
-                    <h3>Oturacaqların sayı, ədəd:</h3>
                     <h3>{JetSki.country}</h3>
                 </div>
                 <div className={style['block-text-row']}>
+                    <h3>At Gucu</h3>
+                    <h3>{JetSki.force}</h3>
+                </div>
+                <div className={style['block-text-row']}>
+                    <h3>Oturacaqların sayı, ədəd:</h3>
+                    <h3>{JetSki.numberOFseats}</h3>
+                </div>
+                <div className={style['block-text-row']}>
                     <h3>Buraxılış ili</h3>
+                    <h3>{JetSki.year}</h3>
+                </div>
+                <div className={style['block-text-row']}>
+                    <h3>Yanacaq</h3>
                     <h3>{JetSki.fuel}</h3>
                 </div>
             </div>

@@ -1,17 +1,13 @@
 .container{
     padding:40px 0; 
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    .block-right{
+        justify-content: space-between;
+        gap: 50px;
+        .block-right{
         display: flex;
         flex-direction: column;
         gap: 20px;
-        h1{
-            font-family: "Barlow Semi Condensed", sans-serif;
-            font-weight: 600;
-            font-style: normal
-        }
+    
     }
     .button-buy{
         padding: 10px 50px;
