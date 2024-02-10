@@ -12,6 +12,7 @@ import BigBoats from "./Page/BigBoats/BigBoats"
 import Boat from "./Page/Boat/Boat"
 import SingleJetSki from "./Page/JetSkis/Single/Single"
 import Contact from "./Page/Contact/Contact"
+import SingleAtv from "./Page/Atv/Single/SingleAtv"
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/stock" element={<Stock/>} />
           <Route path="/atv" element={<Atv/>}/>
+          <Route path="/atv/:id" element={<SingleAtv/>}/>
           <Route path="/BigBoats" element={<BigBoats/>}/>
           <Route path="/Boat" element={<Boat/>}/>
           <Route path="/Hydrocycles" element={<Hydrocycles/>}/>

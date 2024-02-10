@@ -97,7 +97,7 @@ function Atv({Atv , dispatch}:any) {
     <div className={styles['cart-container']}>
     {
     Atv.length && Atv.slice(0,3).map(({id ,img , item , price}:any)=>(
-      <Link to={`/Hydrocycles/${id}`}>
+      <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -121,7 +121,7 @@ function Atv({Atv , dispatch}:any) {
     <div className={styles['cart-container']}>
     {
        Atv.length && Atv.slice(3,6).map(({id ,img , item , price }:any)=>(
-        <Link to={`/Hydrocycles/${id}`}>
+        <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -144,7 +144,7 @@ function Atv({Atv , dispatch}:any) {
     <div className={styles['cart-container']}>
     {
       Atv.length &&  Atv.slice(6,9).map(({id ,img , item , price}:any)=>(
-        <Link to={`/Hydrocycles/${id}`}>
+        <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -167,7 +167,7 @@ function Atv({Atv , dispatch}:any) {
     <div className={styles['cart-container']}>
     {
        Atv.length && Atv.slice(9,12).map(({id ,img , item , price}:any)=>(
-        <Link to={`/Hydrocycles/${id}`}>
+        <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
