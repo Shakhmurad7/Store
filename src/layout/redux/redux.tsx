@@ -1,26 +1,29 @@
-
 interface RootState {
-    user: any[]; // Replace 'any' with the actual type of your user data
-    JetSki:any[]
-  }
-  
-  interface DataAction {
-    type: 'JetSki';
-    payload: any[]; // Replace 'any' with the actual type of your payload
-  }
-  
-  type ActionTypes = DataAction;
-  
-  const RootRedux = (state: RootState = { user: [] , JetSki:[]} ,  action: ActionTypes): RootState => {
-    if (action.type === 'JetSki') {
+  user: any[]; 
+  JetSki: any[];
+  Atv: any[];
+}
+
+interface DataAction {
+  type: 'JetSki';
+  payload: any[]; 
+}
+
+interface DataActions {
+  type: 'Atv'; 
+  payload: any[]; 
+}
+
+type ActionTypes = DataAction | DataActions; 
+
+const RootRedux = (state: RootState = { user: [], JetSki: [], Atv: [] }, action: ActionTypes): RootState => {
+  if (action.type === 'JetSki') {
       return { ...state, JetSki: action.payload };
-    }
-  
-    return state;
-  
-  };
-  
-  export default RootRedux;
-  
+  } else if (action.type === 'Atv') {
+      return { ...state, Atv: action.payload };
+  }
 
+  return state;
+};
 
+export default RootRedux;

@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
 
 import { FaShoppingBasket } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
 
   type cartData ={
@@ -63,6 +64,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
                             {
                                 data.map(({item , id , img  , price}:cartData)=>(
                                  <SwiperSlide>
+                                    <Link to={'/'}>
                                 <div key={id} className={style['cart-box']}>
                                 <h4 
                                     onClick={() => handleIconClick(id)}
@@ -78,6 +80,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
                                         <p><FaShoppingBasket /></p>
                                     </div>
                                 </div>
+                                </Link>
                             </SwiperSlide>
                             ))
                             }
