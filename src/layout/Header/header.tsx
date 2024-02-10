@@ -13,7 +13,9 @@ function Header() {
           <Link to={'/Stock'}>
             <h2>Səhm</h2>
           </Link>
+          <Link to={'/Contact'} >
             <h2>Çatdırılma və ödəniş</h2>
+          </Link>
         </div>
         <div className="header-right">
             <div className="header-right-block">
