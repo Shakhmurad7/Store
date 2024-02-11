@@ -19,6 +19,23 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
 function JetSki({JetSki , dispatch}:any) {
 
+  const [currentPage, setCurrentPage] = useState(1);
+const [itemsPerPage] = useState(9);
+
+const [active, setActive] = useState(1); // Fixing the initialization of active state
+const paginate = (pageNumber: number) => {
+  setCurrentPage(pageNumber);
+  setActive(pageNumber); // Set active page when paginating
+};
+
+
+
+const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
+
+
+
   useEffect(()=>{
     axios.get(url).then(({data})=>{
       dispatch({
@@ -96,7 +113,7 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-    JetSki.length && JetSki.slice(0,3).map(({id ,img , item , price}:any)=>(
+    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
       <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -120,7 +137,7 @@ function JetSki({JetSki , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-       JetSki.length && JetSki.slice(3,6).map(({id ,img , item , price }:any)=>(
+       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -143,7 +160,7 @@ function JetSki({JetSki , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-      JetSki.length &&  JetSki.slice(6,9).map(({id ,img , item , price}:any)=>(
+      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -166,7 +183,7 @@ function JetSki({JetSki , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-       JetSki.length && JetSki.slice(9,12).map(({id ,img , item , price}:any)=>(
+       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -187,6 +204,26 @@ function JetSki({JetSki , dispatch}:any) {
         ))
       }
     </div>
+
+    <ul className={styles["pagenation"]}>
+        {Array.from({ length: Math.ceil(JetSki.length / itemsPerPage) }).map(
+          (_, index) => (
+            <li
+              key={index}
+              className={styles["page-item"]}
+              onClick={() => paginate(index + 1)}
+            >
+              <button
+                className={`${styles["page-link"]} ${
+                  active === index + 1 ? styles["active"] : ""
+                }`}
+              > 
+                {index + 1}
+              </button>
+            </li>
+          )
+        )}
+      </ul>
 
 </div>
 

@@ -216,7 +216,7 @@ const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
                 className={`${styles["page-link"]} ${
                   active === index + 1 ? styles["active"] : ""
                 }`}
-              >
+              > 
                 {index + 1}
               </button>
             </li>
