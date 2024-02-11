@@ -1,16 +1,16 @@
 interface RootState {
-  JetSki: string[] | number[];
-  Atv: string[] | number[];
+  JetSki: any[];
+  Atv: any[];
 }
 
 interface DataAction {
   type: 'JetSki';
-  payload: string[] | number[]; 
+  payload: any[]; 
 }
 
 interface DataActions {
   type: 'Atv'; 
-  payload: string[] | number[]; 
+  payload:any[]; 
 }
 
 type ActionTypes = DataAction | DataActions; 

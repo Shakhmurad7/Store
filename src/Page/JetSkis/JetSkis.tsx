@@ -28,6 +28,13 @@ const paginate = (pageNumber: number) => {
   setActive(pageNumber); // Set active page when paginating
 };
 
+type DataItem ={
+  item:string,
+  id:number,
+  price:string,
+  img:string,
+}
+
 
 
 const indexOfLastItem = currentPage * itemsPerPage;
@@ -60,6 +67,9 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
               { label: "Schindler's List", year: 1993 },
               { label: 'Pulp Fiction', year: 1994 },
             ]
+
+          
+            
 
   return (
 
@@ -113,7 +123,8 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
+    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
+      <div key={id}  className="">
       <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -131,15 +142,17 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
         </div>
         </div>
         </Link>
+        </div>
         ))
     }
     </div>
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
+       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
+        <div key={id}  className="">
         <Link to={`/Hydrocycles/${id}`}>
-         <div key={id} className={style['cart-box']}>
+         <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
@@ -155,12 +168,14 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
         </div>
         </div>
         </Link>
+      </div>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
+      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
+        <div key={id}  className="">
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -178,12 +193,14 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
         </div>
         </div>
         </Link>
+      </div>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
+      currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:DataItem)=>(
+        <div key={id}  className="">
         <Link to={`/Hydrocycles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -201,6 +218,7 @@ const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
         </div>
         </div>
         </Link>
+        </div>
         ))
       }
     </div>

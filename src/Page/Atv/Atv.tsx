@@ -35,6 +35,12 @@ const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
 
 
+type DataItem ={
+  item:string,
+  id:number,
+  price:string,
+  img:string,
+}
 
   useEffect(()=>{
     axios.get(url).then(({data})=>{
@@ -113,7 +119,7 @@ const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
+    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -137,7 +143,7 @@ const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
+       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -160,7 +166,7 @@ const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
+      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -183,7 +189,7 @@ const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
     </div>
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
+       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:DataItem)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
