@@ -19,6 +19,23 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
 function Atv({Atv , dispatch}:any) {
 
+const [currentPage, setCurrentPage] = useState(1);
+const [itemsPerPage] = useState(9);
+
+const [active, setActive] = useState(1); // Fixing the initialization of active state
+const paginate = (pageNumber: number) => {
+  setCurrentPage(pageNumber);
+  setActive(pageNumber); // Set active page when paginating
+};
+
+
+
+const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
+
+
+
   useEffect(()=>{
     axios.get(url).then(({data})=>{
       dispatch({
@@ -96,7 +113,7 @@ function Atv({Atv , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-    Atv.length && Atv.slice(0,3).map(({id ,img , item , price}:any)=>(
+    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
       <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -120,7 +137,7 @@ function Atv({Atv , dispatch}:any) {
 
     <div className={styles['cart-container']}>
     {
-       Atv.length && Atv.slice(3,6).map(({id ,img , item , price }:any)=>(
+       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -143,7 +160,7 @@ function Atv({Atv , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-      Atv.length &&  Atv.slice(6,9).map(({id ,img , item , price}:any)=>(
+      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -166,7 +183,7 @@ function Atv({Atv , dispatch}:any) {
     </div>
     <div className={styles['cart-container']}>
     {
-       Atv.length && Atv.slice(9,12).map(({id ,img , item , price}:any)=>(
+       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -187,6 +204,25 @@ function Atv({Atv , dispatch}:any) {
         ))
       }
     </div>
+           <ul className={styles["pagenation"]}>
+        {Array.from({ length: Math.ceil(Atv.length / itemsPerPage) }).map(
+          (_, index) => (
+            <li
+              key={index}
+              className={styles["page-item"]}
+              onClick={() => paginate(index + 1)}
+            >
+              <button
+                className={`${styles["page-link"]} ${
+                  active === index + 1 ? styles["active"] : ""
+                }`}
+              >
+                {index + 1}
+              </button>
+            </li>
+          )
+        )}
+      </ul>
 
 </div>
 
@@ -205,3 +241,4 @@ function Atv({Atv , dispatch}:any) {
 const mapState = (state:any)=> state
 
 export default connect(mapState)(Atv)
+

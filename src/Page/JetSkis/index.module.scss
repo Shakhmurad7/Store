@@ -52,3 +52,24 @@
     
     
 }
+.pagenation{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    .page-link{
+        cursor: pointer;
+        border: none;
+        width: 25px ;
+        height: 25px;
+        color: rgb(0, 0, 0);
+        border: 1px solid #2775eb;
+        
+     
+    }
+    .page-link.active{
+        color: white;
+        background-color: #2775eb;
+    }
+}
+
