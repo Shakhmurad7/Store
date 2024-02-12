@@ -39,7 +39,7 @@ type DataItem ={
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems = JetSki.slice(indexOfFirstItem, indexOfLastItem);
+const currentItems =  Array.isArray(JetSki) ? JetSki.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
 

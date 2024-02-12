@@ -23,6 +23,7 @@ const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
 
 const [active, setActive] = useState(1); // Fixing the initialization of active state
+
 const paginate = (pageNumber: number) => {
   setCurrentPage(pageNumber);
   setActive(pageNumber); // Set active page when paginating
@@ -32,15 +33,8 @@ const paginate = (pageNumber: number) => {
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems = Atv.slice(indexOfFirstItem, indexOfLastItem);
+const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLastItem) : []; 
 
-
-type DataItem ={
-  item:string,
-  id:number,
-  price:string,
-  img:string,
-}
 
   useEffect(()=>{
     axios.get(url).then(({data})=>{
@@ -67,6 +61,8 @@ type DataItem ={
               { label: 'Pulp Fiction', year: 1994 },
             ]
 
+            console.log(Atv.length);
+            
   return (
 
   <PageContainer>
@@ -119,7 +115,7 @@ type DataItem ={
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
+    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
       <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -143,7 +139,7 @@ type DataItem ={
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
+       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -166,7 +162,7 @@ type DataItem ={
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
+      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -189,7 +185,7 @@ type DataItem ={
     </div>
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:DataItem)=>(
+       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
         <Link to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -222,7 +218,7 @@ type DataItem ={
                 className={`${styles["page-link"]} ${
                   active === index + 1 ? styles["active"] : ""
                 }`}
-              > 
+              >
                 {index + 1}
               </button>
             </li>
