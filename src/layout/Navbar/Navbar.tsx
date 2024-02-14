@@ -14,7 +14,7 @@ function Navbar() {
               <NavLink to={'/Hydrocycles'} >
                 <li>Su üstə avtomobilləri</li>
               </NavLink>
-              <NavLink to={'/Boat'} >
+              <NavLink to={'/Boats'} >
                 <li>Qayıqlar</li>
               </NavLink>
               <NavLink to={'/AllTerrainVehicles'} >
