@@ -1,8 +1,11 @@
+import PageContainer from "../../Components/PageContainer";
 
 
 function BigBoats() {
   return (
-    <div>BigBoats</div>
+    <PageContainer>
+      <div>BigBoats</div>
+    </PageContainer>
   )
 }
 

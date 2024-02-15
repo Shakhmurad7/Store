@@ -9,6 +9,7 @@ import { IoMdHeart } from "react-icons/io";
 
 import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
 import { FaShoppingBasket } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
 
   type cartData ={
@@ -16,9 +17,21 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
       id:number,
       price:string,
       img:string,
+      cateqory:String
     }
+
     function Goods() {
-        const [data , setdata] = useState([]) 
+        const [data , setdata] = useState([])
+
+        const [filter , setfilter] = useState('SpareParts')
+
+        const filters = data.filter((item)=>{
+            return item.cateqory === filter
+            
+        })
+        const Tab = (cateqory:any)=>{
+            setfilter(cateqory)
+        }
         
         useEffect(()=>{
             axios.get(url).then(({data})=>{
@@ -38,12 +51,12 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
             <h2>Məşhur mallar</h2>
         </div>
         <div className={style['goods-list']}>
-            <p>Ehtiyat hissələri</p>
-            <p>Mühərriklər</p>
-            <p>Təkərlər </p>
-            <p>Elektronika</p>
-            <p>Alətlər</p>
-            <p>Aksesuarlar </p>
+            <p onClick={()=>Tab('SpareParts')} className={style[filter === 'SpareParts'? 'h3-active' : '']}>Ehtiyat hissələri</p>
+            <p onClick={()=>Tab('')} className={style[filter === 'Engines'? 'h3-active' : '']} >Mühərriklər</p>
+            <p onClick={()=>Tab('')} className={style[filter === 'Wheels'? 'h3-active' : '']} >Təkərlər </p>
+            <p onClick={()=>Tab('')} className={style[filter === 'Electronics'? 'h3-active' : '']} >Elektronika</p>
+            <p onClick={()=>Tab('')} className={style[filter === 'Tools'? 'h3-active' : '']} >Alətlər</p>
+            <p onClick={()=>Tab('Accessories')} className={style[filter === 'Accessories'? 'h3-active' : '']} >Aksesuarlar </p>
         </div>
 
         <div className={style['cart-container']}>
@@ -55,7 +68,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                         className="mySwiper"
                      >
                             {
-                                data.map(({item , id , img  , price}:cartData)=>(
+                                filters.map(({item , id , img  , price , cateqory}:cartData)=>(
                             <SwiperSlide>
                                 <div key={id} className={style['cart-box']}>
                                       <h4
@@ -78,9 +91,11 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                         </Swiper>
    
         </div>
+        <Link to={'/Atv'}>
                 <div className={style['block-box']}>
                     <h3>Daha çox göstər</h3>
                 </div>
+        </Link>
         
     </div>
   )

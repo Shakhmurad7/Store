@@ -15,7 +15,7 @@ import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
 
 import { FaShoppingBasket } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods2`
+const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
 
   type cartData ={
       item:string,
