@@ -1,18 +1,13 @@
-
 import axios from 'axios'
 import style from '../goods/goods.module.scss'
 import { useEffect, useState } from 'react'
-// Import Swiper React components
 import { Swiper, SwiperSlide  } from 'swiper/react';
-import { IoMdHeart } from "react-icons/io";
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { IoMdHeart } from "react-icons/io";
 
-// import required modules
 import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
-
 import { FaShoppingBasket } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
@@ -22,34 +17,50 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
       id:number,
       price:string,
       img:string,
+      cateqory:String
     }
-    function GoodsTwo() {
-        const [data , setdata] = useState([]) 
+    
+  type cartDB ={
+    cateqory:String
+  }
 
-        const [activeIndex, setActiveIndex] = useState(null);
+    function GoodTwo() {
+        const [data , setdata] = useState([])
 
-        const handleIconClick = (index:any) => {
-                    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-                };
+        const [filter , setfilter] = useState('Tools')
 
+        const filters = data.filter((item:cartDB)=>{
+            return item.cateqory === filter
+            
+        })
+        const Tab = (cateqory:any)=>{
+            setfilter(cateqory)
+        }
+        
         useEffect(()=>{
             axios.get(url).then(({data})=>{
-                setdata(data)  
+                setdata(data)    
             })
     } , [])
+
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleIconClick = (index:any) => {
+                setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+            };
         
   return (
     <div className={style['goods-container']}>
         <div className={style['goods-top-itme']}>
-            <h2>Bu məhsulla satın alın</h2>
+            <h2>Məşhur mallar</h2>
         </div>
         <div className={style['goods-list']}>
-            <p>Ehtiyat hissələri</p>
-            <p>Mühərriklər</p>
-            <p>Təkərlər </p>
-            <p>Elektronika</p>
-            <p>Alətlər</p>
-            <p>Aksesuarlar </p>
+            <p onClick={()=>Tab('SpareParts')} className={style[filter === 'SpareParts'? 'h3-active' : '']}>Ehtiyat hissələri</p>
+            <p onClick={()=>Tab('Engines')} className={style[filter === 'Engines'? 'h3-active' : '']} >Mühərriklər</p>
+            <p onClick={()=>Tab('Wheels')} className={style[filter === 'Wheels'? 'h3-active' : '']} >Təkərlər </p>
+            <p onClick={()=>Tab('Electronics')} className={style[filter === 'Electronics'? 'h3-active' : '']} >Elektronika</p>
+            <p onClick={()=>Tab('Tools')} className={style[filter === 'Tools'? 'h3-active' : '']} >Alətlər</p>
+            <p onClick={()=>Tab('Accessories')} className={style[filter === 'Accessories'? 'h3-active' : '']} >Aksesuarlar </p>
         </div>
 
         <div className={style['cart-container']}>
@@ -57,22 +68,20 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                     slidesPerView={4}
                     spaceBetween={30}
                     navigation={true}
-   
-                             modules={[ Navigation, Pagination, Mousewheel]}
+                        modules={[ Navigation, Pagination, Mousewheel]}
                         className="mySwiper"
                      >
                             {
-                                data.map(({item , id , img  , price}:cartData)=>(
-                                 <SwiperSlide>
-                                    <Link to={'/'}>
+                                filters.map(({item , id , img  , price }:cartData)=>(
+                            <SwiperSlide>
                                 <div key={id} className={style['cart-box']}>
-                                <h4 
-                                    onClick={() => handleIconClick(id)}
-                                    className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-                                    <div> <IoMdHeart /></div>
-                                </h4>
+                                      <h4
+                                        onClick={() => handleIconClick(id)}
+                                         className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
+                                            <div> <IoMdHeart /></div>
+                                         </h4>
                                     <div className={style['img-cart']}>
-                                        <img src={`../../../public/img/${img}.png`} />
+                                        <img src={`./img/${img}.jpg`} />
                                         <h3>{item}</h3>
                                     </div>
                                     <h2>{price}$</h2>
@@ -80,21 +89,22 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                         <p><FaShoppingBasket /></p>
                                     </div>
                                 </div>
-                                </Link>
                             </SwiperSlide>
                             ))
                             }
                         </Swiper>
    
         </div>
+        <Link to={'/Atv'}>
                 <div className={style['block-box']}>
                     <h3>Daha çox göstər</h3>
                 </div>
+        </Link>
         
     </div>
   )
 }
 
+export default (GoodTwo)
 
-export default GoodsTwo
 

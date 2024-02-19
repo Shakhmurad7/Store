@@ -19,13 +19,17 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
       img:string,
       cateqory:String
     }
+    
+  type cartDB ={
+    cateqory:String
+  }
 
     function Goods() {
         const [data , setdata] = useState([])
 
         const [filter , setfilter] = useState('SpareParts')
 
-        const filters = data.filter((item)=>{
+        const filters = data.filter((item:cartDB)=>{
             return item.cateqory === filter
             
         })
@@ -52,10 +56,10 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
         </div>
         <div className={style['goods-list']}>
             <p onClick={()=>Tab('SpareParts')} className={style[filter === 'SpareParts'? 'h3-active' : '']}>Ehtiyat hissələri</p>
-            <p onClick={()=>Tab('')} className={style[filter === 'Engines'? 'h3-active' : '']} >Mühərriklər</p>
-            <p onClick={()=>Tab('')} className={style[filter === 'Wheels'? 'h3-active' : '']} >Təkərlər </p>
-            <p onClick={()=>Tab('')} className={style[filter === 'Electronics'? 'h3-active' : '']} >Elektronika</p>
-            <p onClick={()=>Tab('')} className={style[filter === 'Tools'? 'h3-active' : '']} >Alətlər</p>
+            <p onClick={()=>Tab('Engines')} className={style[filter === 'Engines'? 'h3-active' : '']} >Mühərriklər</p>
+            <p onClick={()=>Tab('Wheels')} className={style[filter === 'Wheels'? 'h3-active' : '']} >Təkərlər </p>
+            <p onClick={()=>Tab('Electronics')} className={style[filter === 'Electronics'? 'h3-active' : '']} >Elektronika</p>
+            <p onClick={()=>Tab('Tools')} className={style[filter === 'Tools'? 'h3-active' : '']} >Alətlər</p>
             <p onClick={()=>Tab('Accessories')} className={style[filter === 'Accessories'? 'h3-active' : '']} >Aksesuarlar </p>
         </div>
 
@@ -68,7 +72,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                         className="mySwiper"
                      >
                             {
-                                filters.map(({item , id , img  , price , cateqory}:cartData)=>(
+                                filters.map(({item , id , img  , price }:cartData)=>(
                             <SwiperSlide>
                                 <div key={id} className={style['cart-box']}>
                                       <h4
@@ -77,7 +81,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                             <div> <IoMdHeart /></div>
                                          </h4>
                                     <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.png`} />
+                                        <img src={`./img/${img}.jpg`} />
                                         <h3>{item}</h3>
                                     </div>
                                     <h2>{price}$</h2>

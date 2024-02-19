@@ -98,8 +98,12 @@
         width: 100%;
         font-weight: 700;
         max-width: 800px;
+        P{
+
+            cursor: pointer;
+        }
         .h3-active{
-            background-color: red;
+           border-bottom:  3px solid blue;
         }        
         p{
             font-size: 18px;
