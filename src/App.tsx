@@ -16,6 +16,7 @@ import SingleAtv from "./Page/Atv/Single/SingleAtv"
 import Boats from "./Page/Boat/Boats"
 import BigBoats from "./Page/BigBoats/BigBoats"
 import SingleBoats from "./Page/Boat/Single/SingleBoats"
+import SingleBİgBoats from "./Page/BigBoats/Single/SingleBİg-Boats"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/atv" element={<Atv/>}/>
           <Route path="/atv/:id" element={<SingleAtv/>}/>
           <Route path="/BigBoats" element={<BigBoats/>}/>
+          <Route path="/BigBoats/:id" element={<SingleBİgBoats/>}/>
           <Route path="/Boats" element={<Boats/>}/>
           <Route path="/Boats/:id" element={<SingleBoats/>}/>
           <Route path="/Hydrocycles" element={<Hydrocycles/>}/>

@@ -81,7 +81,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                             <div> <IoMdHeart /></div>
                                          </h4>
                                     <div className={style['img-cart']}>
-                                        <img src={`./img/${img}.jpg`} />
+                                        <img src={`../../../public/img/${img}.jpg`} />
                                         <h3>{item}</h3>
                                     </div>
                                     <h2>{price}$</h2>
