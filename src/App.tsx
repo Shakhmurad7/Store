@@ -18,6 +18,7 @@ import BigBoats from "./Page/BigBoats/BigBoats"
 import SingleBoats from "./Page/Boat/Single/SingleBoats"
 import SingleBİgBoats from "./Page/BigBoats/Single/SingleBİg-Boats"
 import SingleAllTerrainVehicles from "./Page/All-terrain vehicles/SingleAllTerrainVehicles/SingleAllTerrainVehicles"
+import SingleSnowmobiles from "./Page/Snowmobiles/SingleSnowmobiles/SingleSnowmobiles"
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/Hydrocycles/:id" element={<SingleJetSki/>}/>
           <Route path="/SpareParts" element={<SpareParts/>}/>
           <Route path="/Snowmobiles" element={<Snowmobiles/>}/>
+          <Route path="/Snowmobiles/:id" element={<SingleSnowmobiles/>}/>
           <Route path="/Engines" element={<Engines/>}/>
           <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles/>}/>
           <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>

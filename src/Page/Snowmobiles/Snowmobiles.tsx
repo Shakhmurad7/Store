@@ -125,7 +125,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
     {
     currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <div key={id}  className="">
-      <Link to={`/AllTerrainVehicles/${id}`}>
+      <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -151,7 +151,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
     {
        currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className="">
-        <Link to={`/AllTerrainVehicles/${id}`}>
+        <Link to={`/Snowmobiles/${id}`}>
          <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -176,7 +176,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
     {
       currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <div key={id}  className="">
-        <Link to={`/AllTerrainVehicles/${id}`}>
+        <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}

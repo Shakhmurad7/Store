@@ -10,8 +10,8 @@ import { FaStar } from "react-icons/fa";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
-const url = `https://book-db-shakhmurad.vercel.app/AllTerrainVehicles/`
-function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
+const url = `https://book-db-shakhmurad.vercel.app/Snowmobiles/`
+function SingleSnowmobiles({Snowmobiles , dispatch}:any) {
 
     const {id} = useParams()
 
@@ -19,7 +19,7 @@ function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
         axios.get(url + id).then(({data})=>{
             console.log(data);
           dispatch({
-            type:'AllTerrainVehicles',
+            type:'Snowmobiles',
             payload: data
           })
           
@@ -35,16 +35,16 @@ function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
         <FaAngleRight />
         <p>AllTerrainVehicles</p>
         <FaAngleRight />
-        <p>{AllTerrainVehicles.item}</p>
+        <p>{Snowmobiles.item}</p>
     </div>
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${AllTerrainVehicles.img}.jpg`}/>
-            <h1>{AllTerrainVehicles.price} $</h1>
+            <img src={`../../../public/img/${Snowmobiles.img}.jpg`}/>
+            <h1>{Snowmobiles.price} $</h1>
         </div>
         <div className={style['block-right']}>
-            <h1>{AllTerrainVehicles.item}</h1>
+            <h1>{Snowmobiles.item}</h1>
             <p>Məhsul kodu: 366666-2</p>
             <div className={style['block-icon']}>
                 <h2><CiHeart /></h2>
@@ -61,23 +61,23 @@ function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>
                     <h3>İstehsalçı</h3>
-                    <h3>{AllTerrainVehicles.country}</h3>
+                    <h3>{Snowmobiles.country}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>At Gucu</h3>
-                    <h3>{AllTerrainVehicles.force}</h3>
+                    <h3>{Snowmobiles.force}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Oturacaqların sayı, ədəd:</h3>
-                    <h3>{AllTerrainVehicles.numberOFseats}</h3>
+                    <h3>{Snowmobiles.numberOFseats}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Buraxılış ili</h3>
-                    <h3>{AllTerrainVehicles.year}</h3>
+                    <h3>{Snowmobiles.year}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Yanacaq</h3>
-                    <h3>{AllTerrainVehicles.fuel}</h3>
+                    <h3>{Snowmobiles.fuel}</h3>
                 </div>
             </div>
             <p className={style['button-buy']} >Almaq</p>
@@ -96,4 +96,4 @@ function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
 
 const mapState = (state:any) => state 
 
-export default connect(mapState)(SingleAllTerrainVehicles)
+export default connect(mapState)(SingleSnowmobiles)
