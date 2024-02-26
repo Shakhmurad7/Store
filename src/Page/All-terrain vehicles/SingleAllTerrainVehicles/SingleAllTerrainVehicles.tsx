@@ -3,15 +3,15 @@ import { useEffect} from "react"
 import { connect } from "react-redux"
 import { useParams } from "react-router"
 import { FaAngleRight } from "react-icons/fa6";
-import styles from '../index.module.scss'
-import style from './index.module.scss'
+import styles from '../../JetSkis/index.module.scss'
+import style from '../../JetSkis/Single/index.module.scss'
 import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 const url = `https://book-db-shakhmurad.vercel.app/AllTerrainVehicles/`
-function SingleJetSki({JetSki , dispatch}:any) {
+function SingleJetSki({AllTerrainVehicles , dispatch}:any) {
 
     const {id} = useParams()
 
@@ -19,7 +19,7 @@ function SingleJetSki({JetSki , dispatch}:any) {
         axios.get(url + id).then(({data})=>{
             console.log(data);
           dispatch({
-            type:'JetSki',
+            type:'AllTerrainVehicles',
             payload: data
           })
           
@@ -33,18 +33,18 @@ function SingleJetSki({JetSki , dispatch}:any) {
     <div className={styles['icon']}>
         <p>Home</p>
         <FaAngleRight />
-        <p>JetSki</p>
+        <p>AllTerrainVehicles</p>
         <FaAngleRight />
-        <p>{JetSki.item}</p>
+        <p>{AllTerrainVehicles.item}</p>
     </div>
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${JetSki.img}.png`}/>
-            <h1>{JetSki.price} $</h1>
+            <img src={`../../../public/img/${AllTerrainVehicles.img}.jpg`}/>
+            <h1>{AllTerrainVehicles.price} $</h1>
         </div>
         <div className={style['block-right']}>
-            <h1>{JetSki.item}</h1>
+            <h1>{AllTerrainVehicles.item}</h1>
             <p>Məhsul kodu: 366666-2</p>
             <div className={style['block-icon']}>
                 <h2><CiHeart /></h2>
@@ -61,23 +61,23 @@ function SingleJetSki({JetSki , dispatch}:any) {
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>
                     <h3>İstehsalçı</h3>
-                    <h3>{JetSki.country}</h3>
+                    <h3>{AllTerrainVehicles.country}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>At Gucu</h3>
-                    <h3>{JetSki.force}</h3>
+                    <h3>{AllTerrainVehicles.force}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Oturacaqların sayı, ədəd:</h3>
-                    <h3>{JetSki.numberOFseats}</h3>
+                    <h3>{AllTerrainVehicles.numberOFseats}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Buraxılış ili</h3>
-                    <h3>{JetSki.year}</h3>
+                    <h3>{AllTerrainVehicles.year}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Yanacaq</h3>
-                    <h3>{JetSki.fuel}</h3>
+                    <h3>{AllTerrainVehicles.fuel}</h3>
                 </div>
             </div>
             <p className={style['button-buy']} >Almaq</p>

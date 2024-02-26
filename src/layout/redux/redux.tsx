@@ -3,6 +3,7 @@ interface RootState {
   Atv: any[];
   Boats: number[] | string[]
   BigBoats: number[] | string[]
+  AllTerrainVehicles:number[] | string[]
 }
 
 interface DataAction {
@@ -18,14 +19,18 @@ interface DataBoats {
   type: 'Boats'; 
   payload:any[]; 
 }
+interface DataAllTerrainVehicles {
+  type: 'AllTerrainVehicles'; 
+  payload:any[]; 
+}
 interface DataBigBoats {
   type: 'BigBoats'; 
   payload:any[]; 
 }
 
-type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats;  
+type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles;  
 
-const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] }, action: ActionTypes): RootState => {
+const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] }, action: ActionTypes): RootState => {
   if (action.type === 'JetSki') {
       return { ...state, JetSki: action.payload };
   } else if (action.type === 'Atv') {
@@ -36,6 +41,9 @@ const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats
   }
   else if(action.type ==='BigBoats' ){
     return { ...state, BigBoats: action.payload };
+  }
+  else if(action.type ==='AllTerrainVehicles' ){
+    return { ...state, AllTerrainVehicles: action.payload };
   }
 
   return state;
