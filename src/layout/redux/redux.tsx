@@ -5,6 +5,7 @@ interface RootState {
   BigBoats: number[] | string[]
   AllTerrainVehicles:number[] | string[]
   Snowmobiles:number[] | string[]
+  SpareParts:number[] | string[]
 }
 
 interface DataAction {
@@ -32,27 +33,15 @@ interface DataSnowmobiles {
   type: 'Snowmobiles'; 
   payload:any[]; 
 }
+interface DataSpareParts {
+  type: 'SpareParts'; 
+  payload:any[]; 
+}
 
-type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles;  
+type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles | DataSpareParts;  
 
-const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[] }, action: ActionTypes): RootState => {
-  // if (action.type === 'JetSki') {
-  //     return { ...state, JetSki: action.payload };
-  // } else if (action.type === 'Atv') {
-  //     return { ...state, Atv: action.payload };
-  // }
-  // else if(action.type ==='Boats' ){
-  //   return { ...state, Boats: action.payload };
-  // }
-  // else if(action.type ==='BigBoats' ){
-  //   return { ...state, BigBoats: action.payload };
-  // }
-  // else if(action.type ==='AllTerrainVehicles' ){
-  //   return { ...state, AllTerrainVehicles: action.payload };
-  // }
-  // else if(action.type ==='Snowmobiles' ){
-  //   return { ...state, Snowmobiles: action.payload };
-  // }
+const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[] , SpareParts:[] }, action: ActionTypes): RootState => {
+
   switch (action.type) {
     case 'JetSki' :
       return { ...state, JetSki: action.payload };
@@ -66,6 +55,8 @@ const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats
       return { ...state, AllTerrainVehicles: action.payload };
     case 'Snowmobiles' :
       return { ...state, Snowmobiles: action.payload };
+    case 'SpareParts' :
+      return { ...state, SpareParts: action.payload };
     }
 
     return state;

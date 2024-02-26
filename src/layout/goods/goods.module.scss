@@ -34,8 +34,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        max-width: 270px;
         img{
-            object-fit: contain !important;
+            object-fit: cover !important;
             height: auto !important;
         }
     }
@@ -43,13 +45,13 @@
     .cart-box{
         margin: 10px 5px;
         height:450px;
-        max-height:500px ;
+        max-height:500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 15px;
         text-align: center;
-        max-width: 300px;
+        min-width: 300px;
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
