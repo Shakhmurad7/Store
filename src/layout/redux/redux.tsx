@@ -6,6 +6,7 @@ interface RootState {
   AllTerrainVehicles:number[] | string[]
   Snowmobiles:number[] | string[]
   SpareParts:number[] | string[]
+  Engines:number[] | string[]
 }
 
 interface DataAction {
@@ -37,10 +38,14 @@ interface DataSpareParts {
   type: 'SpareParts'; 
   payload:any[]; 
 }
+interface DataEngines{
+  type: 'Engines'; 
+  payload:any[]; 
+}
 
-type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles | DataSpareParts;  
+type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles | DataSpareParts |DataEngines;   
 
-const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[] , SpareParts:[] }, action: ActionTypes): RootState => {
+const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[]  , SpareParts:[] , Engines:[] }, action: ActionTypes): RootState => {
 
   switch (action.type) {
     case 'JetSki' :
@@ -57,6 +62,8 @@ const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats
       return { ...state, Snowmobiles: action.payload };
     case 'SpareParts' :
       return { ...state, SpareParts: action.payload };
+    case 'Engines' :
+      return { ...state, Engines: action.payload };
     }
 
     return state;
