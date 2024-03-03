@@ -40,7 +40,7 @@ function SingleSnowmobiles({Snowmobiles , dispatch}:any) {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${Snowmobiles.img}.jpg`}/>
+            <img src={`../../../img/${Snowmobiles.img}.jpg`}/>
             <h1>{Snowmobiles.price} $</h1>
         </div>
         <div className={style['block-right']}>

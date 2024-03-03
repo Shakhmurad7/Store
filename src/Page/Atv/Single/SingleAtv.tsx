@@ -40,7 +40,7 @@ function SingleAtv({Atv , dispatch}:any) {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${Atv.img}.jpg`}/>
+            <img src={`../../../img/${Atv.img}.jpg`}/>
             <h1>{Atv.price} $</h1>
         </div>
         <div className={style['block-right']}>

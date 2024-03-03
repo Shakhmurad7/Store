@@ -40,7 +40,7 @@ function SingleAllTerrainVehicles({AllTerrainVehicles , dispatch}:any) {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${AllTerrainVehicles.img}.jpg`}/>
+            <img src={`../../../img/${AllTerrainVehicles.img}.jpg`}/>
             <h1>{AllTerrainVehicles.price} $</h1>
         </div>
         <div className={style['block-right']}>

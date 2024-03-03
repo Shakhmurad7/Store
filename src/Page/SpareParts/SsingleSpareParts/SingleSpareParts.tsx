@@ -40,7 +40,7 @@ function SingleSpareParts({SpareParts , dispatch}:any) {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${SpareParts.img}.jpg`}/>
+            <img src={`../../../img/${SpareParts.img}.jpg`}/>
             <h1>{SpareParts.price} $</h1>
         </div>
         <div className={style['block-right']}>

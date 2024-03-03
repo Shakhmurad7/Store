@@ -40,7 +40,7 @@ function SingleBİgBoats({BigBoats , dispatch}:any) {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../public/img/${BigBoats.img}.jpg`}/>
+            <img src={`../../../img/${BigBoats.img}.jpg`}/>
             <h1>{BigBoats.price} $</h1>
         </div>
         <div className={style['block-right']}>
