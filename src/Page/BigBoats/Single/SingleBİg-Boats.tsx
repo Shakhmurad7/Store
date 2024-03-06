@@ -10,6 +10,7 @@ import { FaStar } from "react-icons/fa";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
+import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Big-Boats/`
 function SingleBİgBoats({BigBoats , dispatch}:any) {
 
@@ -80,7 +81,9 @@ function SingleBİgBoats({BigBoats , dispatch}:any) {
                     <h3>{BigBoats.fuel}</h3>
                 </div>
             </div>
+            <Link to={'/Contact'} >
             <p className={style['button-buy']} >Almaq</p>
+            </Link>
         </div>
     </div>
 
