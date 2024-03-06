@@ -55,14 +55,17 @@
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
+        .cart-box-block-heart{
+            display: flex;
+            justify-content: end;
+        }
+
         h2{
             padding: 15px 0px;
         }
         h4{
-            font-size: 20px;
-            display: flex;
-            justify-content: end;
-            
+            width: fit-content;
+            font-size: 20px;  
         }
         p{
             font-size: 20px;
@@ -77,6 +80,7 @@
             justify-content: center;
         }
         .icon-basket{
+
             margin: 0px -15px -15px 0px ;
             display: flex;
             justify-content: end;

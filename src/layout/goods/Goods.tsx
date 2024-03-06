@@ -74,12 +74,15 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                             {
                                 filters.map(({item , id , img  , price }:cartData)=>(
                             <SwiperSlide>
-                                <div key={id} className={style['cart-box']}>
+                                 <div key={id} className={style['cart-box']}>
+                                    <div className={style['cart-box-block-heart']}>
                                       <h4
                                         onClick={() => handleIconClick(id)}
-                                         className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
+                                        className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
                                             <div> <IoMdHeart /></div>
                                          </h4>
+                                    </div>
+                                    <Link to={`/SpareParts/${id}`}>
                                     <div className={style['img-cart']}>
                                         <img src={`../../../img/${img}.jpg`} />
                                         <h3>{item}</h3>
@@ -88,6 +91,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                     <div className={style['icon-basket']}>
                                         <p><FaShoppingBasket /></p>
                                     </div>
+                                </Link>
                                 </div>
                             </SwiperSlide>
                             ))

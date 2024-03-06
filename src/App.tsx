@@ -20,6 +20,8 @@ import SingleBİgBoats from "./Page/BigBoats/Single/SingleBİg-Boats"
 import SingleAllTerrainVehicles from "./Page/All-terrain vehicles/SingleAllTerrainVehicles/SingleAllTerrainVehicles"
 import SingleSnowmobiles from "./Page/Snowmobiles/SingleSnowmobiles/SingleSnowmobiles"
 import SingleSpareParts from "./Page/SpareParts/SsingleSpareParts/SingleSpareParts"
+import GoodTwo from "./layout/goodTwo/goodTwo"
+import Goods from "./layout/goods/Goods"
 
 
 function App() {
@@ -45,6 +47,10 @@ function App() {
           <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles/>}/>
           <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>
           <Route path="/Contact" element={<Contact/>}/>
+          <Route path="/GoodTow" element={<GoodTwo/>}/>
+          <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
+          <Route path="/Goods" element={<Goods/>}/>
+          <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
       </Routes>
     </div>
     <Footer/>
