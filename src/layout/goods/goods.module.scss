@@ -118,3 +118,10 @@
 .open-icon.open-icons{
     color: red;
 }
+
+
+@media(max-width:1230px){
+    .cart-box{
+        min-width: 100% !important;
+    }
+}

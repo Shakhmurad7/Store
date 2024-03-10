@@ -282,3 +282,20 @@ a.active li::after{
 
     
 }
+
+
+@media(max-width:1230px){
+    .footer-container{
+        flex-direction: column;
+    }
+    .header-left{
+        flex-direction: column;
+        align-items: start !important;
+    }
+    .header-right{
+        max-width: 350px !important;
+    }
+    .swiper-right{
+        display: none !important;
+    }
+}
