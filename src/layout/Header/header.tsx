@@ -3,8 +3,16 @@ import { CiHeart } from "react-icons/ci";
 import { IoPersonSharp } from "react-icons/io5";
 import { SlBasket } from "react-icons/sl";
 import { Link } from "react-router-dom";
+import { IoMdMenu } from "react-icons/io";
+import Navbar from "../Navbar/Navbar";
+import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 function Header() {
+
+  const [menu , setmenu ] = useState(false)
+
   return (
+    <>
     <div className="header-container">
         <div className="header-left">
           <Link to={'/'}>
@@ -26,9 +34,16 @@ function Header() {
                  <CiHeart />
                  <IoPersonSharp />
                  <SlBasket />
+                 <div className="menu-open" onClick={()=>setmenu(!menu)} >
+                   {
+                    menu ===true ? <IoClose />: <IoMdMenu /> 
+                   }
+                 </div>
             </div>
         </div>
     </div>
+    <Navbar menu={menu} setmenu={setmenu} />
+    </>
   )
 }
 

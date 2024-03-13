@@ -282,9 +282,18 @@ a.active li::after{
 
     
 }
+.menu-open{
+    display: none;
+}
 
 
 @media(max-width:1230px){
+    .Navbar-container.active{
+        display: none;
+    }
+    .menu-open{
+        display: flex;
+    }
     .footer-container{
         flex-direction: column;
     }
