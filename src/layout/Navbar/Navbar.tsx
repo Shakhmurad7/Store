@@ -1,12 +1,12 @@
 import '../../style.scss'
 import { NavLink } from "react-router-dom";
-function Navbar({menu , setmenu}:any) {
+function Navbar({menu}:any) {
 
 
 
   return (
     <div>
-        <div className={`Navbar-container ${ menu? `` : 'active'}`}>
+        <div className={`Navbar-container ${ menu? `open` : 'close'}`}>
             <ul>
               <NavLink to={'/atv'} >
                 <li>ATV-lər</li>

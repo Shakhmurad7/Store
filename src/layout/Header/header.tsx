@@ -9,7 +9,7 @@ import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 function Header() {
 
-  const [menu , setmenu ] = useState(false)
+  const [menu , setmenu ] = useState(true)
 
   return (
     <>
@@ -36,13 +36,13 @@ function Header() {
                  <SlBasket />
                  <div className="menu-open" onClick={()=>setmenu(!menu)} >
                    {
-                    menu ===true ? <IoClose />: <IoMdMenu /> 
+                    menu ===true ?  <IoMdMenu /> :<IoClose /> 
                    }
                  </div>
             </div>
         </div>
     </div>
-    <Navbar menu={menu} setmenu={setmenu} />
+    <Navbar menu={menu}/>
     </>
   )
 }
