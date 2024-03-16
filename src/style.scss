@@ -289,8 +289,16 @@ a.active li::after{
 
 
 @media(max-width:1230px){
-
-
+    .swipers{
+        max-width: 1000px;
+        width: 100%;
+    }
+    .Big-Container{
+        padding: 20px 50px;
+    }
+    .Swiper-container{
+        width: 100%;
+    }
     .Navbar-container.open ul{
         display: flex;
         flex-direction: column;
@@ -303,16 +311,17 @@ a.active li::after{
         height: 110%;
         padding-top: 20px;
         z-index: 1000;
-        gap: 10px;
+        gap: 15px;
         li{
             color: rgb(37, 37, 37);
+            font-size:22px ;
         }
     }
     .Navbar-container.close ul{
         transition: .4s;
         padding-top: 20px;
         justify-content: start;
-        gap: 10px;
+        gap: 15px;
         z-index: 1000;
         width: 50%;
         height: 110%;
@@ -323,6 +332,7 @@ a.active li::after{
         left: 0%;
         li{
             color: rgb(37, 37, 37);
+            font-size:22px ;
         }
     }
     .menu-open{

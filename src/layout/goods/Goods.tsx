@@ -65,11 +65,21 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
 
         <div className={style['cart-container']}>
                      <Swiper
-                    slidesPerView={4}
                     spaceBetween={30}
                     navigation={true}
                         modules={[ Navigation, Pagination, Mousewheel]}
                         className="mySwiper"
+                        breakpoints={{
+                            600: {
+                                slidesPerView: 2,
+                              },
+                            800: {
+                              slidesPerView: 3,
+                            },
+                            1400: {
+                              slidesPerView: 4,
+                            },
+                          }}
                      >
                             {
                                 filters.map(({item , id , img  , price }:cartData)=>(
@@ -96,6 +106,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                             </SwiperSlide>
                             ))
                             }
+                            
                         </Swiper>
    
         </div>
