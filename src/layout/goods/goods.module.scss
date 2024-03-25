@@ -99,9 +99,11 @@
     }
 
     .goods-list{
+        flex-wrap: wrap;
         display: flex;
         justify-content: space-between;
         width: 100%;
+        gap: 10px;
         font-weight: 700;
         max-width: 800px;
         P{
@@ -123,5 +125,18 @@
 @media(max-width:1230px){
     .cart-box{
         min-width: 100% !important;
+    }
+}
+@media(max-width:700px){
+    .goods-list{
+        justify-content: start;
+        gap: 20px;
+    }
+    .cart-box{
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
