@@ -11,7 +11,7 @@ import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
-const url = `https://book-db-shakhmurad.vercel.app/AllTerrainVehicles/`
+const url = `https://book-db-shakhmurad.vercel.app/JetSki/`
 function SingleJetSki({JetSki , dispatch}:any) {
 
     const {id} = useParams()
