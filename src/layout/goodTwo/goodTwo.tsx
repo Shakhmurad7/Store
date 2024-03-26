@@ -111,7 +111,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                         </Swiper>
    
         </div>
-        <Link to={'/Atv'}>
+        <Link to={'/SpareParts'}>
                 <div className={style['block-box']}>
                     <h3>Daha çox göstər</h3>
                 </div>
