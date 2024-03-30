@@ -37,6 +37,7 @@
         width: 100%;
         max-width: 270px;
         img{
+            width: 100%;
             object-fit: cover !important;
             height: auto !important;
         }
@@ -51,7 +52,6 @@
         justify-content: space-between;
         padding: 15px;
         text-align: center;
-        min-width: 300px;
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
@@ -123,13 +123,23 @@
 
 
 @media(max-width:1230px){
+
     .cart-box{
+        align-items: center;
+        h2{
+            font-size: 17px;
+        }
+        h3{
+            font-size: 12px;
+        }
+        width: 100%;
         min-width: 100% !important;
     }
 }
+
 @media(max-width:700px){
     .goods-container{
-        padding-top: 0px    ;
+        padding-top: 40px    ;
     }
     .goods-list{
         justify-content: start;

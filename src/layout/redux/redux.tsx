@@ -1,12 +1,84 @@
+// interface RootState {
+//   JetSki: any[];
+//   Atv: any[];
+//   Boats: number[] | string[]
+//   BigBoats: number[] | string[]
+//   AllTerrainVehicles:number[] | string[]
+//   Snowmobiles:number[] | string[]
+//   SpareParts:number[] | string[]
+//   Engines:number[] | string[]
+// }
+
+// interface DataAction {
+//   type: 'JetSki';
+//   payload: any[]; 
+// }
+
+// interface DataActions {
+//   type: 'Atv'; 
+//   payload:any[]; 
+// }
+// interface DataBoats {
+//   type: 'Boats'; 
+//   payload:any[]; 
+// }
+// interface DataAllTerrainVehicles {
+//   type: 'AllTerrainVehicles'; 
+//   payload:any[]; 
+// }
+// interface DataBigBoats {
+//   type: 'BigBoats'; 
+//   payload:any[]; 
+// }
+// interface DataSnowmobiles {
+//   type: 'Snowmobiles'; 
+//   payload:any[]; 
+// }
+// interface DataSpareParts {
+//   type: 'SpareParts'; 
+//   payload:any[]; 
+// }
+// interface DataEngines{
+//   type: 'Engines'; 
+//   payload:any[]; 
+// }
+
+// type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles | DataSpareParts |DataEngines;   
+
+// const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[]  , SpareParts:[] , Engines:[] }, action: ActionTypes): RootState => {
+
+//   switch (action.type) {
+//     case 'JetSki' :
+//       return { ...state, JetSki: action.payload };
+//     case 'Atv' :
+//       return { ...state, Atv: action.payload };
+//     case 'Boats' :
+//       return { ...state, Boats: action.payload };
+//     case 'BigBoats' :
+//       return { ...state, BigBoats: action.payload };
+//     case 'AllTerrainVehicles' :
+//       return { ...state, AllTerrainVehicles: action.payload };
+//     case 'Snowmobiles' :
+//       return { ...state, Snowmobiles: action.payload };
+//     case 'SpareParts' :
+//       return { ...state, SpareParts: action.payload };
+//     case 'Engines' :
+//       return { ...state, Engines: action.payload };
+//     }
+
+//     return state;
+// };
+
+// export default RootRedux;
 interface RootState {
   JetSki: any[];
   Atv: any[];
-  Boats: number[] | string[]
-  BigBoats: number[] | string[]
-  AllTerrainVehicles:number[] | string[]
-  Snowmobiles:number[] | string[]
-  SpareParts:number[] | string[]
-  Engines:number[] | string[]
+  Boats: number[] | string[];
+  BigBoats: number[] | string[];
+  AllTerrainVehicles: number[] | string[];
+  Snowmobiles: number[] | string[];
+  SpareParts: number[] | string[];
+  Engines: number[] | string[];
 }
 
 interface DataAction {
@@ -16,57 +88,69 @@ interface DataAction {
 
 interface DataActions {
   type: 'Atv'; 
-  payload:any[]; 
+  payload: any[]; 
 }
+
 interface DataBoats {
   type: 'Boats'; 
-  payload:any[]; 
+  payload: any[]; 
 }
+
 interface DataAllTerrainVehicles {
   type: 'AllTerrainVehicles'; 
-  payload:any[]; 
+  payload: any[]; 
 }
+
 interface DataBigBoats {
   type: 'BigBoats'; 
-  payload:any[]; 
+  payload: any[]; 
 }
+
 interface DataSnowmobiles {
   type: 'Snowmobiles'; 
-  payload:any[]; 
+  payload: any[]; 
 }
+
 interface DataSpareParts {
   type: 'SpareParts'; 
-  payload:any[]; 
-}
-interface DataEngines{
-  type: 'Engines'; 
-  payload:any[]; 
+  payload: any[]; 
 }
 
-type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles |DataSnowmobiles | DataSpareParts |DataEngines;   
+interface DataEngines {
+  type: 'Engines'; 
+  payload: any[]; 
+}
+
+export const SELECT_CATEGORY = 'SELECT_CATEGORY';
+
+export const selectCategory = (category: string) => ({
+  type: SELECT_CATEGORY,
+  payload: category,
+});
+
+type ActionTypes = DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles | DataSnowmobiles | DataSpareParts | DataEngines;
 
 const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[]  , SpareParts:[] , Engines:[] }, action: ActionTypes): RootState => {
-
   switch (action.type) {
-    case 'JetSki' :
+    case 'JetSki':
       return { ...state, JetSki: action.payload };
-    case 'Atv' :
+    case 'Atv':
       return { ...state, Atv: action.payload };
-    case 'Boats' :
+    case 'Boats':
       return { ...state, Boats: action.payload };
-    case 'BigBoats' :
+    case 'BigBoats':
       return { ...state, BigBoats: action.payload };
-    case 'AllTerrainVehicles' :
+    case 'AllTerrainVehicles':
       return { ...state, AllTerrainVehicles: action.payload };
-    case 'Snowmobiles' :
+    case 'Snowmobiles':
       return { ...state, Snowmobiles: action.payload };
-    case 'SpareParts' :
+    case 'SpareParts':
       return { ...state, SpareParts: action.payload };
-    case 'Engines' :
+    case 'Engines':
       return { ...state, Engines: action.payload };
-    }
-
-    return state;
+  }
+  return state;
 };
 
 export default RootRedux;
+

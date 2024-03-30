@@ -7,7 +7,7 @@ function Search() {
     <div className="search-container">
       <div className="secrch-input">
           <FreeSolo/>
-        <button>Axtar</button>
+            <button>Axtar</button>
       </div>
     </div>
   );

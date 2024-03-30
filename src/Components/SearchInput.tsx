@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 
 export default function FreeSolo() {
+
   return (
     <Stack spacing={2} sx={{ width:'100%' }}>
       <Autocomplete
@@ -22,9 +23,11 @@ export default function FreeSolo() {
           />
         )}
       />
+      
     </Stack>
   );
 }
+
 const top100Films = [
   { title: 'Ehtiyat hissələri', year: 1994 },
   { title: 'Mühərriklər', year: 1972 },

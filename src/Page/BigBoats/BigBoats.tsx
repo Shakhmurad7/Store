@@ -124,9 +124,9 @@ const currentItems =  Array.isArray(BigBoats) ? BigBoats.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
     currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
-      <div key={id}  className="">
+      <div key={id}  className={styles['cart-box-div']}>
       <Link to={`/BigBoats/${id}`}>
-         <div key={id} className={style['cart-box']}>
+        <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
@@ -150,7 +150,7 @@ const currentItems =  Array.isArray(BigBoats) ? BigBoats.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
        currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id}   className={styles['cart-box-div']}>
         <Link to={`/BigBoats/${id}`}>
          <div className={style['cart-box']}>
           <h4
@@ -175,7 +175,7 @@ const currentItems =  Array.isArray(BigBoats) ? BigBoats.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
       currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id}   className={styles['cart-box-div']}>
         <Link to={`/BigBoats/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -200,7 +200,7 @@ const currentItems =  Array.isArray(BigBoats) ? BigBoats.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id}   className={styles['cart-box-div']}>
         <Link to={`/BigBoats/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4

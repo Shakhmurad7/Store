@@ -43,6 +43,13 @@ const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstI
 
 
 
+const filters = currentItems.filter((item)=>{
+  return item.cateqory = SpareParts
+})
+
+
+
+
   useEffect(()=>{
     axios.get(url).then(({data})=>{
       dispatch({
@@ -84,12 +91,25 @@ const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstI
       <h2>JetSki</h2>
       <div className={styles['JetSki-container-block']}>
 
+
+    <div className={styles['JetSki-block-right']}>
       <div className={styles['JetSki-block']}>
         <p>Tam ötürücülü</p>
         <p>5000-dən</p>
         <p>BRP</p>
         <p>daha çox</p>
       </div>
+
+      <div className={styles['JetSki-block-department']}>
+      <p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'SpareParts' })}>Ehtiyat hissələri</p>
+<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Engines' })}>Mühərriklər</p>
+<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Wheels' })}>Təkərlər</p>
+<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Electronics' })}>Elektronika</p>
+<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Tools' })}>Alətlər</p>
+<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Accessories' })}>Aksesuarlar</p>
+
+      </div>
+    </div>
 
       <div className={styles['JetSki-block-right']}>
            <Autocomplete
@@ -123,7 +143,7 @@ const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstI
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
+    filters.length && filters.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <div key={id}  className="">
       <Link to={`/SpareParts/${id}`}>
          <div key={id} className={style['cart-box']}>
@@ -149,7 +169,7 @@ const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstI
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
+       filters.length && filters.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/SpareParts/${id}`}>
          <div className={style['cart-box']}>
@@ -174,7 +194,7 @@ const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstI
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
+      filters.length &&  filters.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/SpareParts/${id}`}>
          <div key={id} className={style['cart-box']}>
