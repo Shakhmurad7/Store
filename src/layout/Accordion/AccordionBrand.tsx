@@ -40,7 +40,7 @@ export default function AccordionBrand() {
         </AccordionSummary>
         <AccordionDetails>
             <Stack sx={{flexDirection:'coulmn' , gap:3}}>
-                <Stack sx={{flexDirection:'row' , gap:3}}>
+                <Stack flexDirection={{sm:'column' , md:'row'}} sx={{gap:"20px"}}>
                      <FormGroup>
                     <FormControlLabel control={<Checkbox />} label="BRP" />
                  </FormGroup>

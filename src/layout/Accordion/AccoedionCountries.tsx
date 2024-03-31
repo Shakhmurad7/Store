@@ -36,7 +36,7 @@ function AccoedionCountries() {
             <Typography>Ölkələr</Typography>
           </AccordionSummary>
           <AccordionDetails>
-              <Stack sx={{flexDirection:'row' , gap:3}}>
+              <Stack flexDirection={{sm:'column' , md:'row'}} sx={{gap:"20px"}}>
               <Stack sx={{flexDirection:'column' , gap:3}}>
               <FormGroup>
                     <FormControlLabel control={<Checkbox />} label="Hamsi" />

@@ -92,6 +92,7 @@
         }
     }
 }
+
 @media(max-width:1070px){
     .cart-container{
         flex-wrap: wrap;
@@ -101,4 +102,23 @@
     .JetSki-block{
         flex-direction: column;
     }
+}
+@media(max-width:767px){
+    .JetSki-container-block{
+        justify-content: start;
+        flex-direction: column;
+        .JetSki-block{
+            p{
+                width: fit-content;
+            }
+        }
+    }
+}
+@media(max-width:500px){
+    .all-container{
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
