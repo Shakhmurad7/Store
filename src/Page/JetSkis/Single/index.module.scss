@@ -69,3 +69,18 @@
         min-width:  300px !important;
     }
 }
+@media(max-width:890px){
+    .container{
+        flex-direction: column;
+    }
+    .block-left{
+        img{
+            width: 100% !important;
+            min-width: auto !important;
+        }
+    }
+    .block-text-row{
+        width: 100% !important;
+        min-width:  250px !important;
+    }
+}

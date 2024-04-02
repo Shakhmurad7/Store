@@ -38,9 +38,7 @@ function Home() {
 
 
       {/* ----Search---- */}
-          <Search user={[]} dispatch={function (): void {
-          throw new Error("Function not implemented.")
-        } }/>
+          <Search/>
 
 
       {/* ---Goods--- */}

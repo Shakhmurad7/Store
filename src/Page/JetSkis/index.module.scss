@@ -104,6 +104,12 @@
     }
 }
 @media(max-width:767px){
+
+        .icon{
+            align-items: start !important;
+            flex-direction: column !important;
+        }
+
     .JetSki-container-block{
         justify-content: start;
         flex-direction: column;
