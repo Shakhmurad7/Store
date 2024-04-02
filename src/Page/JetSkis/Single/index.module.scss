@@ -57,3 +57,15 @@
 .GoodsTwo{
     padding-top: 50px
 }
+@media(max-width:1250px){
+    .block-left{
+        img{
+            width: 100% !important;
+            min-width: 400px !important;
+        }
+    }
+    .block-text-row{
+        width: 100% !important;
+        min-width:  300px !important;
+    }
+}
