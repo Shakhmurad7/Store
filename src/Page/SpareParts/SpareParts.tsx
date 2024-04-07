@@ -144,7 +144,7 @@ const filters = currentItems.filter((item)=>{
     <div className={styles['cart-container']}>
     {
     filters.length && filters.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
-      <div key={id}  className="">
+      <div key={id}  className={style["cart-block-div"]}>
       <Link to={`/SpareParts/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -170,7 +170,7 @@ const filters = currentItems.filter((item)=>{
     <div className={styles['cart-container']}>
     {
        filters.length && filters.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id}  className={style["cart-block-div"]}>
         <Link to={`/SpareParts/${id}`}>
          <div className={style['cart-box']}>
           <h4
@@ -195,7 +195,7 @@ const filters = currentItems.filter((item)=>{
     <div className={styles['cart-container']}>
     {
       filters.length &&  filters.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id} className={style["cart-block-div"]}>
         <Link to={`/SpareParts/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4

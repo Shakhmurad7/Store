@@ -95,15 +95,20 @@
 
 @media(max-width:1070px){
     .cart-container{
+        justify-content: center;
         flex-wrap: wrap;
     }
 }
 @media(max-width:900px){
     .JetSki-block{
-        flex-direction: column;
+        flex-wrap: wrap;
+        width: fit-content;
     }
 }
 @media(max-width:767px){
+    .JetSki-block-department{
+      flex-wrap: wrap;
+    }
 
         .icon{
             align-items: start !important;
