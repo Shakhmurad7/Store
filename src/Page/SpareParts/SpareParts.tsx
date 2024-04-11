@@ -10,14 +10,15 @@ import AccordionCountries from '../../layout/Accordion/AccoedionCountries.tsx'
 import { FaAngleRight } from "react-icons/fa6";
 import axios from "axios";
 import { IoMdHeart } from "react-icons/io";
-import { connect } from "react-redux";
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
 import { FaShoppingBasket } from "react-icons/fa";
 import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
-function SpareParts({SpareParts , dispatch}:any) {
+
+
+function SpareParts() {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -37,27 +38,22 @@ type DataItem ={
 
 
 
+const [data ,setData] = useState([])
+
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems =  Array.isArray(SpareParts) ? SpareParts.slice(indexOfFirstItem, indexOfLastItem) : [];
-
-
-
-const filters = currentItems.filter((item)=>{
-  return item.cateqory = SpareParts
-})
+const currentItems =  Array.isArray(data) ? data.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
 
 
-  useEffect(()=>{
-    axios.get(url).then(({data})=>{
-      dispatch({
-        type:'SpareParts',
-        payload: data
-      })
-    })
-  } , [])
+
+useEffect(()=>{
+
+  axios.get(url).then(({data})=>{
+    setData(data)
+  })
+} , [])
 
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -101,14 +97,15 @@ const filters = currentItems.filter((item)=>{
       </div>
 
       <div className={styles['JetSki-block-department']}>
-      <p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'SpareParts' })}>Ehtiyat hissələri</p>
-<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Engines' })}>Mühərriklər</p>
-<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Wheels' })}>Təkərlər</p>
-<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Electronics' })}>Elektronika</p>
-<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Tools' })}>Alətlər</p>
-<p onClick={() => dispatch({ type: 'SELECT_CATEGORY', payload: 'Accessories' })}>Aksesuarlar</p>
-
+        <p >Ehtiyat hissələri</p>
+        <p >Mühərriklər</p>
+        <p >Təkərlər</p>
+        <p >Elektronika</p>
+        <p >Alətlər</p>
+        <p >Aksesuarlar</p>
+        <p >Hamsi</p>
       </div>
+      
     </div>
 
       <div className={styles['JetSki-block-right']}>
@@ -139,39 +136,13 @@ const filters = currentItems.filter((item)=>{
         </div>
     </div>
 
-<div className={styles['cart-big-contaner']}>
+    <div className={styles['cart-big-contaner']}>
 
     <div className={styles['cart-container']}>
     {
-    filters.length && filters.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
-      <div key={id}  className={style["cart-block-div"]}>
-      <Link to={`/SpareParts/${id}`}>
-         <div key={id} className={style['cart-box']}>
-          <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-          <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
-        </div>
-        </div>
-        </Link>
-        </div>
-        ))
-    }
-    </div>
-
-    <div className={styles['cart-container']}>
-    {
-       filters.length && filters.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className={style["cart-block-div"]}>
-        <Link to={`/SpareParts/${id}`}>
+      currentItems.map(({id ,img , item , price }:DataItem)=>(
+        <div key={id}  className="">
+        <Link to={`/Boats/${id}`}>
          <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -192,35 +163,10 @@ const filters = currentItems.filter((item)=>{
         ))
       }
     </div>
-    <div className={styles['cart-container']}>
-    {
-      filters.length &&  filters.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id} className={style["cart-block-div"]}>
-        <Link to={`/SpareParts/${id}`}>
-         <div key={id} className={style['cart-box']}>
-          <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-          <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
-        </div>
-        </div>
-        </Link>
-      </div>
-        ))
-      }
-    </div>
-  
 
+  
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(SpareParts.length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(data.length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
@@ -239,20 +185,16 @@ const filters = currentItems.filter((item)=>{
         )}
       </ul>
 
+
+
+
 </div>
 
 </div>
-
-
-
-
   </PageContainer>
-
-
-
 )
 }
+export default SpareParts
 
-const mapState = (state:any)=> state
 
-export default connect(mapState)(SpareParts)
+

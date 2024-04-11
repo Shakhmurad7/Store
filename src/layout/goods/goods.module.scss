@@ -35,7 +35,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
         max-width: 270px;
         img{
             width: 100%;
@@ -50,15 +49,18 @@
     .cart-box{
         margin: 10px 5px;
         height:450px;
-        min-width: 300px;
         max-height:500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 15px;
         text-align: center;
-        width: 100%;
         box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        a{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
 
         .cart-box-block-heart{
             display: flex;
@@ -128,7 +130,9 @@
 
 
 @media(max-width:1230px){
-
+    .img-cart{
+        width: 100% !important;
+    }
 }
 
 @media(max-width:700px){
