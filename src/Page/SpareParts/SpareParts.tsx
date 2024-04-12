@@ -16,7 +16,6 @@ import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
-import { ClassNames } from "@emotion/react";
 
 
 function SpareParts() {
@@ -159,7 +158,7 @@ useEffect(()=>{
     {
       currentItems.map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className={styles['cart-box-div']}>
-        <Link to={`/Boats/${id}`}>
+        <Link to={`/SpareParts/${id}`}>
          <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
@@ -183,7 +182,7 @@ useEffect(()=>{
 
   
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(data .length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(flters .length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
@@ -212,6 +211,5 @@ useEffect(()=>{
 )
 }
 export default SpareParts
-
 
 

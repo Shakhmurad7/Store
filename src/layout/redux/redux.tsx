@@ -6,9 +6,7 @@ interface RootState {
   BigBoats: number[] | string[];
   AllTerrainVehicles: number[] | string[];
   Snowmobiles: number[] | string[];
-  SpareParts: number[] | string[];
   Engines: number[] | string[];
-  selectedTab: null | string[]; 
 }
 
 interface DataAction {
@@ -41,11 +39,6 @@ interface DataSnowmobiles {
   payload: any[]; 
 }
 
-interface DataSpareParts {
-  type: 'SpareParts'; 
-  payload: any[]; 
-}
-
 interface DataEngines {
   type: 'Engines'; 
   payload: any[]; 
@@ -55,7 +48,6 @@ interface selectCategorys {
   payload: any[]; 
 }
 
-
 export const SELECT_CATEGORY = 'SELECT_CATEGORY';
 
 export const selectCategory = (category: string) => ({
@@ -63,9 +55,9 @@ export const selectCategory = (category: string) => ({
   payload: category,
 });
 
-type ActionTypes =  selectCategorys | DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles | DataSnowmobiles | DataSpareParts | DataEngines;
+type ActionTypes =  selectCategorys | DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles | DataSnowmobiles  | DataEngines;
 
-const RootRedux = (state: RootState = {JetSki: [], selectedTab: null, Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[]  , SpareParts:[] , Engines:[] }, action: ActionTypes): RootState => {
+const RootRedux = (state: RootState = {JetSki: [], Atv: [] , Boats:[] , BigBoats:[] , AllTerrainVehicles:[] , Snowmobiles:[]  , Engines:[] }, action: ActionTypes): RootState => {
   switch (action.type) {
     case 'JetSki':
       return { ...state, JetSki: action.payload };
@@ -79,12 +71,8 @@ const RootRedux = (state: RootState = {JetSki: [], selectedTab: null, Atv: [] , 
       return { ...state, AllTerrainVehicles: action.payload };
     case 'Snowmobiles':
       return { ...state, Snowmobiles: action.payload };
-    case 'SpareParts':
-      return { ...state, SpareParts: action.payload };
     case 'Engines':
       return { ...state, Engines: action.payload };
-    case SELECT_CATEGORY:
-      return { ...state, selectedTab: action.payload };
   }
   
   return state;
