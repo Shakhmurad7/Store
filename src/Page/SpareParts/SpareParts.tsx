@@ -16,6 +16,7 @@ import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
+import { ClassNames } from "@emotion/react";
 
 
 function SpareParts() {
@@ -39,10 +40,24 @@ type DataItem ={
 
 
 const [data ,setData] = useState([])
+const [filter , setFilter] = useState("All")
+
+const Tab =(cateqory:any)=>{
+  setFilter(cateqory)
+}
+
+const flters = data.filter((item:any)=>{
+  if(filter === "All"){
+    return data
+  }
+  else{
+    return item.cateqory === filter
+  }
+})
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems =  Array.isArray(data) ? data.slice(indexOfFirstItem, indexOfLastItem) : [];
+const currentItems =  Array.isArray(flters) ? flters.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
 
@@ -54,6 +69,8 @@ useEffect(()=>{
     setData(data)
   })
 } , [])
+
+
 
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -97,13 +114,13 @@ useEffect(()=>{
       </div>
 
       <div className={styles['JetSki-block-department']}>
-        <p >Ehtiyat hissələri</p>
-        <p >Mühərriklər</p>
-        <p >Təkərlər</p>
-        <p >Elektronika</p>
-        <p >Alətlər</p>
-        <p >Aksesuarlar</p>
-        <p >Hamsi</p>
+        <p onClick={()=>Tab("SpareParts")} className={styles[filter === 'SpareParts' ? 'filter-active' : '']} >Ehtiyat hissələri</p>
+        <p onClick={()=>Tab("Engines")} className={styles[filter === 'Engines' ? 'filter-active' : '']}>Mühərriklər</p>
+        <p onClick={()=>Tab("Wheels")} className={styles[filter === 'Wheels' ? 'filter-active' : '']}>Təkərlər</p>
+        <p onClick={()=>Tab("Electronics")} className={styles[filter === 'Electronics' ? 'filter-active' : '']}>Elektronika</p>
+        <p onClick={()=>Tab("Tools")} className={styles[filter === 'Tools' ? 'filter-active' : '']}>Alətlər</p>
+        <p onClick={()=>Tab("Accessories")} className={styles[filter === 'Accessories' ? 'filter-active' : '']}>Aksesuarlar</p>
+        <p onClick={()=>Tab("All")} className={styles[filter === 'All' ? 'filter-active' : '']}>Hamsi</p>
       </div>
       
     </div>
@@ -138,10 +155,10 @@ useEffect(()=>{
 
     <div className={styles['cart-big-contaner']}>
 
-    <div className={styles['cart-container']}>
+    <div className={styles['cart-container-box']}>
     {
       currentItems.map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className="">
+        <div key={id}  className={styles['cart-box-div']}>
         <Link to={`/Boats/${id}`}>
          <div className={style['cart-box']}>
           <h4
@@ -166,7 +183,7 @@ useEffect(()=>{
 
   
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(data.length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(data .length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
