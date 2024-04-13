@@ -85,8 +85,8 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                         
                             {
                                 filters.map(({item , id , img  , price }:cartData)=>(
-                                    <SwiperSlide>
-                                <div key={id} className={style['cart-box']}>
+                                    <SwiperSlide key={id} >
+                                <div className={style['cart-box']}>
                                     <div className={style['cart-box-block-heart']}>
                                       <h4
                                         onClick={() => handleIconClick(id)}

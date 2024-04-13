@@ -35,7 +35,7 @@ function SingleJetSki() {
         <p>{date.item}</p>
     </div>
 
-    <div className={style['container']}>
+    <div key={date.id} className={style['container']}>
         <div className={style['block-left']}>
             <img src={`../../../img/${date.img}.jpg`}/>
             <h1>{date.price} $</h1>
