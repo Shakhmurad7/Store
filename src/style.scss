@@ -210,7 +210,8 @@ a.active li::after{
 // ---Search---
 .secrch-input{
     width: 100%;
-    display: flex;
+    height: a;
+    display: flex !important;
     button{
         font-size: 22px;
         cursor: pointer;
