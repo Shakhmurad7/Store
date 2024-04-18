@@ -46,7 +46,7 @@ const FreeSolo: React.FC<FreeSoloProps> = ({ onSearch }) => {
 const top100Films: Film[] = [
   { title: 'Ehtiyat hissələri', item: 'SpareParts' },
   { title: 'Mühərriklər', item: 'Engines' },
-  { title: 'Təkərlər', item: 'JetSki' },
+  { title: 'Təkərlər', item: 'Hydrocycles' },
   { title: 'Elektronika', item: 'Snowmobiles' },
   { title: 'Alətlər', item: 'Boats' },
   { title: 'Aksesuarlar', item: 'Atv' },

@@ -40,23 +40,57 @@ type DataItem ={
 
 const [data ,setData] = useState([])
 const [filter , setFilter] = useState("All")
+const [filters , setFilters] = useState(Number)
 
 const Tab =(cateqory:any)=>{
   setFilter(cateqory)
 }
+const TabOne =(i:any)=>{
+  setFilters(i)
+}
 
-const flters = data.filter((item:any)=>{
-  if(filter === "All"){
-    return data
-  }
-  else{
-    return item.cateqory === filter
-  }
-})
 
+// const FltersOne = data.filter((item:any)=>{
+//     if(item.price > filters ){
+//       return item
+//     }
+//     else if(filters === 0){
+//       return data
+//     }
+
+// })
+
+// const flters = data.filter((item:any)=>{
+//   if(filter === "All"){
+//     return data
+//   }
+//   else{
+//     return item.cateqory === filter
+//   }
+// })
+
+
+const filteredData = data.filter((item: any) => {
+  // Фильтр по категории
+  if (filter !== "All" && item.cateqory !== filter) {
+    return false;
+  }
+  // Фильтр по цене
+  if (filters > 0 && parseInt(item.price) <= filters) {
+    return false;
+  }
+  return true;
+});
+
+
+
+
+// const indexOfLastItem = currentPage * itemsPerPage;
+// const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+// const currentItems =  Array.isArray(flters) ? flters.slice(indexOfFirstItem, indexOfLastItem) : [];
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems =  Array.isArray(flters) ? flters.slice(indexOfFirstItem, indexOfLastItem) : [];
+const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
 
 
@@ -71,9 +105,9 @@ useEffect(()=>{
 
 
 
-    const [activeIndex, setActiveIndex] = useState(null);
+const [activeIndex, setActiveIndex] = useState(null);
 
-    const handleIconClick = (index:any) => {
+const handleIconClick = (index:any) => {
                 setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
             };
 
@@ -87,9 +121,7 @@ useEffect(()=>{
               { label: 'Pulp Fiction', year: 1994 },
             ]
 
-          
-            
-
+        
   return (
 
   <PageContainer>
@@ -106,10 +138,10 @@ useEffect(()=>{
 
     <div className={styles['JetSki-block-right']}>
       <div className={styles['JetSki-block']}>
-        <p>Tam ötürücülü</p>
-        <p>5000-dən</p>
-        <p>BRP</p>
-        <p>daha çox</p>
+        <p onClick={()=>TabOne(0)} className={styles[filters === 0? 'filter-active' : '']} >Hamsi</p>
+        <p onClick={()=>TabOne(50)} className={styles[filters === 50? 'filter-active' : '']} >50-dən</p>
+        <p onClick={()=>TabOne(100)} className={styles[filters === 100? 'filter-active' : '']} >100-dən</p>
+        <p onClick={()=>TabOne(200)} className={styles[filters === 200? 'filter-active' : '']} >200-dən</p>
       </div>
 
       <div className={styles['JetSki-block-department']}>
@@ -156,7 +188,7 @@ useEffect(()=>{
 
     <div className={styles['cart-container-box']}>
     {
-      currentItems.map(({id ,img , item , price }:DataItem)=>(
+      paginatedData.map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className={styles['cart-box-div']}>
         <Link to={`/SpareParts/${id}`}>
          <div className={style['cart-box']}>
@@ -182,7 +214,7 @@ useEffect(()=>{
 
   
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(flters .length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(paginatedData .length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
@@ -209,7 +241,9 @@ useEffect(()=>{
 </div>
   </PageContainer>
 )
+
 }
+
 export default SpareParts
 
 
