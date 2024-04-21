@@ -40,7 +40,7 @@ const TabOne =(i:any)=>{
   setFilters(i)
 }
 const filteredData = AllTerrainVehicles.filter((item: any) => {
-  if(item.price < filters){
+  if(item.price >filters){
     return item
   }
   else if(filters === 0){

@@ -36,10 +36,22 @@ type DataItem ={
 }
 
 
+const [filters , setFilters] = useState(Number)
+const TabOne =(i:any)=>{
+  setFilters(i)
+}
+const filteredData = Snowmobiles.filter((item: any) => {
+  if(item.price > filters){
+    return item
+  }
+  else if(filters === 0){
+    return Snowmobiles
+  }
+});
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirstItem, indexOfLastItem) : [];
+const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
 
@@ -83,12 +95,12 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
     <div className={styles['JetSki-text-top']}>
       <h2>JetSki</h2>
       <div className={styles['JetSki-container-block']}>
-
+        
       <div className={styles['JetSki-block']}>
-        <p>Tam ötürücülü</p>
-        <p>5000-dən</p>
-        <p>BRP</p>
-        <p>daha çox</p>
+        <p onClick={()=>TabOne(0)} className={styles[filters === 0? 'filter-active' : '']} >Hamsi</p>
+        <p onClick={()=>TabOne(3500)} className={styles[filters === 3500? 'filter-active' : '']} >3500-dən</p>
+        <p onClick={()=>TabOne(5000)} className={styles[filters === 6000? 'filter-active' : '']} >5000-dən</p>
+        <p onClick={()=>TabOne(50000)} className={styles[filters === 15000? 'filter-active' : '']} >50000-dən</p>
       </div>
 
       <div className={styles['JetSki-block-right']}>
@@ -123,7 +135,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
+     paginatedData.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <div key={id}  className="">
       <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
@@ -149,7 +161,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
+        paginatedData.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/Snowmobiles/${id}`}>
          <div className={style['cart-box']}>
@@ -174,7 +186,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
+      paginatedData.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
@@ -200,7 +212,7 @@ const currentItems =  Array.isArray(Snowmobiles) ? Snowmobiles.slice(indexOfFirs
   
 
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(Snowmobiles.length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
