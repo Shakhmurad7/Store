@@ -1,5 +1,5 @@
 
-interface RootState {
+export interface RootState {
   JetSki: any[];
   Atv: any[];
   Boats: number[] | string[];

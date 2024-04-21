@@ -85,9 +85,6 @@ const filteredData = data.filter((item: any) => {
 
 
 
-// const indexOfLastItem = currentPage * itemsPerPage;
-// const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-// const currentItems =  Array.isArray(flters) ? flters.slice(indexOfFirstItem, indexOfLastItem) : [];
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -214,7 +211,7 @@ const handleIconClick = (index:any) => {
 
   
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(paginatedData .length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(filteredData .length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}

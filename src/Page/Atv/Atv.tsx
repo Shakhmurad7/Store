@@ -17,6 +17,7 @@ import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
+import { RootState } from "../../layout/redux/redux.tsx";
 function Atv({Atv , dispatch}:any) {
 
 const [currentPage, setCurrentPage] = useState(1);
@@ -31,19 +32,33 @@ const paginate = (pageNumber: number) => {
 
 
 
+
+const [filters , setFilters] = useState(Number)
+const TabOne =(i:any)=>{
+  setFilters(i)
+}
+const filteredData = Atv.filter((item: any) => {
+  if(item.price > filters){
+    return item
+  }
+  else if(filters === 0){
+    return Atv
+  }
+});
+
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLastItem) : []; 
-
+const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem, indexOfLastItem) : [];
 
   useEffect(()=>{
     axios.get(url).then(({data})=>{
+      console.log("Atv:", Atv);
       dispatch({
         type:'Atv',
         payload: data
       })
     })
-  } , [])
+  } , [Atv])
 
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -60,8 +75,6 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
               { label: "Schindler's List", year: 1993 },
               { label: 'Pulp Fiction', year: 1994 },
             ]
-
-            console.log(Atv.length);
             
   return (
 
@@ -77,10 +90,10 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
       <div className={styles['JetSki-container-block']}>
 
       <div className={styles['JetSki-block']}>
-        <p>Tam ötürücülü</p>
-        <p>5000-dən</p>
-        <p>BRP</p>
-        <p>daha çox</p>
+        <p onClick={()=>TabOne(0)} className={styles[filters === 0? 'filter-active' : '']} >Hamsi</p>
+        <p onClick={()=>TabOne(10000)} className={styles[filters === 10000? 'filter-active' : '']} >10000-dən</p>
+        <p onClick={()=>TabOne(15000)} className={styles[filters === 15000? 'filter-active' : '']} >15000-dən</p>
+        <p onClick={()=>TabOne(20000)} className={styles[filters === 20000? 'filter-active' : '']} >20000-dən</p>
       </div>
 
       <div className={styles['JetSki-block-right']}>
@@ -115,31 +128,32 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:any)=>(
-      <Link key={id}  to={`/atv/${id}`}>
-         <div  className={style['cart-box']}>
-          <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-          <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
+  Atv.length > 0 && paginatedData.slice(0, 3).map(({ id, img, item, price }: any) => (
+    <Link key={id} to={`/atv/${id}`}>
+      <div className={style['cart-box']}>
+        <h4
+          onClick={() => handleIconClick(id)}
+          className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
+          <div> <IoMdHeart /></div>
+        </h4>
+        <div className={style['img-cart']}>
+          <img src={`./img/${img}.jpg`} />
+          <h3>{item}</h3>
         </div >
         <h2>{price}$</h2>
         <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
+          <p><FaShoppingBasket /></p>
         </div>
-        </div>
-        </Link>
-        ))
-    }
+      </div>
+    </Link>
+  ))
+}
+
     </div>
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:any)=>(
+      Atv.length > 0  &&  paginatedData.slice(3,6).map(({id ,img , item , price }:any)=>(
         <Link key={id}  to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -162,7 +176,7 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:any)=>(
+     Atv.length > 0 && paginatedData.slice(6,9).map(({id ,img , item , price}:any)=>(
         <Link key={id}  to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -185,7 +199,7 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
     </div>
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(9,12).map(({id ,img , item , price}:any)=>(
+      Atv.length > 0 &&  paginatedData.slice(9,12).map(({id ,img , item , price}:any)=>(
         <Link key={id}  to={`/atv/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
@@ -207,7 +221,7 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
       }
     </div>
            <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(Atv.length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
@@ -240,7 +254,9 @@ const currentItems = Array.isArray(Atv) ? Atv.slice(indexOfFirstItem, indexOfLas
 )
 }
 
-const mapState = (state:any)=> state
+const mapStateToProps = (state: RootState) => ({
+  Atv: state.Atv,
+});
 
-export default connect(mapState)(Atv)
+export default connect(mapStateToProps)(Atv)
 

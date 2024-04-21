@@ -1,6 +1,5 @@
 import axios from "axios"
-import { useEffect} from "react"
-import { connect } from "react-redux"
+import { useEffect, useState} from "react"
 import { useParams } from "react-router"
 import { FaAngleRight } from "react-icons/fa6";
 import style from '../../JetSkis/Single/index.module.scss'
@@ -12,18 +11,36 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Atvs/`
-function SingleAtv({Atv , dispatch}:any) {
+function SingleAtv() {
+
+    type DateType = {
+        id: Number
+        img: String
+        item: String
+        force: String
+        country: String
+        year: String
+        fuel: String
+        price: String
+        numberOFseats: String
+    }
 
     const {id} = useParams()
-
+    const [date, setDate] = useState<DateType>({
+        id: 0,
+        img: '',
+        item: '',
+        force: '',
+        country: '',
+        year: '',
+        fuel: '',
+        price: '',
+        numberOFseats: '',
+      });
     useEffect(()=>{
         axios.get(url + id).then(({data})=>{
             console.log(data);
-          dispatch({
-            type:'Atv',
-            payload: data
-          })
-          
+            setDate(data)
         })
       } , [])
 
@@ -36,16 +53,16 @@ function SingleAtv({Atv , dispatch}:any) {
         <FaAngleRight />
         <p>Atvs</p>
         <FaAngleRight />
-        <p>{Atv.item}</p>
+        <p>{date.item}</p>
     </div>
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../img/${Atv.img}.jpg`}/>
-            <h1>{Atv.price} $</h1>
+            <img src={`../../../img/${date.img}.jpg`}/>
+            <h1>{date.price} $</h1>
         </div>
         <div className={style['block-right']}>
-            <h1>{Atv.item}</h1>
+            <h1>{date.item}</h1>
             <p>Məhsul kodu: 366666-2</p>
             <div className={style['block-icon']}>
                 <h2><CiHeart /></h2>
@@ -62,23 +79,23 @@ function SingleAtv({Atv , dispatch}:any) {
             <div className={style['block-text']}>
                 <div className={style['block-text-row']}>
                     <h3>İstehsalçı</h3>
-                    <h3>{Atv.country}</h3>
+                    <h3>{date.country}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>At Gucu</h3>
-                    <h3>{Atv.force}</h3>
+                    <h3>{date.force}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Oturacaqların sayı, ədəd:</h3>
-                    <h3>{Atv.numberOFseats}</h3>
+                    <h3>{date.numberOFseats}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Buraxılış ili</h3>
-                    <h3>{Atv.year}</h3>
+                    <h3>{date.year}</h3>
                 </div>
                 <div className={style['block-text-row']}>
                     <h3>Yanacaq</h3>
-                    <h3>{Atv.fuel}</h3>
+                    <h3>{date.fuel}</h3>
                 </div>
             </div>
             <Link to={'/Contact'} >
@@ -97,6 +114,6 @@ function SingleAtv({Atv , dispatch}:any) {
   )
 }
 
-const mapState = (state:any) => state 
 
-export default connect(mapState)(SingleAtv)
+
+export default SingleAtv

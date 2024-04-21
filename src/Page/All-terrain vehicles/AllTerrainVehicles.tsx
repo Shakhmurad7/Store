@@ -35,12 +35,22 @@ type DataItem ={
   img:string,
 }
 
-
+const [filters , setFilters] = useState(Number)
+const TabOne =(i:any)=>{
+  setFilters(i)
+}
+const filteredData = AllTerrainVehicles.filter((item: any) => {
+  if(item.price < filters){
+    return item
+  }
+  else if(filters === 0){
+    return AllTerrainVehicles
+  }
+});
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.slice(indexOfFirstItem, indexOfLastItem) : [];
-
+const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
 
   useEffect(()=>{
@@ -83,13 +93,13 @@ const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.sli
     <div className={styles['JetSki-text-top']}>
       <h2>JetSki</h2>
       <div className={styles['JetSki-container-block']}>
-
       <div className={styles['JetSki-block']}>
-        <p>Tam ötürücülü</p>
-        <p>5000-dən</p>
-        <p>BRP</p>
-        <p>daha çox</p>
+        <p onClick={()=>TabOne(0)} className={styles[filters === 0? 'filter-active' : '']} >Hamsi</p>
+        <p onClick={()=>TabOne(2000)} className={styles[filters === 2000? 'filter-active' : '']} >2000-dən</p>
+        <p onClick={()=>TabOne(5000)} className={styles[filters === 5000? 'filter-active' : '']} >5000-dən</p>
+        <p onClick={()=>TabOne(4000)} className={styles[filters === 4000? 'filter-active' : '']} >4000-dən</p>
       </div>
+
 
       <div className={styles['JetSki-block-right']}>
            <Autocomplete
@@ -123,7 +133,7 @@ const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.sli
 
     <div className={styles['cart-container']}>
     {
-    currentItems.length && currentItems.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
+    paginatedData.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <div key={id}  className="">
       <Link to={`/AllTerrainVehicles/${id}`}>
          <div key={id} className={style['cart-box']}>
@@ -149,7 +159,7 @@ const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.sli
 
     <div className={styles['cart-container']}>
     {
-       currentItems.length && currentItems.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
+   paginatedData.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/AllTerrainVehicles/${id}`}>
          <div className={style['cart-box']}>
@@ -174,7 +184,7 @@ const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.sli
     </div>
     <div className={styles['cart-container']}>
     {
-      currentItems.length &&  currentItems.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
+       paginatedData.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <div key={id}  className="">
         <Link to={`/AllTerrainVehicles/${id}`}>
          <div key={id} className={style['cart-box']}>
@@ -200,7 +210,7 @@ const currentItems =  Array.isArray(AllTerrainVehicles) ? AllTerrainVehicles.sli
   
 
     <ul className={styles["pagenation"]}>
-        {Array.from({ length: Math.ceil(AllTerrainVehicles.length / itemsPerPage) }).map(
+        {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }).map(
           (_, index) => (
             <li
               key={index}
