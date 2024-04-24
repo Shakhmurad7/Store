@@ -187,13 +187,13 @@ const handleIconClick = (index:any) => {
     {
       paginatedData.map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className={styles['cart-box-div']}>
-        <Link to={`/SpareParts/${id}`}>
          <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+        <Link to={`/SpareParts/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -202,8 +202,8 @@ const handleIconClick = (index:any) => {
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
       </div>
         ))
       }

@@ -137,13 +137,13 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
     {
      paginatedData.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
       <div key={id}  className="">
-      <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+      <Link to={`/Snowmobiles/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -152,8 +152,8 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
         </div>
         ))
     }
@@ -163,13 +163,13 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
     {
         paginatedData.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
         <div key={id}  className="">
-        <Link to={`/Snowmobiles/${id}`}>
          <div className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+        <Link to={`/Snowmobiles/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -178,8 +178,8 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
       </div>
         ))
       }
@@ -188,13 +188,13 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
     {
       paginatedData.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
         <div key={id}  className="">
-        <Link to={`/Snowmobiles/${id}`}>
          <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+        <Link to={`/Snowmobiles/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -203,8 +203,8 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
       </div>
         ))
       }

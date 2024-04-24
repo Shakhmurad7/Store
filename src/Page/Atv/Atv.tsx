@@ -129,13 +129,13 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
   Atv.length > 0 && paginatedData.slice(0, 3).map(({ id, img, item, price }: any) => (
-    <Link key={id} to={`/atv/${id}`}>
-      <div className={style['cart-box']}>
+    <div className={style['cart-box']}>
         <h4
           onClick={() => handleIconClick(id)}
           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
           <div> <IoMdHeart /></div>
         </h4>
+        <Link key={id} to={`/atv/${id}`}>
         <div className={style['img-cart']}>
           <img src={`./img/${img}.jpg`} />
           <h3>{item}</h3>
@@ -144,8 +144,8 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
         <div className={style['icon-basket']}>
           <p><FaShoppingBasket /></p>
         </div>
-      </div>
     </Link>
+      </div>
   ))
 }
 
@@ -177,13 +177,13 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
     <div className={styles['cart-container']}>
     {
      Atv.length > 0 && paginatedData.slice(6,9).map(({id ,img , item , price}:any)=>(
-        <Link key={id}  to={`/atv/${id}`}>
-         <div key={id} className={style['cart-box']}>
+       <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+           <Link key={id}  to={`/atv/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -192,21 +192,21 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
       Atv.length > 0 &&  paginatedData.slice(9,12).map(({id ,img , item , price}:any)=>(
-        <Link key={id}  to={`/atv/${id}`}>
-         <div key={id} className={style['cart-box']}>
+        <div key={id} className={style['cart-box']}>
           <h4
            onClick={() => handleIconClick(id)}
            className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
            </h4>
+           <Link key={id}  to={`/atv/${id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${img}.jpg`} />
             <h3>{item}</h3>
@@ -215,8 +215,8 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
         <div className={style['icon-basket']}>
            <p><FaShoppingBasket /></p>
         </div>
-        </div>
         </Link>
+        </div>
         ))
       }
     </div>
