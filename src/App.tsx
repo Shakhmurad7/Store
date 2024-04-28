@@ -22,16 +22,43 @@ import SingleSnowmobiles from "./Page/Snowmobiles/SingleSnowmobiles/SingleSnowmo
 import SingleSpareParts from "./Page/SpareParts/SsingleSpareParts/SingleSpareParts"
 import GoodTwo from "./layout/goodTwo/goodTwo"
 import Goods from "./layout/goods/Goods"
+import { toast } from 'react-toastify';
+import { useState } from "react"
+import LikePage from "./layout/LikePage/LikePage"
 
 
 function App() {
+
+  const [cartItems , setCartItems] = useState<any>([])
+
+  const addTodoItem = (index:any)=>{
+    const existingProductIndex = cartItems.findIndex((produ:any)=> produ.id === index.id  )
+
+    if (existingProductIndex !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingProductIndex].count++;
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...index, count: 1 }]);
+    }
+    
+    toast.success(`${index.item} sepete eklendi`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+  };
+  
+
   return (
     <>
     <div className="Big-Container">
       <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/stock" element={<Stock/>} />
-          <Route path="/atv" element={<Atv/>}/>
+          <Route path="/atv"  element={<Atv addTodoItem={addTodoItem} />}/>
           <Route path="/atv/:id" element={<SingleAtv/>}/>
           <Route path="/BigBoats" element={<BigBoats/>}/>
           <Route path="/BigBoats/:id" element={<SingleBİgBoats/>}/>
@@ -50,6 +77,7 @@ function App() {
           <Route path="/GoodTow" element={<GoodTwo/>}/>
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
           <Route path="/Goods" element={<Goods/>}/>
+          <Route path="/LikePage" element={<LikePage cartItems={cartItems} />}/>
           <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
       </Routes>
     </div>

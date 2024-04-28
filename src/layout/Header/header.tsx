@@ -31,7 +31,9 @@ function Header() {
                 <h2>Baki kc , Babək</h2>
             </div>
             <div className="header-right-block-icon">
+              <Link to={"/LikePage"} >
                  <CiHeart />
+              </Link>
                  <IoPersonSharp />
                  <SlBasket />
                  <div className="menu-open" onClick={()=>setmenu(!menu)} >
