@@ -16,15 +16,21 @@
         max-width: 800px;
         justify-content: space-between;
     }
-    .text-like{
-        padding-top: 40px;
-    }
-    .text-like{
-        b{
-            font-size: 20px;
+        .text-like-one{
+            padding-top: 45px;
+            b{
+                font-size: 20px;
+            }
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
+        
+}
+.button-like{
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    font-size: 20px;
 }

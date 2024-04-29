@@ -48,12 +48,6 @@ interface selectCategorys {
   payload: any[]; 
 }
 
-export const SELECT_CATEGORY = 'SELECT_CATEGORY';
-
-export const selectCategory = (category: string) => ({
-  type: SELECT_CATEGORY,
-  payload: category,
-});
 
 type ActionTypes =  selectCategorys | DataAction | DataActions | DataBoats | DataBigBoats | DataAllTerrainVehicles | DataSnowmobiles  | DataEngines;
 

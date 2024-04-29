@@ -22,10 +22,10 @@ import SingleSnowmobiles from "./Page/Snowmobiles/SingleSnowmobiles/SingleSnowmo
 import SingleSpareParts from "./Page/SpareParts/SsingleSpareParts/SingleSpareParts"
 import GoodTwo from "./layout/goodTwo/goodTwo"
 import Goods from "./layout/goods/Goods"
-import { toast } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
 import { useState } from "react"
 import LikePage from "./layout/LikePage/LikePage"
-
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -42,7 +42,7 @@ function App() {
       setCartItems([...cartItems, { ...index, count: 1 }]);
     }
     
-    toast.success(`${index.item} sepete eklendi`, {
+    toast.success(`${cartItems.item} sepete eklendi`, {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -57,13 +57,13 @@ function App() {
     <div className="Big-Container">
       <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/stock" element={<Stock/>} />
+          <Route path="/stock" element={<Stock />} />
           <Route path="/atv"  element={<Atv addTodoItem={addTodoItem} />}/>
-          <Route path="/atv/:id" element={<SingleAtv/>}/>
+          <Route path="/atv/:id" element={<SingleAtv />}/>
           <Route path="/BigBoats" element={<BigBoats/>}/>
-          <Route path="/BigBoats/:id" element={<SingleBİgBoats/>}/>
+          <Route path="/BigBoats/:id" element={<SingleBİgBoats />}/>
           <Route path="/Boats" element={<Boats/>}/>
-          <Route path="/Boats/:id" element={<SingleBoats/>}/>
+          <Route path="/Boats/:id" element={<SingleBoats />}/>
           <Route path="/Hydrocycles" element={<Hydrocycles/>}/>
           <Route path="/Hydrocycles/:id" element={<SingleJetSki/>}/>
           <Route path="/SpareParts" element={<SpareParts/>}/>
@@ -71,15 +71,16 @@ function App() {
           <Route path="/Snowmobiles" element={<Snowmobiles/>}/>
           <Route path="/Snowmobiles/:id" element={<SingleSnowmobiles/>}/>
           <Route path="/Engines" element={<Engines/>}/>
-          <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles/>}/>
+          <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles addTodoItem={addTodoItem} dispatch={undefined} /> }/>
           <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/GoodTow" element={<GoodTwo/>}/>
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
           <Route path="/Goods" element={<Goods/>}/>
-          <Route path="/LikePage" element={<LikePage cartItems={cartItems} />}/>
+          <Route path="/LikePage" element={<LikePage cartItems={cartItems} setCartItems={setCartItems}  />}/>
           <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
       </Routes>
+      <ToastContainer />
     </div>
     <Footer/>
 
@@ -88,3 +89,4 @@ function App() {
 }
 
 export default App
+
