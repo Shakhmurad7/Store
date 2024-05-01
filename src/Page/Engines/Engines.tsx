@@ -17,7 +17,14 @@ import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
-function Engines({Engines , dispatch}:any) {
+
+interface Props {
+  addTodoItem: (index: any) => void;
+  Engines?: any;
+  dispatch: any;
+}
+
+function Engines({Engines , dispatch , addTodoItem}:Props) {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -134,52 +141,52 @@ const paginatedData =  Array.isArray(Engines) ? filteredData.slice(indexOfFirstI
 
     <div className={styles['cart-container']}>
     {
-    paginatedData.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
-      <div key={id}  className="">
-         <div key={id} className={style['cart-box']}>
-          <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-      <Link to={`/SpareParts/${id}`}>
-          <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
+    paginatedData.slice(0,3).map((item:DataItem)=>(
+      <div key={item.id} className={style['cart-box']}>
+      <div className="" onClick={()=>addTodoItem(item)} >
+        <h4
+          onClick={() => handleIconClick(item.id)}
+          className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+          <div> <IoMdHeart /></div>
+        </h4>
+      </div>
+        <Link  to={`/AllTerrainVehicles/${item.id}`}>
+        <div className={style['img-cart']}>
+          <img src={`./img/${item.img}.jpg`} />
+          <h3>{item.item}</h3>
         </div >
-        <h2>{price}$</h2>
+        <h2>{item.price}$</h2>
         <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
+          <p><FaShoppingBasket /></p>
         </div>
-        </Link>
-        </div>
-        </div>
+    </Link>
+      </div>
         ))
     }
     </div>
 
     <div className={styles['cart-container']}>
     {
-       paginatedData.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className="">
-         <div className={style['cart-box']}>
+       paginatedData.slice(3,6).map((item:DataItem)=>(
+        <div key={item.id} className={style['cart-box']}>
+        <div className="" onClick={()=>addTodoItem(item)} >
           <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-        <Link to={`/SpareParts/${id}`}>
+            onClick={() => handleIconClick(item.id)}
+            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            <div> <IoMdHeart /></div>
+          </h4>
+        </div>
+          <Link  to={`/AllTerrainVehicles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
+            <img src={`./img/${item.img}.jpg`} />
+            <h3>{item.item}</h3>
+          </div >
+          <h2>{item.price}$</h2>
+          <div className={style['icon-basket']}>
+            <p><FaShoppingBasket /></p>
+          </div>
+      </Link>
         </div>
-        </Link>
-        </div>
-      </div>
         ))
       }
     </div>

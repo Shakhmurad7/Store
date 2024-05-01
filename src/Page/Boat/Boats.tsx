@@ -17,7 +17,14 @@ import AccordionBrand from "../../layout/Accordion/AccordionBrand.tsx";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
-function Boats({Boats , dispatch}:any) {
+
+interface Props {
+  addTodoItem: (index: any) => void;
+  Boats?: any;
+  dispatch: any;
+}
+
+function Boats({Boats , dispatch , addTodoItem}:Props) {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -136,25 +143,25 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
 
     <div className={styles['cart-container']}>
     {
-     paginatedData.slice(0,3).map(({id ,img , item , price}:DataItem)=>(
-      <div key={id}  className="">
-         <div key={id} className={style['cart-box']}>
+     paginatedData.slice(0,3).map((item:DataItem)=>(
+      <div key={item.id} className={style['cart-box']}>
+        <div className="" onClick={()=>addTodoItem(item)} >
           <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-      <Link to={`/Boats/${id}`}>
+            onClick={() => handleIconClick(item.id)}
+            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            <div> <IoMdHeart /></div>
+          </h4>
+        </div>
+          <Link  to={`/AllTerrainVehicles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
-        </div>
-        </Link>
-        </div>
+            <img src={`./img/${item.img}.jpg`} />
+            <h3>{item.item}</h3>
+          </div >
+          <h2>{item.price}$</h2>
+          <div className={style['icon-basket']}>
+            <p><FaShoppingBasket /></p>
+          </div>
+      </Link>
         </div>
         ))
     }
@@ -162,75 +169,75 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
 
     <div className={styles['cart-container']}>
     {
-        paginatedData.slice(3,6).map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className="">
-         <div className={style['cart-box']}>
-          <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
+        paginatedData.slice(3,6).map((item:DataItem)=>(
+          <div key={item.id} className={style['cart-box']}>
+          <div className="" onClick={()=>addTodoItem(item)} >
+            <h4
+              onClick={() => handleIconClick(item.id)}
+              className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
               <div> <IoMdHeart /></div>
-           </h4>
-        <Link to={`/Boats/${id}`}>
-          <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
-        </div>
+            </h4>
+          </div>
+            <Link  to={`/AllTerrainVehicles/${item.id}`}>
+            <div className={style['img-cart']}>
+              <img src={`./img/${item.img}.jpg`} />
+              <h3>{item.item}</h3>
+            </div >
+            <h2>{item.price}$</h2>
+            <div className={style['icon-basket']}>
+              <p><FaShoppingBasket /></p>
+            </div>
         </Link>
-        </div>
-      </div>
+          </div>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-       paginatedData.slice(6,9).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id}  className="">
-         <div key={id} className={style['cart-box']}>
+       paginatedData.slice(6,9).map((item:DataItem)=>(
+        <div key={item.id} className={style['cart-box']}>
+        <div className="" onClick={()=>addTodoItem(item)} >
           <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-        <Link to={`/Boats/${id}`}>
+            onClick={() => handleIconClick(item.id)}
+            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            <div> <IoMdHeart /></div>
+          </h4>
+        </div>
+          <Link  to={`/AllTerrainVehicles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
+            <img src={`./img/${item.img}.jpg`} />
+            <h3>{item.item}</h3>
+          </div >
+          <h2>{item.price}$</h2>
+          <div className={style['icon-basket']}>
+            <p><FaShoppingBasket /></p>
+          </div>
+      </Link>
         </div>
-        </Link>
-        </div>
-      </div>
         ))
       }
     </div>
     <div className={styles['cart-container']}>
     {
-       paginatedData.slice(9,12).map(({id ,img , item , price}:DataItem)=>(
-        <div key={id}  className="">
-         <div key={id} className={style['cart-box']}>
+       paginatedData.slice(9,12).map((item:DataItem)=>(
+        <div key={item.id} className={style['cart-box']}>
+        <div className="" onClick={()=>addTodoItem(item)} >
           <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-        <Link to={`/Boats/${id}`}>
+            onClick={() => handleIconClick(item.id)}
+            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            <div> <IoMdHeart /></div>
+          </h4>
+        </div>
+          <Link  to={`/AllTerrainVehicles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
-        </div>
-        </Link>
-        </div>
+            <img src={`./img/${item.img}.jpg`} />
+            <h3>{item.item}</h3>
+          </div >
+          <h2>{item.price}$</h2>
+          <div className={style['icon-basket']}>
+            <p><FaShoppingBasket /></p>
+          </div>
+      </Link>
         </div>
         ))
       }

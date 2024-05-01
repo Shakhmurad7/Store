@@ -60,17 +60,17 @@ function App() {
           <Route path="/stock" element={<Stock />} />
           <Route path="/atv"  element={<Atv addTodoItem={addTodoItem} />}/>
           <Route path="/atv/:id" element={<SingleAtv />}/>
-          <Route path="/BigBoats" element={<BigBoats/>}/>
-          <Route path="/BigBoats/:id" element={<SingleBİgBoats />}/>
-          <Route path="/Boats" element={<Boats/>}/>
+          <Route path="/BigBoats" element={<BigBoats addTodoItem={addTodoItem} dispatch={undefined} />}/>
+          <Route path="/BigBoats/:id" element={<SingleBİgBoats  />}/>
+          <Route path="/Boats" element={<Boats addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Boats/:id" element={<SingleBoats />}/>
-          <Route path="/Hydrocycles" element={<Hydrocycles/>}/>
+          <Route path="/Hydrocycles" element={<Hydrocycles addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Hydrocycles/:id" element={<SingleJetSki/>}/>
-          <Route path="/SpareParts" element={<SpareParts/>}/>
+          <Route path="/SpareParts" element={<SpareParts addTodoItem={addTodoItem} />}/>
           <Route path="/SpareParts/:id" element={<SingleSpareParts/>}/>
-          <Route path="/Snowmobiles" element={<Snowmobiles/>}/>
+          <Route path="/Snowmobiles" element={<Snowmobiles addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Snowmobiles/:id" element={<SingleSnowmobiles/>}/>
-          <Route path="/Engines" element={<Engines/>}/>
+          <Route path="/Engines" element={<Engines addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles addTodoItem={addTodoItem} dispatch={undefined} /> }/>
           <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>
           <Route path="/Contact" element={<Contact/>}/>

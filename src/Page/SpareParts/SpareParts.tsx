@@ -17,8 +17,12 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
 
+interface Props {
+  addTodoItem: (index: any) => void;
 
-function SpareParts() {
+}
+
+function SpareParts({addTodoItem}:Props) {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -50,32 +54,14 @@ const TabOne =(i:any)=>{
 }
 
 
-// const FltersOne = data.filter((item:any)=>{
-//     if(item.price > filters ){
-//       return item
-//     }
-//     else if(filters === 0){
-//       return data
-//     }
-
-// })
-
-// const flters = data.filter((item:any)=>{
-//   if(filter === "All"){
-//     return data
-//   }
-//   else{
-//     return item.cateqory === filter
-//   }
-// })
 
 
 const filteredData = data.filter((item: any) => {
-  // Фильтр по категории
+
   if (filter !== "All" && item.cateqory !== filter) {
     return false;
   }
-  // Фильтр по цене
+
   if (filters > 0 && parseInt(item.price) <= filters) {
     return false;
   }
@@ -185,26 +171,26 @@ const handleIconClick = (index:any) => {
 
     <div className={styles['cart-container-box']}>
     {
-      paginatedData.map(({id ,img , item , price }:DataItem)=>(
-        <div key={id}  className={styles['cart-box-div']}>
-         <div className={style['cart-box']}>
+      paginatedData.map((item:DataItem)=>(
+        <div key={item.id} className={style['cart-box']}>
+        <div className="" onClick={()=>addTodoItem(item)} >
           <h4
-           onClick={() => handleIconClick(id)}
-           className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-              <div> <IoMdHeart /></div>
-           </h4>
-        <Link to={`/SpareParts/${id}`}>
+            onClick={() => handleIconClick(item.id)}
+            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            <div> <IoMdHeart /></div>
+          </h4>
+        </div>
+          <Link  to={`/AllTerrainVehicles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${img}.jpg`} />
-            <h3>{item}</h3>
-        </div >
-        <h2>{price}$</h2>
-        <div className={style['icon-basket']}>
-           <p><FaShoppingBasket /></p>
+            <img src={`./img/${item.img}.jpg`} />
+            <h3>{item.item}</h3>
+          </div >
+          <h2>{item.price}$</h2>
+          <div className={style['icon-basket']}>
+            <p><FaShoppingBasket /></p>
+          </div>
+      </Link>
         </div>
-        </Link>
-        </div>
-      </div>
         ))
       }
     </div>
