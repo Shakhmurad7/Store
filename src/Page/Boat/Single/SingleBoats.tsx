@@ -28,17 +28,7 @@ function SingleJetSki() {
         numberOFseats: String
     }
 
-    const [date, setDate] = useState<DateType>({
-        id: 0,
-        img: '',
-        item: '',
-        force: '',
-        country: '',
-        year: '',
-        fuel: '',
-        price: '',
-        numberOFseats: '',
-      });
+    const [date, setDate] = useState<any>([]);
 
     useEffect(()=>{
         axios.get(url + id).then(({data})=>{

@@ -16,7 +16,7 @@ function SingleAllTerrainVehicles() {
 
     const {id} = useParams()
 
-    const [date, setDate] = useState<any>();
+    const [date, setDate] = useState<any>([]);
 
     useEffect(()=>{
         axios.get(url + id).then(({data})=>{

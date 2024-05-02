@@ -151,9 +151,9 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
       <div> <IoMdHeart /></div>
     </h4>
   </div>
-    <Link  to={`/AllTerrainVehicles/${item.id}`}>
+    <Link  to={`/Hydrocycles/${item.id}`}>
     <div className={style['img-cart']}>
-      <img src={`./img/${item.img}.jpg`} />
+      <img src={`./img/${item.img}.png`} />
       <h3>{item.item}</h3>
     </div >
     <h2>{item.price}$</h2>
@@ -177,9 +177,9 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${item.img}.jpg`} />
+          <img src={`./img/${item.img}.png`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
@@ -202,9 +202,9 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${item.img}.jpg`} />
+          <img src={`./img/${item.img}.png`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
@@ -227,9 +227,9 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-            <img src={`./img/${item.img}.jpg`} />
+          <img src={`./img/${item.img}.png`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>

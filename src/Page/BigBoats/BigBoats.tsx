@@ -35,14 +35,6 @@ const paginate = (pageNumber: number) => {
   setActive(pageNumber); // Set active page when paginating
 };
 
-type DataItem ={
-  item:string,
-  id:number,
-  price:string,
-  img:string,
-}
-
-
 
 const [filters , setFilters] = useState(Number)
 const TabOne =(i:any)=>{
@@ -143,7 +135,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
 
     <div className={styles['cart-container']}>
     {
-      paginatedData.slice(0,3).map((item:DataItem)=>(
+      paginatedData.slice(0,3).map((item:any)=>(
         <div key={item.id} className={style['cart-box']}>
         <div className="" onClick={()=>addTodoItem(item)} >
           <h4
@@ -152,7 +144,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/BigBoats/${item.id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>
@@ -169,7 +161,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
 
     <div className={styles['cart-container']}>
     {
-     paginatedData.slice(3,6).map((item:DataItem)=>(
+     paginatedData.slice(3,6).map((item:any)=>(
       <div key={item.id} className={style['cart-box']}>
       <div className="" onClick={()=>addTodoItem(item)} >
         <h4
@@ -178,7 +170,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
           <div> <IoMdHeart /></div>
         </h4>
       </div>
-        <Link  to={`/AllTerrainVehicles/${item.id}`}>
+        <Link  to={`/BigBoats/${item.id}`}>
         <div className={style['img-cart']}>
           <img src={`./img/${item.img}.jpg`} />
           <h3>{item.item}</h3>
@@ -194,7 +186,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
     </div>
     <div className={styles['cart-container']}>
     {
-       paginatedData.slice(6,9).map((item:DataItem)=>(
+       paginatedData.slice(6,9).map((item:any)=>(
         <div key={item.id} className={style['cart-box']}>
       <div className="" onClick={()=>addTodoItem(item)} >
         <h4
@@ -203,7 +195,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
           <div> <IoMdHeart /></div>
         </h4>
       </div>
-        <Link  to={`/AllTerrainVehicles/${item.id}`}>
+        <Link  to={`/BigBoats/${item.id}`}>
         <div className={style['img-cart']}>
           <img src={`./img/${item.img}.jpg`} />
           <h3>{item.item}</h3>
@@ -219,7 +211,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
     </div>
     <div className={styles['cart-container']}>
     {
-      paginatedData.slice(9,12).map((item:DataItem)=>(
+      paginatedData.slice(9,12).map((item:any)=>(
         <div key={item.id} className={style['cart-box']}>
         <div className="" onClick={()=>addTodoItem(item)} >
           <h4
@@ -228,7 +220,7 @@ const paginatedData =  Array.isArray(BigBoats) ? filteredData.slice(indexOfFirst
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/BigBoats/${item.id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>

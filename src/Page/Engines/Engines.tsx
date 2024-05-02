@@ -150,7 +150,7 @@ const paginatedData =  Array.isArray(Engines) ? filteredData.slice(indexOfFirstI
           <div> <IoMdHeart /></div>
         </h4>
       </div>
-        <Link  to={`/AllTerrainVehicles/${item.id}`}>
+        <Link  to={`/SpareParts/${item.id}`}>
         <div className={style['img-cart']}>
           <img src={`./img/${item.img}.jpg`} />
           <h3>{item.item}</h3>
@@ -176,7 +176,7 @@ const paginatedData =  Array.isArray(Engines) ? filteredData.slice(indexOfFirstI
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/SpareParts/${item.id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>

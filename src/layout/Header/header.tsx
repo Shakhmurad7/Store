@@ -35,7 +35,9 @@ function Header() {
                  <CiHeart />
               </Link>
                  <IoPersonSharp />
-                 <SlBasket />
+                 <Link to={"/Basket"} >
+                    <SlBasket />
+                 </Link>
                  <div className="menu-open" onClick={()=>setmenu(!menu)} >
                    {
                     menu ===true ?  <IoMdMenu /> :<IoClose /> 

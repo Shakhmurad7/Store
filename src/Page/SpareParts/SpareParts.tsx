@@ -180,7 +180,7 @@ const handleIconClick = (index:any) => {
             <div> <IoMdHeart /></div>
           </h4>
         </div>
-          <Link  to={`/AllTerrainVehicles/${item.id}`}>
+          <Link  to={`/SpareParts/${item.id}`}>
           <div className={style['img-cart']}>
             <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>

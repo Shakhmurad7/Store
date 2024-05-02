@@ -26,10 +26,12 @@ import { ToastContainer,toast } from 'react-toastify';
 import { useState } from "react"
 import LikePage from "./layout/LikePage/LikePage"
 import 'react-toastify/dist/ReactToastify.css';
+import Basket from "./layout/Basket/Basket"
 
 function App() {
 
   const [cartItems , setCartItems] = useState<any>([])
+  const [ basketItems , setBasketItems] = useState<any>([])
 
   const addTodoItem = (index:any)=>{
     const existingProductIndex = cartItems.findIndex((produ:any)=> produ.id === index.id  )
@@ -50,6 +52,8 @@ function App() {
       pauseOnHover: true,
     });
   };
+
+
   
 
   return (
@@ -78,6 +82,7 @@ function App() {
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
           <Route path="/Goods" element={<Goods/>}/>
           <Route path="/LikePage" element={<LikePage cartItems={cartItems} setCartItems={setCartItems}  />}/>
+          <Route path="/Basket" element={<Basket cartItems={cartItems} setCartItems={setCartItems}  />}/>
           <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
       </Routes>
       <ToastContainer />
