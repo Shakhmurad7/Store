@@ -53,6 +53,25 @@ function App() {
     });
   };
 
+  const addTodoItemBasket = (index:any)=>{
+    const existingProductIndex = basketItems.findIndex((produ:any)=> produ.id === index.id  )
+
+    if (existingProductIndex !== -1) {
+      const updatedCartItems = [...basketItems];
+      updatedCartItems[existingProductIndex].count++;
+      setBasketItems(updatedCartItems);
+    } else {
+      setBasketItems([...basketItems, { ...index, count: 1 }]);
+    }
+    
+    toast.success(`${basketItems.item} sepete eklendi`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+  };
 
   
 
@@ -66,7 +85,7 @@ function App() {
           <Route path="/atv/:id" element={<SingleAtv />}/>
           <Route path="/BigBoats" element={<BigBoats addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/BigBoats/:id" element={<SingleBİgBoats  />}/>
-          <Route path="/Boats" element={<Boats addTodoItem={addTodoItem} dispatch={undefined} />}/>
+          <Route path="/Boats" element={<Boats  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Boats/:id" element={<SingleBoats />}/>
           <Route path="/Hydrocycles" element={<Hydrocycles addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Hydrocycles/:id" element={<SingleJetSki/>}/>
@@ -82,7 +101,7 @@ function App() {
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
           <Route path="/Goods" element={<Goods/>}/>
           <Route path="/LikePage" element={<LikePage cartItems={cartItems} setCartItems={setCartItems}  />}/>
-          <Route path="/Basket" element={<Basket cartItems={cartItems} setCartItems={setCartItems}  />}/>
+          <Route path="/Basket" element={<Basket basketItems={basketItems} setBasketItems={setBasketItems}  />}/>
           <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
       </Routes>
       <ToastContainer />
