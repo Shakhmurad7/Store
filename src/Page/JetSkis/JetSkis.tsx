@@ -20,11 +20,12 @@ import { Link } from "react-router-dom";
 
 interface Props {
   addTodoItem: (index: any) => void;
+  addTodoItemBasket: (index: any) => void;
   JetSki?: any;
   dispatch: any;
 }
 
-function JetSki({JetSki , dispatch , addTodoItem}:Props) {
+function JetSki({JetSki , dispatch , addTodoItem , addTodoItemBasket}:Props) {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -153,14 +154,14 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
   </div>
     <Link  to={`/Hydrocycles/${item.id}`}>
     <div className={style['img-cart']}>
-      <img src={`./img/${item.img}.png`} />
+      <img src={`./img/${item.img}.jpg`} />
       <h3>{item.item}</h3>
     </div >
     <h2>{item.price}$</h2>
-    <div className={style['icon-basket']}>
+</Link>
+    <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
       <p><FaShoppingBasket /></p>
     </div>
-</Link>
   </div>
         ))
     }
@@ -183,10 +184,10 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
       }
@@ -208,10 +209,10 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
       }
@@ -233,10 +234,10 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
       }

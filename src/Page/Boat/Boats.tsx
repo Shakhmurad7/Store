@@ -159,10 +159,10 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
     }
@@ -185,10 +185,10 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
               <h3>{item.item}</h3>
             </div >
             <h2>{item.price}$</h2>
-            <div className={style['icon-basket']}>
+        </Link>
+            <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
               <p><FaShoppingBasket /></p>
             </div>
-        </Link>
           </div>
         ))
       }
@@ -210,7 +210,7 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-      </Link>
+          </Link>
           <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
@@ -236,7 +236,7 @@ const paginatedData =  Array.isArray(Boats) ? filteredData.slice(indexOfFirstIte
           </div >
           <h2>{item.price}$</h2>
       </Link>
-          <div className={style['icon-basket']}>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
         </div>

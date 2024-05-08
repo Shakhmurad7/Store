@@ -19,10 +19,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { Link } from "react-router-dom";
 interface AllTerrainVehiclesProps {
   addTodoItem: (index: any) => void;
+  addTodoItemBasket: (index: any) => void;
   AllTerrainVehicles?: any;
   dispatch: any;
 }
-function AllTerrainVehicles({AllTerrainVehicles , dispatch , addTodoItem}:AllTerrainVehiclesProps) {
+function AllTerrainVehicles({AllTerrainVehicles , dispatch , addTodoItem , addTodoItemBasket}:AllTerrainVehiclesProps) {
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
 
@@ -147,10 +148,10 @@ const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
           <h3>{item.item}</h3>
         </div >
         <h2>{item.price}$</h2>
-        <div className={style['icon-basket']}>
+    </Link>
+        <div  onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
           <p><FaShoppingBasket /></p>
         </div>
-    </Link>
       </div>
         ))
     }
@@ -173,10 +174,10 @@ const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
         <h3>{item.item}</h3>
       </div >
       <h2>{item.price}$</h2>
-      <div className={style['icon-basket']}>
+  </Link>
+      <div  onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
         <p><FaShoppingBasket /></p>
       </div>
-  </Link>
     </div>
         ))
       }
@@ -198,10 +199,10 @@ const paginatedData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div  onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
       }

@@ -47,7 +47,7 @@ function Basket({basketItems , setBasketItems}:any) {
                   </div>
         </div>
             ): <div style={{paddingTop:'20px' , textAlign:'center'}}> 
-                    <h1>Beyendiyniz Esiya Bulunmadi</h1>
+                    <h1>Sebet bosdu</h1>
                 </div>
 }
     </PageContainer>

@@ -40,7 +40,7 @@ function SingleJetSki() {
 
     <div className={style['container']}>
         <div className={style['block-left']}>
-            <img src={`../../../img/${date.img}.png`}/>
+            <img src={`../../../img/${date.img}.jpg`}/>
             <h1>{date.price} $</h1>
         </div>
         <div className={style['block-right']}>

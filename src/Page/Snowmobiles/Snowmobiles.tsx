@@ -22,9 +22,10 @@ interface Props {
   addTodoItem: (index: any) => void;
   Snowmobiles?: any;
   dispatch: any;
+  addTodoItemBasket: (index: any) => void;
 }
 
-function Snowmobiles({Snowmobiles , dispatch , addTodoItem }:Props) {
+function Snowmobiles({Snowmobiles , dispatch , addTodoItem , addTodoItemBasket }:Props) {
 
   const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
@@ -157,10 +158,10 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
           <h3>{item.item}</h3>
         </div >
         <h2>{item.price}$</h2>
-        <div className={style['icon-basket']}>
+    </Link>
+        <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
           <p><FaShoppingBasket /></p>
         </div>
-    </Link>
       </div>
         ))
     }
@@ -183,10 +184,10 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
               <h3>{item.item}</h3>
             </div >
             <h2>{item.price}$</h2>
-            <div className={style['icon-basket']}>
+        </Link>
+            <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
               <p><FaShoppingBasket /></p>
             </div>
-        </Link>
           </div>
         ))
       }
@@ -208,10 +209,10 @@ const paginatedData =  Array.isArray(Snowmobiles) ? filteredData.slice(indexOfFi
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-          <div className={style['icon-basket']}>
+      </Link>
+          <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>
-      </Link>
         </div>
         ))
       }
