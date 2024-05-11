@@ -27,6 +27,7 @@ import { useState } from "react"
 import LikePage from "./layout/LikePage/LikePage"
 import 'react-toastify/dist/ReactToastify.css';
 import Basket from "./layout/Basket/Basket"
+import Header from "./layout/Header/header"
 
 function App() {
 
@@ -78,6 +79,7 @@ function App() {
   return (
     <>
     <div className="Big-Container">
+      <Header cartItems={cartItems} setCartItems={setCartItems}  />
       <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/stock" element={<Stock />} />

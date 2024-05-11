@@ -13,7 +13,8 @@ function LikePage({cartItems , setCartItems}:any) {
     const TotlaItem = cartItems.reduce((total:any, item:any)=> total + item.count , 0 )
     const TotlaItemPrice = cartItems.reduce((total:any, item:any)=> total + item.count * item.price , 0 )
      
-
+    console.log(cartItems);
+    
   return (
     <PageContainer>
         {

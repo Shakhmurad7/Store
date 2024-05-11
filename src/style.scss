@@ -287,6 +287,23 @@ a.active li::after{
 .menu-open{
     display: none;
 }
+.item-heart{
+    position: relative;
+}
+.item-heart::after{
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    left: 11px;
+    bottom: 0;
+    width: 12px ;
+    height: 12px;
+    border-radius: 20px;
+    color: red;
+    background-color: red !important;
+}
+
 
 @media(max-width:1360px){
     .block-botton-text{

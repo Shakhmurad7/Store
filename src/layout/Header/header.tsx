@@ -7,7 +7,9 @@ import { IoMdMenu } from "react-icons/io";
 import Navbar from "../Navbar/Navbar";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-function Header() {
+function Header({cartItems}:any) {
+  console.log(cartItems);
+  
 
   const [menu , setmenu ] = useState(true)
 
@@ -31,8 +33,10 @@ function Header() {
                 <h2>Baki kc , Babək</h2>
             </div>
             <div className="header-right-block-icon">
-              <Link to={"/LikePage"} >
-                 <CiHeart />
+              <Link  to={"/LikePage"} >
+                <div className={cartItems.length?'item-heart' : 'iten-none'}>
+                  <CiHeart  />
+                </div>
               </Link>
                  <IoPersonSharp />
                  <Link to={"/Basket"} >
