@@ -60,11 +60,17 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
     })
   } , [Atv])
 
-    const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
-    const handleIconClick = (index:any) => {
-                setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-            };
+const handleIconClick = (index:any) => {
+    setActiveIndexes((prevIndexes:any) => {
+        if (prevIndexes.includes(index)) {
+            return prevIndexes.filter((i:any) => i !== index);
+        } else {
+            return [...prevIndexes, index]; 
+        }
+    });
+};
 
             const top100Films = [
               { label: 'The Shawshank Redemption', year: 1994 },
@@ -133,7 +139,7 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
       <div className="" onClick={()=>addTodoItem(item)} >
           <h4
               onClick={() => handleIconClick(item.id)}
-              className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+              className={`${style['open-icon']} ${activeIndexes.includes(item.id) ? style['open-icons'] : ''}`}>
               <div> <IoMdHeart /></div>
           </h4>
       </div>
@@ -161,7 +167,7 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
         <div className="" onClick={()=>addTodoItem(item)} >
           <h4
             onClick={() => handleIconClick(item.id)}
-            className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+            className={`${style['open-icon']} ${activeIndexes.includes(item.id) ? style['open-icons'] : ''}`}>
             <div> <IoMdHeart /></div>
           </h4>
         </div>
@@ -186,7 +192,7 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
       <div className="" onClick={()=>addTodoItem(item)} >
         <h4
           onClick={() => handleIconClick(item.id)}
-          className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+          className={`${style['open-icon']} ${activeIndexes.includes(item.id) ? style['open-icons'] : ''}`}>
           <div> <IoMdHeart /></div>
         </h4>
       </div>
@@ -211,7 +217,7 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
       <div className="" onClick={()=>addTodoItem(item)} >
         <h4
           onClick={() => handleIconClick(item.id)}
-          className={`${style['open-icon']} ${activeIndex === item.id ? style['open-icons'] : style['']}`}>
+          className={`${style['open-icon']} ${activeIndexes.includes(item.id) ? style['open-icons'] : ''}`}>
           <div> <IoMdHeart /></div>
         </h4>
       </div>
