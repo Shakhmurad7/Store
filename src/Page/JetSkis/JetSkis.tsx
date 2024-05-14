@@ -75,7 +75,7 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
     const [activeIndex, setActiveIndex] = useState(null);
 
     const handleIconClick = (index:any) => {
-                setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+                setActiveIndex((prevIndex) => (prevIndex === index? null: index));
             };
 
             const top100Films = [
@@ -180,7 +180,7 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
         </div>
           <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-          <img src={`./img/${item.img}.png`} />
+          <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
@@ -205,7 +205,7 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
         </div>
           <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-          <img src={`./img/${item.img}.png`} />
+          <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
@@ -230,11 +230,11 @@ const paginatedData =  Array.isArray(JetSki) ? filteredData.slice(indexOfFirstIt
         </div>
           <Link  to={`/Hydrocycles/${item.id}`}>
           <div className={style['img-cart']}>
-          <img src={`./img/${item.img}.png`} />
+            <img src={`./img/${item.img}.jpg`} />
             <h3>{item.item}</h3>
           </div >
           <h2>{item.price}$</h2>
-      </Link>
+          </Link>
           <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
             <p><FaShoppingBasket /></p>
           </div>

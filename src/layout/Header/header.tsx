@@ -7,7 +7,7 @@ import { IoMdMenu } from "react-icons/io";
 import Navbar from "../Navbar/Navbar";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-function Header({cartItems}:any) {
+function Header({cartItems , basketItems}:any) {
   console.log(cartItems);
   
 
@@ -40,7 +40,9 @@ function Header({cartItems}:any) {
               </Link>
                  <IoPersonSharp />
                  <Link to={"/Basket"} >
+                 <div className={basketItems.length?'item-heart' : 'iten-none'}>
                     <SlBasket />
+                    </div>
                  </Link>
                  <div className="menu-open" onClick={()=>setmenu(!menu)} >
                    {

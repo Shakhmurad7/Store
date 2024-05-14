@@ -9,7 +9,6 @@ import Snowmobiles from "./Page/Snowmobiles/Snowmobiles"
 import Engines from "./Page/Engines/Engines"
 import AllTerrainVehicles from "./Page/All-terrain vehicles/AllTerrainVehicles"
 
-
 import SingleJetSki from "./Page/JetSkis/Single/Single"
 import Contact from "./Page/Contact/Contact"
 import SingleAtv from "./Page/Atv/Single/SingleAtv"
@@ -79,7 +78,7 @@ function App() {
   return (
     <>
     <div className="Big-Container">
-      <Header cartItems={cartItems} setCartItems={setCartItems}  />
+      <Header cartItems={cartItems} basketItems={basketItems}   />
       <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/stock" element={<Stock />} />
