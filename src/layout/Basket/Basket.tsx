@@ -25,6 +25,9 @@ function Basket({basketItems , setBasketItems}:any) {
                 <div key={item.id} className="">
               <div  className={style['cart-like']}>
                     <div className={style['block-like']}>
+                    <div className={style['button-like-top']} onClick={()=>removItem(item.id)} >
+                            <IoMdClose />
+                        </div>
                       <img src={`./img/${item.img}.jpg`} />
                       <div className={style['text-like-one']}>
                         <b>Adi:</b>
