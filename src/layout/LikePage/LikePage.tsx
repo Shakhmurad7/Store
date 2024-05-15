@@ -25,6 +25,9 @@ function LikePage({cartItems , setCartItems}:any) {
                 <div key={item.id} className="">
               <div  className={style['cart-like']}>
                     <div className={style['block-like']}>
+                        <div className={style['button-like-top']} onClick={()=>removItem(item.id)} >
+                            <IoMdClose />
+                        </div>
                       <img src={`./img/${item.img}.jpg`} />
                       <div className={style['text-like-one']}>
                         <b>Adi:</b>
@@ -35,7 +38,7 @@ function LikePage({cartItems , setCartItems}:any) {
                         <div className={style['button-like']} onClick={()=>removItem(item.id)} >
                             <IoMdClose />
                         </div>
-                        <h3>Qiymet :</h3>
+                        <h3>Qiymet:</h3>
                         <h2>{item.price}$</h2>
                     </div>
                   </div>

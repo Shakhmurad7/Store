@@ -13,6 +13,7 @@
     .block-like{
         display: flex;
         width: 100%;
+        gap: 20px;
         max-width: 800px;
         justify-content: space-between;
     }
@@ -33,4 +34,27 @@
     justify-content: end;
     cursor: pointer;
     font-size: 20px;
+}
+.button-like-top{
+    display: none;
+}
+
+
+@media(max-width:676px){
+    .cart-like{
+        flex-direction: column;
+        .block-like{
+            flex-direction: column;
+            .button-like-top{
+                font-size: 28px;
+                justify-content: end;
+                display: flex;
+            }
+        }
+        .button-like{
+            display: none;
+        }
+    }
+
+
 }
