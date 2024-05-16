@@ -5,8 +5,12 @@ import Search from "../../layout/Search/Search"
 import Goods from "../../layout/goods/Goods"
 import GoodsTwo from "../../layout/goodTwo/goodTwo"
 
+interface Props {
+  addTodoItem: (index: any) => void;
+  addTodoItemBasket: (index: any) => void;
+}
 
-function Home() {
+function Home({addTodoItem , addTodoItemBasket}:Props) {
   return (
     <>
     <PageContainer>
@@ -42,7 +46,7 @@ function Home() {
 
 
       {/* ---Goods--- */}
-        <Goods/>
+        <Goods addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket}  />
       
 
       {/* ----box-text---- */}
@@ -51,7 +55,7 @@ function Home() {
 
 
        {/* ---GoodTwo--- */}
-        <GoodsTwo/>
+        <GoodsTwo addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />
     </PageContainer>
     </>
   )

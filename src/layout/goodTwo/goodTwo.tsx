@@ -11,7 +11,10 @@ import { Navigation, Pagination, Mousewheel,} from 'swiper/modules';
 import { FaShoppingBasket } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
-
+interface Props {
+  addTodoItem: (index: any) => void;
+  addTodoItemBasket: (index: any) => void;
+}
 
   type cartData ={
       item:string,
@@ -25,7 +28,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
     cateqory:String
   }
 
-    function GoodTwo() {
+    function GoodTwo({addTodoItem , addTodoItemBasket}:Props){
         const [data , setdata] = useState([])
 
         const [filter , setfilter] = useState('Tools')
@@ -44,11 +47,17 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
             })
     } , [])
 
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
     const handleIconClick = (index:any) => {
-                setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-            };
+        setActiveIndexes((prevIndexes:any) => {
+            if (prevIndexes.includes(index)) {
+                return prevIndexes.filter((i:any) => i !== index);
+            } else {
+                return [...prevIndexes, index]; 
+            }
+        });
+    };
         
   return (
     <div className={style['goods-container']}>
@@ -84,27 +93,27 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                      >
                         
                             {
-                                filters.map(({item , id , img  , price }:cartData)=>(
-                                    <SwiperSlide key={id} >
-                                <div className={style['cart-box']}>
-                                    <div className={style['cart-box-block-heart']}>
-                                      <h4
-                                        onClick={() => handleIconClick(id)}
-                                        className={`${style['open-icon']} ${activeIndex === id ? style['open-icons'] : style['']}`}>
-                                            <div> <IoMdHeart /></div>
-                                         </h4>
-                                    </div>
-                                    <Link to={`/SpareParts/${id}`}>
-                                    <div className={style['img-cart']}>
-                                        <img src={`../../../img/${img}.jpg`} />
-                                        <h3>{item}</h3>
-                                    </div>
-                                    <h2>{price}$</h2>
-                                    <div className={style['icon-basket']}>
-                                        <p><FaShoppingBasket /></p>
-                                    </div>
+                                filters.map((item:cartData)=>(
+                                    <SwiperSlide key={item.id} >
+                                  <div key={item.id} className={style['cart-box']}>
+                                <div className="" onClick={()=>addTodoItem(item)} >
+                                  <h4
+                                    onClick={() => handleIconClick(item.id)}
+                                    className={`${style['open-icon']} ${activeIndexes.includes(item.id) ? style['open-icons'] : ''}`}>
+                                    <div> <IoMdHeart /></div>
+                                  </h4>
+                                  </div>
+                                 <Link  to={`/SpareParts/${item.id}`}>
+                                <div className={style['img-cart']}>
+                                   <img src={`./img/${item.img}.jpg`} />
+                                   <h3>{item.item}</h3>
+                                </div >
+                                    <h2>{item.price}$</h2>
                                 </Link>
-                                </div>
+                              <div onClick={()=>addTodoItemBasket(item)} className={style['icon-basket']}>
+                                <p><FaShoppingBasket /></p>
+                              </div>
+                              </div>
                             </SwiperSlide>
                             ))
                             }

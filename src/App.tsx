@@ -80,7 +80,7 @@ function App() {
     <div className="Big-Container">
       <Header cartItems={cartItems} basketItems={basketItems}   />
       <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />} />
           <Route path="/stock" element={<Stock />} />
           <Route path="/atv"  element={<Atv addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />}/>
           <Route path="/atv/:id" element={<SingleAtv />}/>
@@ -98,9 +98,9 @@ function App() {
           <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} dispatch={undefined} /> }/>
           <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>
           <Route path="/Contact" element={<Contact/>}/>
-          <Route path="/GoodTow" element={<GoodTwo/>}/>
+          <Route path="/GoodTow" element={<GoodTwo  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>
-          <Route path="/Goods" element={<Goods/>}/>
+          <Route path="/Goods" element={<Goods addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/LikePage" element={<LikePage cartItems={cartItems} setCartItems={setCartItems}  />}/>
           <Route path="/Basket" element={<Basket basketItems={basketItems} setBasketItems={setBasketItems}  />}/>
           <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
