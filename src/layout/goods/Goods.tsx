@@ -106,7 +106,7 @@ const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods`
                                   </div>
                                  <Link  to={`/SpareParts/${item.id}`}>
                                 <div className={style['img-cart']}>
-                                   <img src={`./img/${item.img}.jpg`} />
+                                   <img src={`../../../img/${item.img}.jpg`} />
                                    <h3>{item.item}</h3>
                                 </div >
                                     <h2>{item.price}$</h2>
