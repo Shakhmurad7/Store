@@ -12,7 +12,11 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods/`
-function SingleJetSki() {
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleJetSki({addTodoItem ,addTodoItemBasket}:Props) {
 
     const {id} = useParams()
     const [date , setDate]  = useState<any>([])
@@ -85,7 +89,7 @@ function SingleJetSki() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />
     </div>
 
     </PageContainer>

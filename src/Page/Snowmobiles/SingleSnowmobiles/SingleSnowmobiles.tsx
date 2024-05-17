@@ -12,7 +12,12 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Snowmobiles/`
-function SingleSnowmobiles() {
+
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleSnowmobiles({addTodoItem , addTodoItemBasket}:Props) {
 
     const {id} = useParams()
 
@@ -87,7 +92,7 @@ function SingleSnowmobiles() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />
     </div>
 
     </PageContainer>
