@@ -83,20 +83,20 @@ function App() {
           <Route path="/" element={<Home addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />} />
           <Route path="/stock" element={<Stock />} />
           <Route path="/atv"  element={<Atv addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />}/>
-          <Route path="/atv/:id" element={<SingleAtv />}/>
+          <Route path="/atv/:id" element={<SingleAtv addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/BigBoats" element={<BigBoats  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
-          <Route path="/BigBoats/:id" element={<SingleBİgBoats  />}/>
+          <Route path="/BigBoats/:id" element={<SingleBİgBoats addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/Boats" element={<Boats  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
-          <Route path="/Boats/:id" element={<SingleBoats />}/>
+          <Route path="/Boats/:id" element={<SingleBoats addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/Hydrocycles" element={<Hydrocycles  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
-          <Route path="/Hydrocycles/:id" element={<SingleJetSki/>}/>
+          <Route path="/Hydrocycles/:id" element={<SingleJetSki addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/SpareParts" element={<SpareParts addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} />}/>
-          <Route path="/SpareParts/:id" element={<SingleSpareParts/>}/>
+          <Route path="/SpareParts/:id" element={<SingleSpareParts  />}/>
           <Route path="/Snowmobiles" element={<Snowmobiles addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Snowmobiles/:id" element={<SingleSnowmobiles/>}/>
           <Route path="/Engines" element={<Engines  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/AllTerrainVehicles" element={<AllTerrainVehicles addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} dispatch={undefined} /> }/>
-          <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles/>}/>
+          <Route path="/AllTerrainVehicles/:id" element={<SingleAllTerrainVehicles addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/GoodTow" element={<GoodTwo  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/GoodTow/:id" element={<SingleSpareParts/>}/>

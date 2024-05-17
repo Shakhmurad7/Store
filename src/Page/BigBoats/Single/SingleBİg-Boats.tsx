@@ -12,7 +12,12 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Big-Boats/`
-function SingleBİgBoats() {
+
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleBİgBoats({ addTodoItemBasket, addTodoItem}:Props) {
 
     const {id} = useParams()
 
@@ -86,7 +91,7 @@ function SingleBİgBoats() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem}  />
     </div>
 
     </PageContainer>

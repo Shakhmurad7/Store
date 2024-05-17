@@ -12,7 +12,12 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/AllTerrainVehicles/`
-function SingleAllTerrainVehicles() {
+
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleAllTerrainVehicles({addTodoItemBasket , addTodoItem}:Props) {
 
     const {id} = useParams()
 
@@ -87,7 +92,7 @@ function SingleAllTerrainVehicles() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />
     </div>
 
     </PageContainer>

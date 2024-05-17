@@ -11,23 +11,17 @@ import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
-const url = `https://book-db-shakhmurad.vercel.app/Qayiq/`
-function SingleJetSki() {
+const url = `https://book-db-shakhmurad.vercel.app/Qayiq/
+
+
+`
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleJetSki({addTodoItemBasket, addTodoItem}:Props) {
 
     const {id} = useParams()
-
-    type DateType = {
-        id: Number
-        img: String
-        item: String
-        force: String
-        country: String
-        year: String
-        fuel: String
-        price: String
-        numberOFseats: String
-    }
-
     const [date, setDate] = useState<any>([]);
 
     useEffect(()=>{
@@ -99,7 +93,7 @@ function SingleJetSki() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />
     </div>
 
     </PageContainer>

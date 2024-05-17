@@ -12,7 +12,12 @@ import PageContainer from "../../../Components/PageContainer"
 import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/JetSki/`
-function SingleJetSki() {
+
+interface Props {
+    addTodoItem: (index: any) => void;
+    addTodoItemBasket: (index: any) => void;
+  }
+function SingleJetSki({addTodoItemBasket , addTodoItem}:Props) {
 
     const {id} = useParams()
 
@@ -88,7 +93,7 @@ function SingleJetSki() {
 
     {/* ---GoodsTwo---- */}
     <div className={style['GoodsTwo']}>
-        <GoodsTwo/>
+        <GoodsTwo addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />
     </div>
 
     </PageContainer>
