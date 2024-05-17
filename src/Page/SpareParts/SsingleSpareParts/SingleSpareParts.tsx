@@ -9,14 +9,10 @@ import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { BiSolidBarChartAlt2 } from "react-icons/bi";
 import PageContainer from "../../../Components/PageContainer"
-import GoodsTwo from "../../../layout/goodTwo/goodTwo";
 import { Link } from "react-router-dom";
 const url = `https://book-db-shakhmurad.vercel.app/Post-cart-goods/`
-interface Props {
-    addTodoItem: (index: any) => void;
-    addTodoItemBasket: (index: any) => void;
-  }
-function SingleJetSki({addTodoItem ,addTodoItemBasket}:Props) {
+
+function SingleJetSki() {
 
     const {id} = useParams()
     const [date , setDate]  = useState<any>([])
@@ -86,12 +82,6 @@ function SingleJetSki({addTodoItem ,addTodoItemBasket}:Props) {
             </Link>
         </div>
     </div>
-
-    {/* ---GoodsTwo---- */}
-    <div className={style['GoodsTwo']}>
-        <GoodsTwo addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />
-    </div>
-
     </PageContainer>
     </>
   )

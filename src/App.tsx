@@ -91,7 +91,7 @@ function App() {
           <Route path="/Hydrocycles" element={<Hydrocycles  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Hydrocycles/:id" element={<SingleJetSki addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/SpareParts" element={<SpareParts addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} />}/>
-          <Route path="/SpareParts/:id" element={<SingleSpareParts addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />}/>
+          <Route path="/SpareParts/:id" element={<SingleSpareParts/>}/>
           <Route path="/Snowmobiles" element={<Snowmobiles addTodoItemBasket={addTodoItemBasket}  addTodoItem={addTodoItem} dispatch={undefined} />}/>
           <Route path="/Snowmobiles/:id" element={<SingleSnowmobiles addTodoItem={addTodoItem} addTodoItemBasket={addTodoItemBasket} />}/>
           <Route path="/Engines" element={<Engines  addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} dispatch={undefined} />}/>
@@ -103,7 +103,7 @@ function App() {
           <Route path="/Goods" element={<Goods addTodoItemBasket={addTodoItemBasket} addTodoItem={addTodoItem} />}/>
           <Route path="/LikePage" element={<LikePage cartItems={cartItems} setCartItems={setCartItems}  />}/>
           <Route path="/Basket" element={<Basket basketItems={basketItems} setBasketItems={setBasketItems}  />}/>
-          <Route path="/Goods/:id" element={<SingleSpareParts/>}/>
+          <Route path="/Goods/:id" element={<SingleSpareParts />}/>
       </Routes>
       <ToastContainer />
     </div>
