@@ -32,7 +32,7 @@ export default function Swipers() {
         <SwiperSlide><img src={'./img/pexels-engin-akyurt-10364376.jpg'} /></SwiperSlide>
         <SwiperSlide><img src={'./img/pexels-karola-siimson-704213.jpg'} /></SwiperSlide>
         <SwiperSlide><img src={'./img/pexels-sebastian-voortman-804570.jpg'} /></SwiperSlide>
-        <SwiperSlide><img src={'./public/img/pexels-shelly-ohlsson-3761037.jpg'} /></SwiperSlide>
+        <SwiperSlide><img src={'./img/pexels-shelly-ohlsson-3761037.jpg'} /></SwiperSlide>
         <SwiperSlide><img src={'./img/pexels-tima-miroshnichenko-5976911.jpg'} /></SwiperSlide>
       </Swiper>
     </>
