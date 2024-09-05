@@ -317,6 +317,10 @@ a.active li::after{
     } 
 }
 @media(max-width:1230px){
+    .Navbar-container ul{
+        margin-top: 0px;
+    }
+    
     .swipers{
         max-width: 1000px;
         width: 100%;
@@ -332,7 +336,7 @@ a.active li::after{
         flex-direction: column;
         position: absolute;
         justify-content: start;
-        top: -5%;
+        top: 0;
         left: -100%;
         transition: .4s;
         width: 70%;
@@ -356,8 +360,8 @@ a.active li::after{
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: -5%;
-        left: 0%;
+        top: 0;
+        left: 0;
         li{
             color: rgb(37, 37, 37);
             font-size:22px ;
