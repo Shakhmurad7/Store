@@ -46,13 +46,14 @@ function Header({cartItems , basketItems}:any) {
                  </Link>
                  <div className="menu-open" onClick={()=>setmenu(!menu)} >
                    {
-                    menu ===true ?  <IoMdMenu /> :<IoClose /> 
+                    menu ===true ?  <IoMdMenu /> :"" 
                    }
                  </div>
             </div>
         </div>
+
     </div>
-    <Navbar menu={menu}/>
+    <Navbar setmenu={setmenu} menu={menu}/>
     </>
   )
 }

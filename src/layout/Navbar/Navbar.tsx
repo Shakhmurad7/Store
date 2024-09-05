@@ -1,6 +1,7 @@
 import '../../style.scss'
 import { NavLink } from "react-router-dom";
-function Navbar({menu}:any) {
+import { IoClose } from "react-icons/io5";
+function Navbar({menu , setmenu}:any) {
 
 
 
@@ -32,7 +33,14 @@ function Navbar({menu}:any) {
                 <NavLink to={"/SpareParts"}>
                    <li>Ehtiyat hissələri</li>
                 </NavLink>
+              { menu?  "" : 
+                    <div  onClick={()=>setmenu(!menu)} className="close-position">
+                       <IoClose />
+                     </div> 
+              }
+    
             </ul>
+
         </div>
     </div>
   )

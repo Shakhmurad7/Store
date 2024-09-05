@@ -134,6 +134,7 @@ a.active li::after{
    }
 }
 
+
 // ---Swiper---
 .Swiper-container{
     height: 550px;
@@ -306,6 +307,9 @@ a.active li::after{
 
 
 @media(max-width:1360px){
+    .Navbar-container.open ul li{
+        width: fit-content;
+    }
     .block-botton-text{
         font-size: 15px;
         gap: 5px;
@@ -332,6 +336,7 @@ a.active li::after{
         width: 100%;
     }
     .Navbar-container.open ul{
+        position: relative;
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -348,6 +353,13 @@ a.active li::after{
             color: rgb(37, 37, 37);
             font-size:22px ;
         }
+    }
+    .close-position{
+        cursor: pointer;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        font-size: 26px;
     }
     .Navbar-container.close ul{
         transition: .4s;
@@ -366,6 +378,10 @@ a.active li::after{
             color: rgb(37, 37, 37);
             font-size:22px ;
         }
+    }
+    .Navbar-container.close ul li{
+        width: fit-content;
+        user-select: none;
     }
     .menu-open{
         display: flex;
@@ -389,6 +405,12 @@ a.active li::after{
 }
 
 @media(max-width:767px){
+    .close-position{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 22px;
+    }
 .swiper-slide.swiper-slide-active img ,
 .swiper-slide.swiper-slide-next img ,
 .swiper-slide.swiper-slide-prev img ,
@@ -421,10 +443,12 @@ a.active li::after{
 
 @media(max-width:480px){
     .Navbar-container.close ul li{
-        font-size: 13px;
+        width: fit-content;
+        user-select: none;
+        font-size: 15px;
     }
     .Navbar-container.open ul li{
-        font-size: 13px;
+        font-size: 15px;
     }
 .swiper-slide.swiper-slide-active img ,
 .swiper-slide.swiper-slide-next img ,
