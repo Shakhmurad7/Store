@@ -23,11 +23,11 @@ function Atv({Atv , dispatch , addTodoItem, addTodoItemBasket}:any) {
 const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(9);
 
-const [active, setActive] = useState(1); // Fixing the initialization of active state
+const [active, setActive] = useState(1)
 
 const paginate = (pageNumber: number) => {
   setCurrentPage(pageNumber);
-  setActive(pageNumber); // Set active page when paginating
+  setActive(pageNumber); 
 };
 
 
@@ -52,7 +52,6 @@ const paginatedData =  Array.isArray(Atv) ? filteredData.slice(indexOfFirstItem,
 
   useEffect(()=>{
     axios.get(url).then(({data})=>{
-      console.log("Atv:", Atv);
       dispatch({
         type:'Atv',
         payload: data

@@ -5,10 +5,8 @@ import { SlBasket } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 import Navbar from "../Navbar/Navbar";
-import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 function Header({cartItems , basketItems}:any) {
-  console.log(cartItems);
   
 
   const [menu , setmenu ] = useState(true)
