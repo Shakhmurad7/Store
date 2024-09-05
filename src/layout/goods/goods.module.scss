@@ -136,6 +136,9 @@
 }
 
 @media(max-width:700px){
+    .cart-box{
+        text-align: start;
+    }
     .goods-container{
         padding-top: 40px    ;
     }
@@ -153,7 +156,6 @@
 
 @media(max-width:545px){
     .cart-box{
-        align-items: center;
         h2{
             font-size: 17px;
         }
